@@ -9,10 +9,12 @@
                 <label for="txtProductCode" class="col-sm-2 col-form-label">Mã sản phẩm<span class="star">*</span></label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="txtProductCode" name="txtProductCode" readonly>
+                    
                 </div>
                 <label for="txtProductName" class="col-sm-2 col-form-label">Tên sản phẩm<span class="star">*</span></label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="txtProductName" name="txtProductName">
+                    <input type="text" class="form-control" id="txtProductName" name="txtProductName" maxlength="100">
+                    <span id="validateProductName" style="color:red"></span>
                 </div>
             </div>
             <div class="form-group row">
@@ -23,7 +25,7 @@
                 <label for="statusProduct" class="col-sm-2 col-form-label">Trạng thái<span class="star">*</span></label>
                 <div class="col-sm-4">
                     <select id="statusProduct" class="form-control">
-                        <option value="0"> Khóa </option>
+                        <option value="0" > Khóa </option>
                         <option value="1" selected> Kích hoạt </option>
                     </select>
                 </div>
@@ -32,26 +34,31 @@
                 <label for="txtOriginPrice" class="col-sm-2 col-form-label">Giá gốc<span class="star">*</span></label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="txtOriginPrice" name="txtOriginPrice">
+                    <span id="validateOriginPrice" style="color:red"></span>
                 </div>
                 <label for="txtSalePrice" class="col-sm-2 col-form-label">Giá bán<span class="star">*</span></label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="txtSalePrice" name="txtSalePrice">
+                    <span id="validateSalePrice" style="color:red"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="txtInstallmentPrice" class="col-sm-2 col-form-label">Giá trả góp<span class="star">*</span></label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="txtInstallmentPrice" name="txtInstallmentPrice">
+                    <span id="validateInstallmentPrice" style="color:red"></span>
                 </div>
                 <label for="txtQuantity" class="col-sm-2 col-form-label">Số lượng<span class="star">*</span></label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="txtQuantity" name="txtQuantity">
+                    <span id="validateQuantity" style="color:red"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="uploadfile" class="col-sm-2 col-form-label">Hình ảnh</label>
                 <div class="col-sm-4">
                     <input type="file" name="UploadFile" id="txtUploadFile" class="makethispretty" onchange="readURL(this)" , accept="image/gif, image/jpeg, image/png" />
+                    <span id="validateUploadFile" style="color:red"></span>
                 </div>
             </div>
             <div class="form-group row">

@@ -19,6 +19,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
+            ViewBag.TenTaiKhoan = Session["TaiKhoan"];
             //var product = db.Products.OrderBy(x => x.ID).ToList();
             return View();
         }

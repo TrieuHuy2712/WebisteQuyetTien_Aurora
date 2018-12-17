@@ -9,6 +9,7 @@ $("#btnCreate").on('click', function () {
 });
 //Thực hiện lưu hình ảnh
 $("#btnAttributeCreateNew").on('click', function () {
+    resetValidate();
     var productCode = $('#txtProductCode').val();
     var productTypeId = $('#material-dropdown').val();
     var salePrice = $('#txtSalePrice').val();
@@ -17,6 +18,7 @@ $("#btnAttributeCreateNew").on('click', function () {
     var quantity = $('#txtQuantity').val();
     var productName = $('#txtProductName').val();
     var status = $('#statusProduct').val();
+
     //Convert againt number
     console.log(productCode);
     salePrice = salePrice.replace(/\,/g, '');
@@ -34,55 +36,51 @@ $("#btnAttributeCreateNew").on('click', function () {
     } else {
         status = false;
     }
+    if (checkValidation() == true) {
+        $.ajax({
+            type: "POST",
+            url: "/Manage/SaveEntity",
+            data: {
+                ID: gIDProduct,
+                ProductCode: productCode,
+                ProductName: productName,
+                ProductTypeID: productTypeId,
+                OriginPrice: originPrice,
+                SalePrice: salePrice,
+                InstallmentPrice: installmentPrice,
+                Quantity: quantity,
+                Status: status,
+            },
+            dataType: "json",
+            beforeSend: function () {
+                general.startLoading();
+            },
+            success: function (response) {
+                currentID = response.ID;
+                console.log(gIDProduct);
+                //KIểm tra xem có tồn tại hay không
+                $('#modal-add-edit').modal('hide');
+                $('body').removeClass('modal-open');
+                $('.modal-backdrop').remove();
+                console.log("Save thành công");
+                general.stopLoading();
+                if ($("#txtUploadFile").get(0).files.length != 0) {
+                    uploadImage(currentID);
+                    window.location.reload();
+                } else {
+                    LoadData();
+                }
 
-    $.ajax({
-        type: "POST",
-        url: "/Manage/SaveEntity",
-        data: {
-            ID: gIDProduct,
-            ProductCode: productCode,
-            ProductName: productName,
-            ProductTypeID: productTypeId,
-            OriginPrice: originPrice,
-            SalePrice: salePrice,
-            InstallmentPrice: installmentPrice,
-            Quantity: quantity,
-            Status: status,
-        },
-        dataType: "json",
-        beforeSend: function () {
-            general.startLoading();
-        },
-        success: function (response) {
-            currentID = response.ID;
-            console.log(gIDProduct);
-            //KIểm tra xem có tồn tại hay không
-            $('#modal-add-edit').modal('hide');
-            $('body').removeClass('modal-open');
-            $('.modal-backdrop').remove();
-            console.log("Save thành công");
-            general.stopLoading();
-            if ($("#txtUploadFile").get(0).files.length != 0) {
-                uploadImage(currentID);
-                window.location.reload();
-            } else {
-                LoadData();
+                console.log(response);
+            },
+            error: function () {
+                general.notify('Có lỗi', 'error');
+                general.stopLoading();
             }
-           
-            
-
-            console.log(response);
-        },
-        error: function () {
-            general.notify('Có lỗi', 'error');
-            general.stopLoading();
-        }
-    });
+        });
+    }
     return false;
 });
-
-//14/12/2018: Author: Triệu Đức Huy
-//--------------Content--------------//
 //----------Sự kiện không cho nhập số giá gốc-----------------//
 $('body').on('keyup', '#txtOriginPrice', function (event) {
     if (event.which >= 37 && event.which <= 40) return;
@@ -138,10 +136,12 @@ function resetForm() {
     $('#material-dropdown').val('').trigger('change.select2');
     $('#statusProduct').val('');
     $('#txtQuantity').val('');
+    $('#HinhAnhSP').attr('src', "#");
 }
 ///Load Dữ liệu/////
 $('body').on('click', '.btn-edit', function (e) {
     e.preventDefault();
+    resetValidate();
     var that = $(this).data('id');
     console.log(that);
     getProductType();
@@ -304,3 +304,82 @@ function LoadData() {
         }
     });
 }
+
+function checkValidation() {
+    var countErr = 0;
+    var salePrice = $('#txtSalePrice').val();
+    var originPrice = $('#txtOriginPrice').val();
+    var installmentPrice = $('#txtInstallmentPrice').val();
+    salePrice = salePrice.replace(/\,/g, '');
+    salePrice = parseInt(salePrice, 10);
+
+    originPrice = originPrice.replace(/\,/g, '');
+    originPrice = parseInt(originPrice, 10);
+
+    installmentPrice = installmentPrice.replace(/\,/g, '');;
+    installmentPrice = parseInt(installmentPrice, 10);
+    if ($("#txtProductName").val() == "" || $("#txtProductName").val() == null) {
+        $('#validateProductName').text("Tên sản phẩm không được bỏ trống");
+        countErr++;
+    }
+    if ($("#txtOriginPrice").val() == "" || $("#txtOriginPrice").val() == null) {
+        $('#validateOriginPrice').text("Giá gốc không được bỏ trống");
+        countErr++;
+    }
+    if ($("#txtSalePrice").val() == "" || $("#txtSalePrice").val() == null) {
+        $('#validateSalePrice').text("Giá gốc không được bỏ trống");
+        countErr++;
+    }
+    if (salePrice < originPrice) {
+        console.log(originPrice);
+        console.log(salePrice);
+        $('#validateSalePrice').text("Giá bán phải lớn hơn giá gốc");
+        countErr++;
+    }
+    if ($("#txtInstallmentPrice").val() == "" || $("#txtInstallmentPrice").val() == null) {
+        $('#validateInstallmentPrice').text("Giá góp không được bỏ trống");
+        countErr++;
+    }
+    if (installmentPrice < originPrice) {
+        $('#validateInstallmentPrice').text("Giá góp phải lớn hơn giá gốc");
+        countErr++;
+    }
+    if ($("#txtQuantity").val() == "" || $("#txtQuantity").val() == null) {
+        $('#validateQuantity').text("Số lượng không được bỏ trống");
+        countErr++;
+    }
+
+    if (countErr > 0) {
+        return false;
+    }
+    return true;
+}
+function resetValidate() {
+    $('#validateProductName').text("");
+    $('#validateOriginPrice').text("");
+    $('#validateSalePrice').text("");
+    $('#validateInstallmentPrice').text("");
+    $('#validateQuantity').text("");
+    $('#validateUploadFile').text("");
+}
+//Check event destroy fault
+$("#txtProductName").keyup(function () {
+    var val = $(this).val();
+    $("#validateProductName").text("");
+});
+$("#txtOriginPrice").keyup(function () {
+    var val = $(this).val();
+    $("#validateOriginPrice").text("");
+});
+$("#txtSalePrice").keyup(function () {
+    var val = $(this).val();
+    $("#validateSalePrice").text("");
+});
+$("#txtInstallmentPrice").keyup(function () {
+    var val = $(this).val();
+    $("#validateInstallmentPrice").text("");
+});
+$("#txtQuantity").keyup(function () {
+    var val = $(this).val();
+    $("#validateQuantity").text("");
+});
