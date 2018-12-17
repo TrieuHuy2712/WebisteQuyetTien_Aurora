@@ -93,3 +93,98 @@ C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_
 C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team\bin\EntityFramework.SqlServer.dll
 C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team\bin\EntityFramework.xml
 C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team\bin\EntityFramework.SqlServer.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\ApplicationInsights.config
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\WebsiteQuyetTien_byAurora Team.dll.config
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\WebsiteQuyetTien_byAurora Team.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\WebsiteQuyetTien_byAurora Team.pdb
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\csc.exe
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\csc.exe.config
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\csc.rsp
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\csi.exe
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\csi.exe.config
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\csi.rsp
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.Managed.Core.targets
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.AppContext.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Collections.Immutable.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Console.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.IO.Compression.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.IO.FileSystem.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.IO.Pipes.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Reflection.Metadata.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Security.AccessControl.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Security.Claims.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Security.Principal.Windows.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.ValueTuple.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Xml.XmlDocument.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Xml.XPath.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\vbc.exe
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\vbc.exe.config
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\vbc.rsp
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\VBCSCompiler.exe
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\roslyn\VBCSCompiler.exe.config
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Antlr3.Runtime.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\EntityFramework.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\EntityFramework.SqlServer.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.Agent.Intercept.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.DependencyCollector.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.Web.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.WindowsServer.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.ApplicationInsights.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.Web.Infrastructure.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Newtonsoft.Json.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Diagnostics.DiagnosticSource.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Web.Helpers.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Web.Mvc.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Web.Optimization.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Web.Razor.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Web.WebPages.Deployment.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Web.WebPages.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Web.WebPages.Razor.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\WebGrease.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\EntityFramework.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\EntityFramework.SqlServer.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Web.Helpers.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Web.Mvc.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Web.Optimization.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Web.Razor.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Web.WebPages.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Web.WebPages.Deployment.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Web.WebPages.Razor.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Newtonsoft.Json.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Antlr3.Runtime.pdb
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\System.Diagnostics.DiagnosticSource.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.DependencyCollector.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.WindowsServer.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.Web.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csprojAssemblyReference.cache
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csproj.CoreCompileInputs.cache
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csproj.CopyComplete
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.pdb
