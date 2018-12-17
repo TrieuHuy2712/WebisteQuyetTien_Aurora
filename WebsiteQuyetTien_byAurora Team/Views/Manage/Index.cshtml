@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WebsiteQuyetTien_byAurora_Team.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<p>
+    <a href="#" data-target="#modal-add-edit" data-toggle="modal" class="btn btn-success" id="btnCreate">Create New</a>
+</p>
+<div id="modal-add-edit" class=" modal fade modal-darkorange in" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @Html.Partial("~/Views/Manage/CRUDModal.cshtml")
+        </div>
+    </div>
+</div>
+
+<div class="modal fade text-center" id="modal-add-edit">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<table class="table" id="myTable">
+    <thead>
+        <tr>
+
+            <th>Mã Sản Phẩm</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Giá bán</th>
+            <th>Giá gốc</th>
+            <th>Giá góp</th>
+            <th>Số lượng tồn</th>
+            <th>Tên loại</th>
+            <th>Tên loại</th>
+            <th>Hình ảnh</th>
+            <th>#</th>
+        </tr>
+    </thead>
+    <tbody id="tbl-content"></tbody>
+</table>
+
+<script id="table-template" type="x-tmpl-mustache">
+    <tr>
+        <td id="productCode">{{ProductCode}}</td>
+        <td>{{ProductName}}</td>
+        <td>{{SalePrice}}</td>
+        <td>{{OriginPrice}}</td>
+        <td>{{InstallmentPrice}}</td>
+        <td>{{Quantity}}</td>
+        <td>{{ProductTypeID}}</td>
+        <td>{{{Status}}}</td>
+        <td><img id="imgSrc" src="/www.root/Img/{{ID}}.png"  width="100px" height="100px" /></td>
+
+        <th scope="row">
+            <button class="btn btn-default btn-sm btn-edit" data-id="{{ID}}"><i class="far fa-edit"></i></button>
+            <button class="btn btn-danger btn-sm btn-delete" data-id="{{ID}}"><i class="fas fa-trash-alt"></i></button>
+        </th>
+    </tr>
+</script>
+@section Scripts{
+
+    <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+}
