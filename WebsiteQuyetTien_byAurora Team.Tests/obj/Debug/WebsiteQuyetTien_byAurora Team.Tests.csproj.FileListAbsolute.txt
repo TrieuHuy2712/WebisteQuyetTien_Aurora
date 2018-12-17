@@ -36,3 +36,41 @@ C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_
 C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.pdb
 C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\EntityFramework.dll
 C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\EntityFramework.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\ApplicationInsights.config
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\WebsiteQuyetTien_byAurora Team.Tests.dll.config
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\WebsiteQuyetTien_byAurora Team.Tests.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\WebsiteQuyetTien_byAurora Team.Tests.pdb
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Helpers.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Mvc.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Razor.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.WebPages.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\WebsiteQuyetTien_byAurora Team.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Optimization.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\EntityFramework.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\WebsiteQuyetTien_byAurora Team.pdb
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\WebsiteQuyetTien_byAurora Team.dll.config
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Helpers.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Mvc.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Razor.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.WebPages.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Optimization.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\EntityFramework.xml
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.csprojAssemblyReference.cache
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.csproj.CoreCompileInputs.cache
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.csproj.CopyComplete
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.dll
+C:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.pdb
