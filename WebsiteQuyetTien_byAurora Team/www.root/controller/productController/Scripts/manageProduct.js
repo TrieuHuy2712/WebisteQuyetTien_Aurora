@@ -68,7 +68,7 @@ $("#btnAttributeCreateNew").on('click', function () {
                     uploadImage(currentID);
                     window.location.reload();
                 } else {
-                    LoadData();
+                    LoadData(true);
                 }
 
                 console.log(response);
@@ -348,6 +348,10 @@ function checkValidation() {
         $('#validateQuantity').text("Số lượng không được bỏ trống");
         countErr++;
     }
+    if ($("#txtUploadFile").get(0).files.length == 0) {
+        $('#validateUploadFile').text("Vui lòng chọn hình ảnh");
+        countErr++;
+    } 
 
     if (countErr > 0) {
         return false;
@@ -383,4 +387,7 @@ $("#txtInstallmentPrice").keyup(function () {
 $("#txtQuantity").keyup(function () {
     var val = $(this).val();
     $("#validateQuantity").text("");
+});
+$("#txtUploadFile").change(function () {
+    $('#validateUploadFile').text("");
 });
