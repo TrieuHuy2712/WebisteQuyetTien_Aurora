@@ -3,6 +3,7 @@
 });
 var gIDProduct = 0;
 var currentID = "";
+var count = 0;
 $("#btnCreate").on('click', function () {
     resetForm();
     getProductType();
@@ -142,6 +143,7 @@ function resetForm() {
 $('body').on('click', '.btn-edit', function (e) {
     e.preventDefault();
     resetValidate();
+   
     var that = $(this).data('id');
     console.log(that);
     getProductType();
@@ -171,7 +173,7 @@ $('body').on('click', '.btn-edit', function (e) {
                 } else if (response.Status == false) {
                     $('#statusProduct').val("0");
                 }
-
+               
                 $('#txtQuantity').val(response.Quantity);
             }
             $('#modal-add-edit').modal('toggle');

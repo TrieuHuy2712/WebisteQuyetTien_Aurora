@@ -26,19 +26,19 @@
             </div>
         </div>
     </div>
-    <table class="table table-striped" id="myTable">
+    <table class="table table-striped" id="myTable" style="text-align:center; ">
         <thead>
             <tr>
 
-                <th>Mã Sản Phẩm</th>
-                <th>Tên Sản Phẩm</th>
-                <th>Giá bán</th>
-                <th>Giá gốc</th>
-                <th>Giá góp</th>
-                <th>Số lượng</th>
-                <th>Tên loại</th>
-                <th>Trạng thái</th>
-                <th>Hình ảnh</th>
+                <th style="text-align:center; vertical-align:middle">Mã Sản Phẩm</th>
+                <th style="text-align:center; vertical-align:middle">Tên Sản Phẩm</th>
+                <th style="text-align:center; vertical-align:middle">Giá bán</th>
+                <th style="text-align:center; vertical-align:middle">Giá gốc</th>
+                <th style="text-align:center; vertical-align:middle">Giá góp</th>
+                <th style="text-align:center; vertical-align:middle">Số lượng</th>
+                <th style="text-align:center; vertical-align:middle">Tên loại</th>
+                <th style="text-align:center; vertical-align:middle">Trạng thái</th>
+                <th style="text-align:center; vertical-align:middle">Hình ảnh</thstyle="text-align:center;>
                 <th>#</th>
             </tr>
         </thead>
@@ -47,14 +47,14 @@
 
     <script id="table-template" type="x-tmpl-mustache">
         <tr>
-            <td id="productCode">{{ProductCode}}</td>
-            <td>{{ProductName}}</td>
-            <td>{{SalePrice}}</td>
-            <td>{{OriginPrice}}</td>
-            <td>{{InstallmentPrice}}</td>
-            <td>{{Quantity}}</td>
-            <td>{{ProductTypeID}}</td>
-            <td>{{{Status}}}</td>
+            <td id="productCode" style="text-align:center; vertical-align:middle">{{ProductCode}}</td>
+            <td style="text-align:left; vertical-align:middle">{{ProductName}}</td>
+            <td style="text-align:center; vertical-align:middle">{{SalePrice}}</td>
+            <td style="text-align:center; vertical-align:middle">{{OriginPrice}}</td>
+            <td style="text-align:center; vertical-align:middle">{{InstallmentPrice}}</td>
+            <td style="text-align:center; vertical-align:middle">{{Quantity}}</td>
+            <td style="text-align:center; vertical-align:middle">{{ProductTypeID}}</td>
+            <td style="text-align:center; vertical-align:middle">{{{Status}}}</td>
             <td><img id="imgSrc" src="/www.root/Img/{{ID}}.png" width="100px" height="100px" /></td>
 
             <th scope="row">
