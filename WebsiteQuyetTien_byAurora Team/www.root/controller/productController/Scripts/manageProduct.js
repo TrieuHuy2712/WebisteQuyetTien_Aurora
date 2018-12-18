@@ -7,7 +7,7 @@ $("#btnCreate").on('click', function () {
     resetForm();
     getProductType();
 });
-//Thực hiện lưu hình ảnh
+//Thực hiện lưu hình ảnh và những thông tin mới
 $("#btnAttributeCreateNew").on('click', function () {
     resetValidate();
     var productCode = $('#txtProductCode').val();
@@ -362,7 +362,8 @@ function resetValidate() {
     $('#validateQuantity').text("");
     $('#validateUploadFile').text("");
 }
-//Check event destroy fault
+
+//
 $("#txtProductName").keyup(function () {
     var val = $(this).val();
     $("#validateProductName").text("");
