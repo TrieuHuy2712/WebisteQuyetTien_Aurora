@@ -27,6 +27,5 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             }
             return Content("Tài khoản hoặc mật khẩu không đúng");
         }
-        
     }
 }

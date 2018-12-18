@@ -3,6 +3,7 @@
 });
 var gIDProduct = 0;
 var currentID = "";
+var count = 0;
 $("#btnCreate").on('click', function () {
     resetForm();
     getProductType();
@@ -142,6 +143,7 @@ function resetForm() {
 $('body').on('click', '.btn-edit', function (e) {
     e.preventDefault();
     resetValidate();
+   
     var that = $(this).data('id');
     console.log(that);
     getProductType();
@@ -171,7 +173,7 @@ $('body').on('click', '.btn-edit', function (e) {
                 } else if (response.Status == false) {
                     $('#statusProduct').val("0");
                 }
-
+               
                 $('#txtQuantity').val(response.Quantity);
             }
             $('#modal-add-edit').modal('toggle');
@@ -296,7 +298,26 @@ function LoadData() {
                 $('#tbl-content').html(render);
             };
             $(document).ready(function () {
-                $('#myTable').DataTable();
+                $('#myTable').DataTable({
+                    "language": {
+                        "sProcessing": "Đang xử lý...",
+                        "sLengthMenu": "Xem _MENU_ sản phẩm",
+                        "sZeroRecords": "Không tìm thấy sản phẩm nào phù hợp",
+                        "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ sản phẩm",
+                        "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 sản phẩm",
+                        "sInfoFiltered": "(được lọc từ _MAX_ sản phẩm)",
+                        "sInfoPostFix": "",
+                        "sSearch": "Tìm sản phẩm:",
+                        "sUrl": "",
+                        "oPaginate": {
+                            "sFirst": "Đầu",
+                            "sPrevious": "Trước",
+                            "sNext": "Tiếp",
+                            "sLast": "Cuối"
+                        }
+
+                    }
+                });
             });
         },
         error: function (ex) {

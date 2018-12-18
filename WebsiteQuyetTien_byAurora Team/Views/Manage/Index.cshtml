@@ -1,65 +1,67 @@
 ﻿@model IEnumerable<WebsiteQuyetTien_byAurora_Team.Models.Product>
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Admin.cshtml";
+    Layout = "~/Views/Shared/_AdminLayput.cshtml";
 }
 
-<p>
-    <a href="#" data-target="#modal-add-edit" data-toggle="modal" class="btn btn-success" id="btnCreate">Create New</a>
-</p>
-<div id="modal-add-edit" class=" modal fade modal-darkorange in" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            @Html.Partial("~/Views/Manage/CRUDModal.cshtml")
-        </div>
+<div class="monthly-grid">
+    <div class="progressbar-heading grids-heading">
+        <h2><strong>XEM DANH SÁCH SẢN PHẨM</strong></h2>
     </div>
-</div>
 
-<div class="modal fade text-center" id="modal-add-edit">
-    <div class="modal-dialog">
-        <div class="modal-content">
+    <p>
+        <a href="#" data-target="#modal-add-edit" data-toggle="modal" class="btn btn-success" id="btnCreate">Create New</a>
+    </p>
+    <div id="modal-add-edit" class=" modal fade modal-darkorange in" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                @Html.Partial("~/Views/Manage/CRUDModal.cshtml")
+            </div>
         </div>
     </div>
-</div>
-<table class="table table-striped" id="myTable">
-    <thead>
+
+    <div class="modal fade text-center" id="modal-add-edit">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+    <table class="table table-striped" id="myTable" style="text-align:center; ">
+        <thead>
+            <tr>
+
+                <th style="text-align:center; vertical-align:middle">Mã Sản Phẩm</th>
+                <th style="text-align:center; vertical-align:middle">Tên Sản Phẩm</th>
+                <th style="text-align:center; vertical-align:middle">Giá bán</th>
+                <th style="text-align:center; vertical-align:middle">Giá gốc</th>
+                <th style="text-align:center; vertical-align:middle">Giá góp</th>
+                <th style="text-align:center; vertical-align:middle">Số lượng</th>
+                <th style="text-align:center; vertical-align:middle">Tên loại</th>
+                <th style="text-align:center; vertical-align:middle">Trạng thái</th>
+                <th style="text-align:center; vertical-align:middle">Hình ảnh</thstyle="text-align:center;>
+                <th>#</th>
+            </tr>
+        </thead>
+        <tbody id="tbl-content"></tbody>
+    </table>
+
+    <script id="table-template" type="x-tmpl-mustache">
         <tr>
+            <td id="productCode" style="text-align:center; vertical-align:middle">{{ProductCode}}</td>
+            <td style="text-align:left; vertical-align:middle">{{ProductName}}</td>
+            <td style="text-align:center; vertical-align:middle">{{SalePrice}}</td>
+            <td style="text-align:center; vertical-align:middle">{{OriginPrice}}</td>
+            <td style="text-align:center; vertical-align:middle">{{InstallmentPrice}}</td>
+            <td style="text-align:center; vertical-align:middle">{{Quantity}}</td>
+            <td style="text-align:center; vertical-align:middle">{{ProductTypeID}}</td>
+            <td style="text-align:center; vertical-align:middle">{{{Status}}}</td>
+            <td><img id="imgSrc" src="/www.root/Img/{{ID}}.png" width="100px" height="100px" /></td>
 
-            <th>Mã Sản Phẩm</th>
-            <th>Tên Sản Phẩm</th>
-            <th>Giá bán</th>
-            <th>Giá gốc</th>
-            <th>Giá góp</th>
-            <th>Số lượng</th>
-            <th>Tên loại</th>
-            <th>Trạng thái</th>
-            <th>Hình ảnh</th>
-            <th>#</th>
+            <th scope="row">
+                <button class="btn btn-default btn-sm btn-edit" data-id="{{ID}}"><i class="far fa-edit"></i></button>
+                <button class="btn btn-danger btn-sm btn-delete" data-id="{{ID}}"><i class="fas fa-trash-alt"></i></button>
+            </th>
         </tr>
-    </thead>
-    <tbody id="tbl-content"></tbody>
-</table>
-
-<script id="table-template" type="x-tmpl-mustache">
-    <tr>
-        <td id="productCode">{{ProductCode}}</td>
-        <td>{{ProductName}}</td>
-        <td>{{SalePrice}}</td>
-        <td>{{OriginPrice}}</td>
-        <td>{{InstallmentPrice}}</td>
-        <td>{{Quantity}}</td>
-        <td>{{ProductTypeID}}</td>
-        <td>{{{Status}}}</td>
-        <td><img id="imgSrc" src="/www.root/Img/{{ID}}.png" width="100px" height="100px" /></td>
-
-        <th scope="row">
-            <button class="btn btn-default btn-sm btn-edit" data-id="{{ID}}"><i class="far fa-edit"></i></button>
-            <button class="btn btn-danger btn-sm btn-delete" data-id="{{ID}}"><i class="fas fa-trash-alt"></i></button>
-        </th>
-    </tr>
-</script>
-@section Scripts{
-
-    <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-}
+    </script>
+   
+</div>
