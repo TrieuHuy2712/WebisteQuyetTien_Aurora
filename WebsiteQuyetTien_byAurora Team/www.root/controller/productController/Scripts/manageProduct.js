@@ -68,10 +68,8 @@ $("#btnAttributeCreateNew").on('click', function () {
                 if ($("#txtUploadFile").get(0).files.length != 0) {
                     uploadImage(currentID);
                     window.location.reload();
-                } else {
-                    LoadData(true);
                 }
-
+                LoadData();
                 console.log(response);
             },
             error: function () {
@@ -143,7 +141,7 @@ function resetForm() {
 $('body').on('click', '.btn-edit', function (e) {
     e.preventDefault();
     resetValidate();
-   
+
     var that = $(this).data('id');
     console.log(that);
     getProductType();
@@ -173,7 +171,7 @@ $('body').on('click', '.btn-edit', function (e) {
                 } else if (response.Status == false) {
                     $('#statusProduct').val("0");
                 }
-               
+
                 $('#txtQuantity').val(response.Quantity);
             }
             $('#modal-add-edit').modal('toggle');
@@ -297,27 +295,31 @@ function LoadData() {
             if (render != '') {
                 $('#tbl-content').html(render);
             };
-            $(document).ready(function () {
-                $('#myTable').DataTable({
-                    "language": {
-                        "sProcessing": "Đang xử lý...",
-                        "sLengthMenu": "Xem _MENU_ sản phẩm",
-                        "sZeroRecords": "Không tìm thấy sản phẩm nào phù hợp",
-                        "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ sản phẩm",
-                        "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 sản phẩm",
-                        "sInfoFiltered": "(được lọc từ _MAX_ sản phẩm)",
-                        "sInfoPostFix": "",
-                        "sSearch": "Tìm sản phẩm:",
-                        "sUrl": "",
-                        "oPaginate": {
-                            "sFirst": "Đầu",
-                            "sPrevious": "Trước",
-                            "sNext": "Tiếp",
-                            "sLast": "Cuối"
-                        }
 
+            $('#myTable').DataTable({
+                "aaSorting": [],
+                //stateSave: true,
+                destroy: true,
+                retrieve: true,
+               
+                "language": {
+                    "sProcessing": "Đang xử lý...",
+                    "sLengthMenu": "Xem _MENU_ sản phẩm",
+                    "sZeroRecords": "Không tìm thấy sản phẩm nào phù hợp",
+                    "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ sản phẩm",
+                    "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 sản phẩm",
+                    "sInfoFiltered": "(được lọc từ _MAX_ sản phẩm)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Tìm sản phẩm:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "Đầu",
+                        "sPrevious": "Trước",
+                        "sNext": "Tiếp",
+                        "sLast": "Cuối"
                     }
-                });
+                },
+               
             });
         },
         error: function (ex) {
@@ -369,10 +371,12 @@ function checkValidation() {
         $('#validateQuantity').text("Số lượng không được bỏ trống");
         countErr++;
     }
-    if ($("#txtUploadFile").get(0).files.length == 0) {
-        $('#validateUploadFile').text("Vui lòng chọn hình ảnh");
-        countErr++;
-    } 
+    if (gIDProduct == 0) {
+        if ($("#txtUploadFile").get(0).files.length == 0) {
+            $('#validateUploadFile').text("Vui lòng chọn hình ảnh");
+            countErr++;
+        }
+    }
 
     if (countErr > 0) {
         return false;

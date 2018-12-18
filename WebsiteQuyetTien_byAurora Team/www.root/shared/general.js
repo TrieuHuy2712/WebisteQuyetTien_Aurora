@@ -224,9 +224,9 @@
     },
     getStatus: function (status) {
         if (status == 1)
-            return '<span class="badge btn-success">Kích hoạt</span>';
+            return '<span class="badge badge-success">Kích hoạt</span>';
         else
-            return '<span class="badge btn-danger">Khoá</span>';
+            return '<span class="badge badge-danger">Khoá</span>';
     },
     getGender: function (gender) {
         if (gender == null || '')

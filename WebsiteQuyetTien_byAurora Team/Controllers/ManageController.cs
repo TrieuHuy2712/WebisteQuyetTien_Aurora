@@ -46,7 +46,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
                 s.ProductTypeID,
                 c.ProductTypeName,
                 
-            }).Where(s=>s.Status==true).OrderBy(x=>x.ProductCode).ToList();
+            }).Where(s=>s.Status==true).OrderByDescending(x=>x.ID).ToList();
             
             return Json(students, JsonRequestBehavior.AllowGet);
         }
