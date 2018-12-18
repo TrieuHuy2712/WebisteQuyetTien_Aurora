@@ -1,0 +1,207 @@
+﻿@using WebsiteQuyetTien_byAurora_Team.Models;
+@{Account account = (Account)Session["acc"];
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Quản lý Điện máy Quyết Tiến</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Gretong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+
+        Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/www.root/controller/productController/Css/manageProduct.css" rel="stylesheet" />
+    <!-- Bootstrap Core CSS -->
+    <link href="~/www.root/shared/admin_layout/Admin/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/www.root/shared/admin_layout/Admin/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Graph CSS -->
+    <link href="~/www.root/shared/admin_layout/Admin/css/font-awesome.css" rel="stylesheet">
+    <!-- jQuery -->
+    <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css' />
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- lined-icons -->
+    <link rel="stylesheet" href="~/www.root/shared/admin_layout/Admin/css/icon-font.min.css" type='text/css' />
+    <!-- //lined-icons -->
+    <!-- //lined-icons -->
+    <script src="~/www.root/shared/admin_layout/Admin/js/jquery-1.10.2.min.js"></script>
+    <!-- Datatable-->
+    
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    @RenderSection("Styles", false)
+</head>
+<body>
+    <div class="page-container">
+        <!--/content-inner-->
+        <div class="left-content">
+            <div class="inner-content">
+                <!-- header-starts -->
+                <div class="header-section">
+                    <!-- top_bg -->
+                    <div class="top_bg">
+
+                        <div class="header_top">
+                            <div class="top_right">
+                                <ul>
+                                    <li><a href="#">Trang khách hàng</a></li>|
+                                    <li><a href="#">Hổ trợ kỹ thuật</a></li>|
+                                </ul>
+                            </div>
+                            <div class="top_left">
+
+                                <h2>Chào: hùng <a href="#" style="color: #b52e31">Đăng xuất <i class="fas fa-sign-out-alt"></i></a></h2>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- /top_bg -->
+                </div>
+
+                <!-- //header-ends -->
+                <!--content-->
+                <div class="content">
+                    @RenderBody()
+
+                    <!--Footer layout-->
+
+                    <div class="footer">
+                        <p>© 2018 Đồ án <Strong style="color: red;">Quyết Tiến</Strong> cho môn học | Thiết kế bởi <a href="http://w3layouts.com/">W3layouts</a> | Xây dựng bởi <Strong style="color: aquamarine">Aurora</Strong> và <strong style="color: darkblue">DevWeb</strong></p>
+                    </div>
+
+
+                    <!--End Footer Layout-->
+                </div>
+                <!--content-->
+            </div>
+        </div>
+        <!--//content-inner-->
+        <!--/sidebar-menu-->
+        <div class="sidebar-menu">
+            <header class="logo1">
+                <a href="index.html" class="logoQT"><img src="~/Content/Admin/images/logo.png" class="img-responsive" alt="" style="width: 125px; display: inline;"> </a>
+                <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a>
+            </header>
+            <div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
+            <div class="menu">
+                <ul id="menu">
+                    <li><a href="#"><i class="fas fa-home"></i> <span>Trang Chủ</span></a></li>
+                    <li id="menu-academico">
+                        <a href="#"><i class="fa fa-table"></i> <span> Sản phẩm</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                        <ul id="menu-academico-sub">
+                            <li id="menu-academico-avaliacoes"><a href="#">Danh sách sản phẩm</a></li>
+                            <li id="menu-academico-boletim"><a href="#">Thêm sản phẩm</a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-academico">
+                        <a href="#"><i class="fas fa-money-bill"></i> <span> Hóa đơn tiền mặt</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                        <ul id="menu-academico-sub">
+                            <li id="menu-academico-avaliacoes"><a href="#">Danh sách hóa đơn tiền mặt</a></li>
+                            <li id="menu-academico-boletim"><a href="#">Thêm hóa đơn tiền mặt</a></li>
+                            <li id="menu-academico-boletim"><a href="#">In hóa đơn tiền mặt</a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-academico">
+                        <a href="#"><i class="lnr lnr-book"></i> <span> Hóa đơn trả góp</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                        <ul id="menu-academico-sub">
+                            <li id="menu-academico-avaliacoes"><a href="#">Danh sách hóa đơn trả góp</a></li>
+                            <li id="menu-academico-boletim"><a href="#">Thêm hóa đơn trả góp</a></li>
+                            <li id="menu-academico-boletim"><a href="#">In hóa đơn trả góp</a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-academico"><a href="sunglasses.html"><i class="fas fa-gift"></i> <span>Quản lý khuyến Mãi</span></a></li>
+                    <li><a href="sweater.html"><i class="fas fa-newspaper"></i> <span>Tin tức sự kiện</span></a></li>
+                    <li id="menu-academico"><a href="catalog.html"><i class="fas fa-boxes"></i> <span>Phân Loại sản phẩm</span></a></li>
+                    <li id="menu-academico"><a href="shoes.html"><i class="fas fa-chart-area"></i> <span>Thống kê doanh thu</span></a></li>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <script>
+        var toggle = true;
+
+        $(".sidebar-icon").click(function () {
+            if (toggle) {
+                $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                $("#menu span").css({ "position": "absolute" });
+                $(".logoQT").css({ "display": "none" });
+            }
+            else {
+                $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                setTimeout(function () {
+                    $("#menu span").css({ "position": "relative" });
+                }, 400);
+                $(".logoQT").css({ "display": "unset" });
+            }
+
+            toggle = !toggle;
+        });
+    </script>
+    <!--js -->
+    <script src="~/www.root/shared/admin_layout/Admin/js/jquery.nicescroll.js"></script>
+    <script src="~/www.root/shared/admin_layout/Admin/js/scripts.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/www.root/shared/admin_layout/Admin/js/bootstrap.min.js"></script>
+    <script src="~/www.root/shared/admin_layout/Admin/js/menu_jquery.js"></script>
+    <!-- jQuery -->
+    <script src="~/lib/jquery/dist/jquery.js" charset="utf-8"></script>
+    <script src="~/lib/jquery-ui/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+    <!-- Bootstrap -->
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>*@
+    <script src="~/www.root/controller/productController/Scripts/manageProduct.js"></script>
+    <!-- FastClick -->
+    <script src="~/lib/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+
+    <script src="~/lib/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="~/lib/mustache/mustache.js"></script>
+
+    <script src="~/lib/twbs-pagination/jquery.twbsPagination.js"></script>
+
+    <script src="~/lib/chart.js/dist/Chart.js"></script>
+    <!-- jQuery Sparklines -->
+
+    <script src="~/lib/jquery-sparkline/dist/jquery.sparkline.js"></script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation/dist/additional-methods.js"></script>
+    <script src="~/lib/jquery-validation/dist/Localization/messages_vi.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+    <!-- bootstrap-daterangepicker -->
+
+    <script src="~/lib/notifyjs/dist/notify.js"></script>
+    <script src="~/lib/notifyjs/dist/styles/metro/notify-metro.js"></script>
+    <script src="~/lib/bootbox/bootbox.js"></script>
+    <script src="~/lib/ckeditor/ckeditor.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery.easing.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    @*<script src="~/Scripts/jquery.dataTables.js"></script>*@
+    @*<script src="~/Scripts/dataTables.bootstrap4.js"></script>*@
+    @*<script src="~/Scripts/sb-admin.min.js"></script>
+        <script src="~/Scripts/sb-admin-datatables.min.js"></script>*@
+    <!-- Custom Script-->
+    <script src="~/www.root/shared/general.js"></script>
+    <!--Select 2-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    @RenderSection("Scripts2", required: false)
+    @RenderSection("Scripts", required: false)
+</body>
+
+
+</html>

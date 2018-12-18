@@ -296,7 +296,26 @@ function LoadData() {
                 $('#tbl-content').html(render);
             };
             $(document).ready(function () {
-                $('#myTable').DataTable();
+                $('#myTable').DataTable({
+                    "language": {
+                        "sProcessing": "Đang xử lý...",
+                        "sLengthMenu": "Xem _MENU_ sản phẩm",
+                        "sZeroRecords": "Không tìm thấy sản phẩm nào phù hợp",
+                        "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ sản phẩm",
+                        "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 sản phẩm",
+                        "sInfoFiltered": "(được lọc từ _MAX_ sản phẩm)",
+                        "sInfoPostFix": "",
+                        "sSearch": "Tìm sản phẩm:",
+                        "sUrl": "",
+                        "oPaginate": {
+                            "sFirst": "Đầu",
+                            "sPrevious": "Trước",
+                            "sNext": "Tiếp",
+                            "sLast": "Cuối"
+                        }
+
+                    }
+                });
             });
         },
         error: function (ex) {
