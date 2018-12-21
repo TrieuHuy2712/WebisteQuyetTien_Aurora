@@ -112,3 +112,5 @@ C:\Users\Callous - Rot\Desktop\test\WebsiteQuyetTien_byAurora Team.Tests\obj\Deb
 C:\Users\Callous - Rot\Desktop\test\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.csproj.CopyComplete
 C:\Users\Callous - Rot\Desktop\test\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.dll
 C:\Users\Callous - Rot\Desktop\test\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.pdb
+C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\EntityFramework.SqlServer.xml

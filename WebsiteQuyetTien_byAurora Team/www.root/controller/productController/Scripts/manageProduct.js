@@ -4,9 +4,13 @@
 var gIDProduct = 0;
 var currentID = "";
 var count = 0;
+var getImage = "";
+//Khi nhấn vào sẽ show modal
 $("#btnCreate").on('click', function () {
     resetForm();
     getProductType();
+    $('#titleProduct').text('');
+    $('#titleProduct').text('Thêm mới sản phẩm');
 });
 //Thực hiện lưu hình ảnh và những thông tin mới
 $("#btnAttributeCreateNew").on('click', function () {
@@ -67,9 +71,10 @@ $("#btnAttributeCreateNew").on('click', function () {
                 general.stopLoading();
                 if ($("#txtUploadFile").get(0).files.length != 0) {
                     uploadImage(currentID);
-                    window.location.reload();
+                    
                 }
                 LoadData();
+                general.notify("Load thành công", "success");
                 console.log(response);
             },
             error: function () {
@@ -141,7 +146,8 @@ function resetForm() {
 $('body').on('click', '.btn-edit', function (e) {
     e.preventDefault();
     resetValidate();
-
+    $('#titleProduct').text('');
+    $('#titleProduct').text('Chỉnh sửa sản phẩm');
     var that = $(this).data('id');
     console.log(that);
     getProductType();
@@ -165,7 +171,7 @@ $('body').on('click', '.btn-edit', function (e) {
                 $('#txtSalePrice').val(general.toMoney(response.SalePrice));
                 $('#txtInstallmentPrice').val(general.toMoney(response.InstallmentPrice));
                 $('#material-dropdown').val('' + response.ProductTypeID + '').trigger('change.select2');
-                $('#HinhAnhSP').attr('src', '/www.root/Img/' + response.ID + '.png');
+                $('#HinhAnhSP').attr('src', '/www.root/Img/' + response.ID + ".png?" + new Date().getTime()+'');
                 if (response.Status == true) {
                     $('#statusProduct').val("1");
                 } else if (response.Status == false) {
@@ -201,7 +207,7 @@ $('body').on('click', '.btn-delete', function (e) {
             console.log("Save thành công");
 
             general.stopLoading();
-
+            general.notify("Bạn đã khóa lại", "error");
             LoadData();
         },
         error: function (status) {
@@ -226,6 +232,8 @@ function uploadImage(currID) {
         data: formData,
         success: function (urlImage) {
             console.log("Lưu thành công");
+            
+            
         },
         error: function (err) {
             alert("Có lỗi khi upload: " + err.statusText);
@@ -275,10 +283,13 @@ function LoadData() {
         type: 'GET',
         url: '/Manage/getProduct',
         dataType: 'json',
-
+        processData: false,
+        contentType: false,
+        cache: false,
         success: function (data) {
             console.log(data);
             $.each(data, function (i, item) {
+                $("#imgSrc").remove();
                 render += Mustache.render(template, {
                     ID: item.ID,
                     ProductCode: item.ProductCode,
@@ -286,9 +297,10 @@ function LoadData() {
                     SalePrice: general.toMoney(item.SalePrice),
                     OriginPrice: general.toMoney(item.OriginPrice),
                     InstallmentPrice: general.toMoney(item.InstallmentPrice),
-                    Quantity: item.Quantity,
+                    Quantity: general.toMoney(item.Quantity),
                     ProductTypeID: item.ProductTypeName,
                     Status: general.getStatus(item.Status),
+                    Img: "/www.root/Img/" + item.ID + ".png?" + new Date().getTime(),
                 });
             });
 
@@ -322,12 +334,14 @@ function LoadData() {
                
             });
         },
+        
         error: function (ex) {
             console.log("Error");
-        }
+        },
+        
     });
 }
-
+//Kiểm tra validation
 function checkValidation() {
     var countErr = 0;
     var salePrice = $('#txtSalePrice').val();
@@ -383,6 +397,7 @@ function checkValidation() {
     }
     return true;
 }
+//Reset validation
 function resetValidate() {
     $('#validateProductName').text("");
     $('#validateOriginPrice').text("");
@@ -391,8 +406,7 @@ function resetValidate() {
     $('#validateQuantity').text("");
     $('#validateUploadFile').text("");
 }
-
-//
+//Ẩn validation khi nhập chữ
 $("#txtProductName").keyup(function () {
     var val = $(this).val();
     $("#validateProductName").text("");

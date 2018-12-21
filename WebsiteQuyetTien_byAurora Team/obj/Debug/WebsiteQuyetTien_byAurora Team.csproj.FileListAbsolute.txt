@@ -84,7 +84,6 @@ C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_
 C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.Web.xml
 C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csprojAssemblyReference.cache
 C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csproj.CoreCompileInputs.cache
 C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csproj.CopyComplete
 C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.dll
@@ -283,3 +282,4 @@ C:\Users\Callous - Rot\Desktop\test\WebsiteQuyetTien_byAurora Team\obj\Debug\Web
 C:\Users\Callous - Rot\Desktop\test\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csproj.CopyComplete
 C:\Users\Callous - Rot\Desktop\test\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.dll
 C:\Users\Callous - Rot\Desktop\test\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.pdb
+C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csprojAssemblyReference.cache

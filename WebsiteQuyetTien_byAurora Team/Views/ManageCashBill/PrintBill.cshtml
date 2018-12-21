@@ -1,0 +1,82 @@
+﻿@model WebsiteQuyetTien_byAurora_Team.Models.ReceiptCashModel
+@{
+    Layout = null;
+    ViewBag.Title = "Print";
+    int i = 1;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>In hóa đơn </title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="clearfix">
+        <div id="logo">
+            <img src="~/Content/logo.png">
+        </div>
+        <div id="company">
+            <h2 class="name">Quyết Tiến</h2>
+            <div>hcm, VietNamese</div>
+            <div>(602) 519-0450</div>
+            <div><a href="mailto:company@example.com">quyettien@gmail.com</a></div>
+        </div>
+
+    </header>
+    <main>
+        <div id="details" class="clearfix">
+            <div id="client">
+                <div class="to">Hóa đơn:</div>
+                <h2 class="name">@Model.CustomerName</h2>
+                <div class="address">@Model.PhoneNumber</div>
+            </div>
+            <div id="invoice">
+                <h1>@Model.BillCode</h1>
+                <div class="date">@Model.Date</div>
+                @*<div class="date">@Model.QUANTITY</div>*@
+            </div>
+        </div>
+        <table border="0" cellspacing="0" cellpadding="0" >
+            <thead>
+                <tr>
+                    <th class="no">#</th>
+                    <th class="desc"><h3>Tên sản phẩm</h3></th>
+                    <th class="unit"><h3>Đơn giá</h3></th>
+                    <th class="qty"><h3>Số lượng</h3></th>
+                    <th class="total"><h3>Thành tiền</h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.CashBillDetail)
+                {
+                    <tr>
+                        <td class="no">@i</td>
+                        <td class="desc"><h3>@Html.DisplayFor(modelItem => item.Product.ProductName)</h3></td>
+                        <td class="unit">@Html.DisplayFor(modelItem =>  item.SalePrice)</td>
+                        <td class="qty">@Html.DisplayFor(modelItem => item.Quantity)</td>
+                        <td class="total">@string.Format("{0:0,0} VNĐ", (item.SalePrice * item.Quantity)) </td>
+                    </tr>
+                    i++;
+                }
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2"></td>
+                    <td colspan="2">Tổng tiền</td>
+                    <td>@string.Format("{0:0,0} VNĐ", @Model.GrandTotal)</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div id="thanks">Cám ơn!</div>
+        <div id="notices">
+            <div>NOTICE:</div>
+            <div >@Model.Note</div>
+        </div>
+    </main>
+    <footer>
+       Hẹn gặp lại quý khách!
+    </footer>
+</body>
+</html>

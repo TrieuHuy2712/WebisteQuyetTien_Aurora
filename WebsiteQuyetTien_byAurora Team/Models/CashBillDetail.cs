@@ -11,7 +11,10 @@ namespace WebsiteQuyetTien_byAurora_Team.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web.ModelBinding;
+
     public partial class CashBillDetail
     {
         public int ID { get; set; }
@@ -19,7 +22,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Models
         public int ProductID { get; set; }
         public int Quantity { get; set; }
         public int SalePrice { get; set; }
-    
+        [ForeignKey("BillID")]
         public virtual CashBill CashBill { get; set; }
         public virtual Product Product { get; set; }
     }

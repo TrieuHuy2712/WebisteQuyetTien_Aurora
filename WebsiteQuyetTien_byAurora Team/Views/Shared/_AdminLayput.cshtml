@@ -24,12 +24,16 @@
     <!-- jQuery -->
     <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css' />
     <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="~/lib/notifyjs/dist/styles/metro/notify-metro.css" rel="stylesheet" />
     <!-- lined-icons -->
     <link rel="stylesheet" href="~/www.root/shared/admin_layout/Admin/css/icon-font.min.css" type='text/css' />
     <!-- //lined-icons -->
     <!-- //lined-icons -->
-    <script src="~/www.root/shared/admin_layout/Admin/js/jquery-1.10.2.min.js"></script>
-
+    @*<script src="~/www.root/shared/admin_layout/Admin/js/jquery-1.10.2.min.js"></script>*@
+    <!-- jQuery -->
+    <script src="~/lib/jquery/dist/jquery.js" charset="utf-8"></script>
+    <script src="~/lib/jquery-ui/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <!-- Datatable-->
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
@@ -165,55 +169,38 @@
     <script src="~/lib/jquery-ui/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
     <!-- Bootstrap -->
     @*<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>*@
-
     <!-- FastClick -->
     <script src="~/lib/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
-
     <script src="~/lib/nprogress/nprogress.js"></script>
     <!-- Chart.js -->
     <script src="~/lib/mustache/mustache.js"></script>
-
     <script src="~/lib/twbs-pagination/jquery.twbsPagination.js"></script>
-
     <script src="~/lib/chart.js/dist/Chart.js"></script>
     <!-- jQuery Sparklines -->
-
     <script src="~/lib/jquery-sparkline/dist/jquery.sparkline.js"></script>
-
     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
     <script src="~/lib/jquery-validation/dist/additional-methods.js"></script>
     <script src="~/lib/jquery-validation/dist/Localization/messages_vi.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
-
     <!-- bootstrap-daterangepicker -->
-
     <script src="~/lib/notifyjs/dist/notify.js"></script>
     <script src="~/lib/notifyjs/dist/styles/metro/notify-metro.js"></script>
     <script src="~/lib/bootbox/bootbox.js"></script>
     <script src="~/lib/ckeditor/ckeditor.js"></script>
     <!-- Bootstrap core JavaScript-->
-    <script src="~/Scripts/jquery.min.js"></script>
+    @*<script src="~/Scripts/jquery.min.js"></script>*@
     <script src="~/Scripts/bootstrap.bundle.min.js"></script>
-    <script src="~/Scripts/jquery.easing.min.js"></script>
-
-   
+    @*<script src="~/Scripts/jquery.easing.min.js"></script>*@
+    <!--Table-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    
-
-
-
-
-    @*<script src="~/Scripts/jquery.dataTables.js"></script>*@
-    @*<script src="~/Scripts/dataTables.bootstrap4.js"></script>*@
-    @*<script src="~/Scripts/sb-admin.min.js"></script>
-        <script src="~/Scripts/sb-admin-datatables.min.js"></script>*@
     <!-- Custom Script-->
     <script src="~/www.root/shared/general.js"></script>
     <script src="~/www.root/controller/productController/Scripts/manageProduct.js"></script>
+    <script src="~/www.root/controller/cashBillController/Scripts/manageCashBill.js"></script>
     <!--Select 2-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>

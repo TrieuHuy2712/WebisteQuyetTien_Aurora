@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayput.cshtml";
+}
+<div class="monthly-grid">
+    <div class="form-group row">
+        <div class="progressbar-heading grids-heading col-sm-6">
+            <h2><strong>XEM DANH SÁCH HÓA ĐƠN</strong></h2>
+        </div>
+
+        <div class="col-sm-6">
+            <a href="#" data-target="#modal-cash-bill" data-toggle="modal" class="btn btn-success pull-right " id="btnCreateCash"><i class="fas fa-plus"></i></a>
+        </div>
+    </div>
+    <div id="modal-cash-bill"  class="modal fade modal-cash-bill" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                @Html.Partial("~/Views/ManageCashBill/_CRUDModal.cshtml")
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade text-center" id="modal-cash-bill">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered" id="myTable2" style="width:100%">
+            <thead>
+                <tr>
+
+                    <th style="text-align:center; vertical-align:middle">Mã Hóa đơn</th>
+                    <th style="text-align:center; vertical-align:middle">Tên khách hàng</th>
+                    <th style="text-align:center; vertical-align:middle">Số điện thoại</th>
+                    <th style="text-align:center; vertical-align:middle">Địa chỉ</th>
+                    <th style="text-align:center; vertical-align:middle">Ngày</th>
+                    <th style="text-align:center; vertical-align:middle">Người giao</th>
+                    <th style="text-align:center; vertical-align:middle">Ghi chú</th>
+                    <th style="text-align:center; vertical-align:middle">Thành tiền</th>
+                    <th style="text-align:center; vertical-align:middle">#</th>
+                </tr>
+            </thead>
+            <tbody id="tbl-content-product"></tbody>
+        </table>
+    </div>
+
+    <script id="table-template-cashBill" type="x-tmpl-mustache">
+        <tr>
+            <td id="BillCode" style="text-align:center; vertical-align:middle">{{BillCode}}</td>
+            <td style="text-align:center; vertical-align:middle">{{CustomerName}}</td>
+            <td style="text-align:center; vertical-align:middle">{{PhoneNumber}}</td>
+
+            <td style="text-align:center; vertical-align:middle">{{Address}}</td>
+            <td style="text-align:center; vertical-align:middle">{{Date}}</td>
+            <td style="text-align:center; vertical-align:middle">{{Shipper}}</td>
+            <td style="text-align:center; vertical-align:middle">{{Note}}</td>
+            <td style="text-align:center; vertical-align:middle">{{GrandTotal}}</td>
+
+            <td scope="row" style="text-align:center; vertical-align:middle">
+                <button class="btn btn-default btn-sm btn-edit-bills" data-id="{{ID}}" id="{{ID}}" data-target="#modal-cash-bill" data-toggle="modal"><i class="far fa-edit"></i></button>
+                <a href="/ManageCashBill/PrintBill?id={{ID}}" class="btn btn-primary btn-sm btn-print-bill"  id="{{ID}}"><i class="fas fa-print"></i></a>
+            </td>
+        </tr>
+    </script>
+</div>

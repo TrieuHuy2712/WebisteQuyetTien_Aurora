@@ -18,6 +18,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Models
         public CashBill()
         {
             this.CashBillDetails = new HashSet<CashBillDetail>();
+            Date = DateTime.Now;
         }
     
         public int ID { get; set; }
