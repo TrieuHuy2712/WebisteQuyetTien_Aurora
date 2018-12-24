@@ -38,7 +38,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         {
             db.Configuration.ProxyCreationEnabled = false;
 
-            var cashBill = db.Products.OrderBy(x => x.ID).ToList();
+            var cashBill = db.Products.Where(s=>s.Status==true).OrderBy(x => x.ID).ToList();
             return Json(cashBill, JsonRequestBehavior.AllowGet);
         }
 
