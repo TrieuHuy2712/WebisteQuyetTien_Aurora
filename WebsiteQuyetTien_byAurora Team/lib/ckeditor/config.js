@@ -7,7 +7,11 @@ CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here.
 	// For complete reference see:
 	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
-
+    config.htmlEncodeOutput = false;
+    config.entities = false;
+    config.basicEntities = false;
+    config.entities_latin = false;
+    config.ForceSimpleAmpersand = true;
 	// The toolbar groups arrangement, optimized for two toolbar rows.
 	config.toolbarGroups = [
 		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
@@ -39,4 +43,8 @@ CKEDITOR.editorConfig = function( config ) {
     config.filebrowserUploadMethod = 'form';
 
     config.filebrowserImageUploadUrl = "/Upload/UploadImageForCKEditor?type=Images&responseType=json&_token="
+    // Define changes to default configuration here. For example:
+    config.language = 'en';
+    // config.uiColor = '#AADC6E';
+   
 };

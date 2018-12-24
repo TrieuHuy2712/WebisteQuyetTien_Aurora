@@ -90,7 +90,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         public ActionResult SaveEntity(Product product)
         {
             db.Configuration.ProxyCreationEnabled = false;
@@ -122,6 +122,13 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             db.Configuration.ProxyCreationEnabled = false;
             var product = db.Products.Where(x => x.ID == id).FirstOrDefault();
             return Json(product, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public ActionResult getManufacture()
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var manu = db.Manufactories.ToList();
+            return Json(manu, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

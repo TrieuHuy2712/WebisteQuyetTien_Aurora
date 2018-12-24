@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     LoadData();
+    CKEDITOR.replace('editorDescription');
 });
 var gIDProduct = 0;
 var currentID = "";
@@ -12,6 +13,7 @@ $('body').on('click', '#btnCreate', function () {
     $('#titleProduct').text('Thêm mới sản phẩm');
     resetForm();
     getProductType();
+    getManufacture();
 
 });
 //Thực hiện lưu hình ảnh và những thông tin mới
@@ -19,13 +21,15 @@ $("#btnAttributeCreateNew").on('click', function () {
     resetValidate();
     var productCode = $('#txtProductCode').val();
     var productTypeId = $('#material-dropdown').val();
+    var manufactoryId = $('#manufacture-dropdown').val();
     var salePrice = $('#txtSalePrice').val();
+    var editorText = CKEDITOR.instances.editorDescription.getData();
     var originPrice = $('#txtOriginPrice').val();
     var installmentPrice = $('#txtInstallmentPrice').val();
     var quantity = $('#txtQuantity').val();
     var productName = $('#txtProductName').val();
     var status = $('#statusProduct').val();
-
+    console.log(editorText);
     //Convert againt number
     console.log(productCode);
     salePrice = salePrice.replace(/\,/g, '');
@@ -52,10 +56,13 @@ $("#btnAttributeCreateNew").on('click', function () {
                 ProductCode: productCode,
                 ProductName: productName,
                 ProductTypeID: productTypeId,
+                ManufactoryID: manufactoryId,
                 OriginPrice: originPrice,
                 SalePrice: salePrice,
                 InstallmentPrice: installmentPrice,
                 Quantity: quantity,
+                Description: CKEDITOR.instances.editorDescription.getData(),
+                //Description: editorText,
                 Status: status,
             },
             dataType: "json",
@@ -65,6 +72,7 @@ $("#btnAttributeCreateNew").on('click', function () {
             success: function (response) {
                 currentID = response.ID;
                 console.log(gIDProduct);
+                console.log(response);
                 //KIểm tra xem có tồn tại hay không
                 $('#modal-add-edit').modal('hide');
                 $('body').removeClass('modal-open');
@@ -153,6 +161,7 @@ $('body').on('click', '.btn-edit', function (e) {
     var that = $(this).data('id');
     console.log(that);
     getProductType();
+    getManufacture();
     $.ajax({
         type: "GET",
         url: "/Manage/GetById",
@@ -172,6 +181,8 @@ $('body').on('click', '.btn-edit', function (e) {
                 $('#txtSalePrice').val(general.toMoney(response.SalePrice));
                 $('#txtInstallmentPrice').val(general.toMoney(response.InstallmentPrice));
                 $('#material-dropdown').val('' + response.ProductTypeID + '').trigger('change.select2');
+                $('#manufacture-dropdown').val('' + response.ManufactoryID + '').trigger('change.select2');
+                CKEDITOR.instances.editorDescription.setData(response.Description);
                 $('#HinhAnhSP').attr('src', '/www.root/Img/' + response.ID + ".png?" + new Date().getTime()+'');
                 if (response.Status == true) {
                     $('#statusProduct').val("1");
@@ -265,6 +276,28 @@ function getProductType() {
         }
     });
 }
+function getManufacture() {
+    dropdown1 = $('#manufacture-dropdown');
+    $('#manufacture-dropdown').select2();
+    dropdown1.empty();
+
+    var count = 0;
+    $.ajax({
+        type: 'GET',
+        url: '/Manage/getManufacture',
+        dataType: 'json',
+
+        success: function (data) {
+            console.log(data);
+            $.each(data, function (i, item) {
+                dropdown1.append($('<option></option>').attr('value', item.ID).text(item.ManufactoryName));
+            });
+        },
+        error: function (ex) {
+            console.log("Error");
+        }
+    });
+}
 //Hàm show hình ảnh
 function readURL(input) {
     if (input.files && input.files[0]) {
@@ -302,6 +335,7 @@ function LoadData() {
                     Quantity: general.toMoney(item.Quantity),
                     ProductTypeID: item.ProductTypeName,
                     Status: general.getStatus(item.Status),
+                    ManufactoryID: item.ManufactoryName,
                     Img: "/www.root/Img/" + item.ID + ".png?" + new Date().getTime(),
                 });
             });
