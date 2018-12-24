@@ -21,7 +21,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             Account acc = db.Accounts.SingleOrDefault(n => n.Username == username && n.Password == password);
             if (acc != null)
             {
-                Session["TaiKhoan"] = acc.Username;
+                Session["TaiKhoan"] = acc.Fullname;
                 var taikhoan = db.Accounts.SingleOrDefault(n => n.Username == username && n.Password == password);
                 return Content("<script>window.location.reload();</script>");
             }
