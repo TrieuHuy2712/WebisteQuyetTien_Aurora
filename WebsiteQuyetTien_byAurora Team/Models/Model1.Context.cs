@@ -34,5 +34,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Models
         public virtual DbSet<Manufactory> Manufactories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
+        public virtual DbSet<Manufactory> Manufactories { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

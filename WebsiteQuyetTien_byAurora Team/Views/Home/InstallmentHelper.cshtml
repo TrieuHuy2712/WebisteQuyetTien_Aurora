@@ -1,0 +1,150 @@
+﻿
+@{
+    ViewBag.Title = "InstallmentHelper";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="all">
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- *** THANH ĐƯỜNG DẪN *** -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                            <li aria-current="page" class="breadcrumb-item active">Hướng dẫn mua trả góp</li>
+                        </ol>
+                    </nav>
+                </div>
+                    <!-- *** DANH MỤC *** -->
+                    @Html.Partial("~/Views/Shared/DoanhMuc1Partial.cshtml")
+                    <!-- *** HẾT DANH MỤC ***-->
+
+                <div class="col-lg-9">
+                    <div id="text-page" class="box">
+                        <h1>Chính sách mua trả góp</h1>
+                        <p class="lead">
+                            Mua trả góp 0% lãi suất với các sản phẩm điện máy tại Quyết Tiến ngay hôm
+                            nay để được sở hữu ngay sản phẩm mơ ước với giá tốt nhất, khuyến mãi nhiều nhất và hậu mãi
+                            tận tâm nhất.
+                        </p>
+                        <p>
+                            Bạn chỉ cần trả từ 30% giá trị sản phẩm là có sản phẩm sử dụng ngay, phần còn lại sẽ được hỗ
+                            trợ vay từ công ty tài chính và trả dần theo từng tuần hoặc tháng - với lãi suất 0đ.
+                        </p>
+                        <div id="accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                                aria-expanded="true" aria-controls="collapseOne">
+                                            ĐIỀU KIỆN VÀ GIẤY TỜ GỐC CẦN CÓ
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                     data-parent="#accordion">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>
+                                                Tuổi từ 20 - 60 (tính theo ngày tháng năm sinh trên chứng minh nhân
+                                                dân).
+                                            </li>
+                                            <li>Chứng minh nhân dân còn hạn sử dụng (15 năm tính từ ngày cấp).</li>
+                                            <li>
+                                                Hộ khẩu (người mua hàng phải có tên trong hộ khẩu). Nếu khoản vay dưới
+                                                10 triệu có thể thay hộ khẩu bằng bằng lái xe.
+                                            </li>
+                                            <li>
+                                                Công ty tài chính chỉ kiểm tra xong và gửi lại không giữ bất cứ giấy tờ
+                                                gì của khách hàng.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">
+                                            LÀM SAO ĐỂ CÓ LÃI SUẤT TỐT NHẤT
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                     data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p class="font-weight-bold">
+                                            Lãi suất có thể giảm thêm 5 - 7%/năm nếu bạn có thêm
+                                            các giấy tờ sau:
+                                        </p>
+                                        <ul>
+                                            <li>
+                                                Hoá đơn tiền điện / nước / Internet /TH cáp / điện thoại: do bạn đứng
+                                                tên hoặc có địa chỉ trùng với nơi bạn ở.
+                                            </li>
+                                        </ul>
+                                        <p class="font-weight-bold">Nếu vay trên 10 triệu thì có thêm:</p>
+                                        <ul>
+                                            <li>
+                                                Nếu đang đi làm: có sao kê tài khoản 3 tháng gần nhất / hoặc Hợp đồng
+                                                lao động / hoặc Bảo hiểm y tế.
+                                            </li>
+                                            <li>
+                                                Nếu là chủ Doanh Nghiệp: Giấy phép kinh doanh + Biên lai thuế 3 tháng
+                                                gần nhất.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseThree" aria-expanded="false"
+                                                aria-controls="collapseThree">
+                                            LỢI ÍCH KHI MUA TRẢ GÓP Ở QUYẾT TIẾN
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                     data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p class="font-weight-bold">Thủ tục đăng ký và duyệt hồ sơ nhanh chóng.</p>
+                                        <ul>
+                                            <li>Bước 1: Chuẩn bị giấy tờ gốc cần thiết.</li>
+                                            <li>Bước 2: Tới cửa hàng điện máy Quyết Tiến.</li>
+                                            <li>Bước 3: Chọn sản phẩm muốn mua trả góp.</li>
+                                            <li>Bước 4: Làm thủ tục mua trả góp.</li>
+                                            <li>Bước 5: Đợi công ty tài chính duyệt hồ sơ.</li>
+                                            <li>
+                                                Bước 6: Mang hàng về nhà (hồ sơ sẽ được trả lại khi đối chiếu xong).
+                                            </li>
+                                        </ul>
+                                        <p class="font-weight-bold">
+                                            Bán theo giá niêm yết tại website và nhận đủ các
+                                            khuyến mãi (tuỳ sản phẩm sẽ không áp dụng đồng thời chương trình trả góp lãi
+                                            suất 0%).
+                                        </p>
+                                        <ul>
+                                            <li>
+                                                Trả tiền góp hàng tuần, hàng tháng tiện lợi, nhanh chóng tại Quyết
+                                                Tiến.
+                                            </li>
+                                            <li>Luôn có sản phẩm trả góp lãi suất 0% hoặc nhiều ưu đãi khác.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

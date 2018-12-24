@@ -1,7 +1,134 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div id="all">
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- *** THANH ĐƯỜNG DẪN *** -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                            <li aria-current="page" class="breadcrumb-item active">Về Quyết Tiến</li>
+                        </ol>
+                    </nav>
+
+                </div>
+                    <!-- *** DANH MỤC *** -->
+                    @Html.Partial("~/Views/Shared/DoanhMuc1Partial.cshtml")
+                    <!-- *** HẾT DANH MỤC ***-->
+                    
+                <div class="col-lg-9">
+                    <div id="text-page" class="box">
+                        <div class="IntroduceTH introduce-th" style="display: block;">
+                            <h3 class="title-content"><br>GIỚI THIỆU CÔNG TY</h3>
+                            <div class="wrap-img">
+                                <img src="~/www.root/shared/user_layout/img/about1.jpg" style="width:600px;" alt="thien hoa">
+                            </div>
+
+                            <div class="block">
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:16px"><br><strong><span style="font-family:Arial,Helvetica,sans-serif">LỊCH SỬ HÌNH THÀNH</span></strong></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>C&ocirc;ng ty Cổ Phần Thương Mại v&agrave; Dịch Vụ Quyết Tiến</strong> ch&iacute;nh thức được th&agrave;nh lập v&agrave; đi v&agrave;o hoạt động ng&agrave;y 24/11/2001 với ng&agrave;nh nghề kinh doanh chủ yếu l&agrave; Điện m&aacute;y &ndash; Nội thất. Bắt đầu hoạt động từ một cửa h&agrave;ng kinh doanh c&aacute;c mặt h&agrave;ng điện &ndash; điện tử - điện lạnh nhỏ tại Tp Hồ Ch&iacute; Minh, đến nay <strong>Quyết Tiến</strong> đ&atilde; ph&aacute;t triển th&agrave;nh chuỗi hệ thống trung t&acirc;m Điện m&aacute;y &ndash; Nội thất quy m&ocirc; với 10&nbsp;trung t&acirc;m lớn tiện nghi thu h&uacute;t đ&ocirc;ng đảo kh&aacute;ch h&agrave;ng đến tham quan v&agrave; mua sắm. </span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in">&nbsp;</p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:16px"><strong><span style="font-family:Arial,Helvetica,sans-serif">CÁC THÀNH TỰU</span></strong></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Quyết Tiến</strong> đi v&agrave;o hoạt động đ&atilde; hơn 16 năm, với kinh nghiệm v&agrave; uy t&iacute;n ng&agrave;y c&agrave;ng được khẳng định theo thời gian bằng những th&agrave;nh tựu đ&aacute;ng kể như:</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Năm 2007: <strong>Quyết Tiến </strong>vinh dự đ&oacute;n nhận c&uacute;p &ldquo;Thương hiệu Việt được y&ecirc;u th&iacute;ch&rdquo; do B&aacute;o S&agrave;i G&ograve;n Giải Ph&oacute;ng tổ chức với vị tr&iacute; đứng đầu trong lĩnh vực điện m&aacute;y &ndash; nội thất do người ti&ecirc;u d&ugrave;ng b&igrave;nh chọn.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Năm 2008: Tiếp tục đạt danh hiệu &ldquo;Thương hiệu Việt được y&ecirc;u th&iacute;ch&rdquo; v&agrave; nằm trong Top 500 Doanh nghiệp lớn nhất Việt Nam do b&aacute;o điện tử Vietnamnet v&agrave; C&ocirc;ng ty Cổ phần B&aacute;o c&aacute;o đ&aacute;nh gi&aacute; Việt Nam c&ocirc;ng bố.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Năm 2009: Tiếp tục đạt danh hiệu &ldquo;Thương hiệu Việt được y&ecirc;u th&iacute;ch&rdquo; v&agrave; nằm trong Top 500 Doanh nghiệp lớn nhất Việt Nam.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Năm 2010: Tiếp tục đạt danh hiệu &ldquo;Thương hiệu Việt được y&ecirc;u th&iacute;ch&rdquo; v&agrave; nằm trong Top 500 Doanh nghiệp lớn nhất Việt Nam.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Năm 2012: Đ&oacute;n nhận danh hiệu &quot;Thương hiệu Việt được y&ecirc;u th&iacute;ch nhất&quot; năm 2012, do đọc giả b&aacute;o S&agrave;i G&ograve;n Giải Ph&oacute;ng b&igrave;nh chọn.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in">&nbsp;</p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Quyết Tiến</strong> khẳng định t&ecirc;n tuổi v&agrave; uy t&iacute;n của m&igrave;nh th&ocirc;ng qua việc tổ chức hệ thống b&aacute;n lẻ c&aacute;c sản phẩm điện m&aacute;y, gia dụng, nội thất cao cấp với một m&ocirc; h&igrave;nh b&aacute;n lẻ hiện đại v&agrave; ti&ecirc;n tiến nhất hiện nay. S&aacute;u ng&agrave;nh h&agrave;ng chủ lực được kinh doanh bao gồm: Điện tử, Điện lạnh, Điện Gia Dụng, C&ocirc;ng nghệ th&ocirc;ng tin - Kỹ thuật số, Viễn th&ocirc;ng &ndash; Thiết Bị Văn Ph&ograve;ng, Nội Thất cao cấp, với hơn 80.000 sản phẩm ch&iacute;nh h&atilde;ng của c&aacute;c thương hiệu h&agrave;ng đầu thế giới như: Sony, Toshiba, LG, Panasonic, Samsung, Sharp, Sanyo, Toshiba, Elextrolux, Deawoo, Fujiyama, Canon, Nokia, HP, Black&amp;White, Hitachi, Philips, TCL, Acer, JVC, Reetech, &hellip; <strong>Quyết Tiến</strong> lu&ocirc;n đạt danh hiệu &ldquo;Thương hiệu b&aacute;n lẻ điện m&aacute;y được y&ecirc;u th&iacute;ch nhất&rdquo; tại thị trường Việt Nam do người ti&ecirc;u d&ugrave;ng b&igrave;nh chọn. Đồng thời, li&ecirc;n tục nằm trong Top 500 doanh nghiệp lớn nhất Việt Nam.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in">&nbsp;</p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">Qua kết quả b&igrave;nh chọn, 90% kh&aacute;ch h&agrave;ng chọn<strong> Quyết Tiến</strong> l&agrave;m nơi mua sắm h&agrave;ng tuần với c&aacute;c l&yacute; do:</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Sản phẩm ch&iacute;nh h&atilde;ng &ndash; chất lượng cao &ndash; gi&aacute; cả hợp l&yacute;.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Phong c&aacute;ch phục vụ chuy&ecirc;n nghiệp &ndash; chu đ&aacute;o &ndash; nhiệt t&igrave;nh.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Thủ tục thanh to&aacute;n nhanh ch&oacute;ng.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ C&oacute; nhiều chương tr&igrave;nh khuyến m&atilde;i hấp dẫn.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Sản phẩm đa dạng, phong ph&uacute; &ndash; tiện lợi cho việc mua sắm.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Trung t&acirc;m rộng lớn, tho&aacute;ng m&aacute;t &ndash; c&aacute;ch b&agrave;i tr&iacute; sản phẩm đẹp &ndash; dễ t&igrave;m kiếm.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Chương tr&igrave;nh chăm s&oacute;c kh&aacute;ch h&agrave;ng &ndash; hậu m&atilde;i chu đ&aacute;o.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in">&nbsp;</p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">B&ecirc;n cạnh đ&oacute;, <strong>Quyết Tiến</strong> c&ograve;n l&agrave; doanh nghiệp lu&ocirc;n đi đầu trong c&ocirc;ng t&aacute;c x&atilde; hội v&igrave; cộng đồng nhằm g&oacute;p phần chia sẻ những kh&oacute; khăn của người d&acirc;n sống trong v&ugrave;ng thi&ecirc;n tai, b&atilde;o lụt, những gia đ&igrave;nh ngh&egrave;o c&ograve;n gặp nhiều kh&oacute; khăn trong cuộc sống.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in">&nbsp;</p>
+
+                                <p style="margin-left:0in; margin-right:0in"><strong><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif">ĐỊNH HƯỚNG PHÁT TRIỂN</span></span></strong></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">Với sự ph&aacute;t triển kh&ocirc;ng ngừng của thị trường điện m&aacute;y, <strong>Quyết Tiến</strong> đ&atilde; v&agrave; đang nổ lực hết m&igrave;nh nhằm mang lại sự tin tưởng tuyệt đối cho kh&aacute;ch h&agrave;ng. Đặt ra sứ mệnh, &ldquo;SỰ TIỆN &Iacute;CH CỦA KH&Aacute;CH H&Agrave;NG L&Agrave; NỀN TẢNG CHO SỰ TỒN TẠI V&Agrave; PH&Aacute;T TRIỂN&rdquo;,Quyết Tiến lu&ocirc;n hướng đến sự ho&agrave;n thiện trong c&ocirc;ng t&aacute;c chăm s&oacute;c v&agrave; phục vụ kh&aacute;ch h&agrave;ng tốt nhất. Với quy m&ocirc; như hiện nay, <strong>Quyết Tiến</strong> tự tin sẽ trở th&agrave;nh hệ thống chuỗi si&ecirc;u thị điện m&aacute;y hiện đại nhất, rộng khắp đứng đầu Việt Nam, l&agrave; nơi hội tụ sự t&iacute;n nhiệm của c&aacute;c h&atilde;ng điện tử h&agrave;ng đầu tr&ecirc;n thế giới v&agrave; kh&aacute;ch h&agrave;ng.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in">&nbsp;</p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">Trong tương lai, hệ thống Trung t&acirc;m Điện m&aacute;y &ndash; Nội thất Thi&ecirc;n H&ograve;a sẽ được nh&acirc;n rộng khắp với hơn 10 trung t&acirc;m mua sắm tại Tp. Hồ Ch&iacute; Minh v&agrave; c&aacute;c trung t&acirc;m tại c&aacute;c tỉnh l&acirc;n cận như B&igrave;nh Dương, Đồng Nai, Long An, Cần Thơ, B&agrave; Rịa - Vũng T&agrave;u, Vĩnh Long,... sau đ&oacute; sẽ nh&acirc;n rộng khắp đến c&aacute;c tỉnh th&agrave;nh kh&aacute;c tr&ecirc;n cả nước.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in">&nbsp;</p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">Đến với <strong>Quyết Tiến</strong>&nbsp;qu&yacute; kh&aacute;ch sẽ ho&agrave;n to&agrave;n h&agrave;i l&ograve;ng với những tiện &iacute;ch m&agrave; <strong>Quyết Tiến</strong> lu&ocirc;n phấn đấu x&acirc;y dựng v&agrave; ph&aacute;t triển. Kh&ocirc;ng chỉ l&agrave; mua sắm m&agrave; c&ograve;n l&agrave; vui chơi, giải tr&iacute;, ẩm thực v&agrave; c&aacute;c tiện t&iacute;ch kh&aacute;c đ&atilde; gi&uacute;p <strong>Quyết Tiến</strong>thu h&uacute;t được số lượng kh&aacute; đ&ocirc;ng kh&aacute;ch h&agrave;ng đến đ&acirc;y mỗi ng&agrave;y. <strong>Quyết Tiến</strong> sẽ c&ograve;n ph&aacute;t triển nhiều tiện &iacute;ch hơn nữa để xứng đ&aacute;ng với khẩu hiệu đề ra <span style="color:#e74c3c"><strong>Quyết Tiến &ndash; Tiện &Iacute;ch Cho Mọi Nh&agrave;.</strong></span></span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in">&nbsp;</p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong>QUYẾT TIẾN CAM KẾT</strong></span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Tiếp tục đem đến cho kh&aacute;ch h&agrave;ng những quyền lợi mua sắm tốt nhất với phong c&aacute;ch phục vụ chuy&ecirc;n nghiệp v&agrave; c&aacute;c chương tr&igrave;nh khuyến m&atilde;i hấp dẫn.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ N&acirc;ng cao chất lượng dịch vụ bảo h&agrave;nh, bảo tr&igrave;, giao h&agrave;ng, lắp đặt v&agrave; c&aacute;c dịch vụ kh&aacute;c.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Cam kết cung cấp cho kh&aacute;ch h&agrave;ng những sản phẩm chất lượng cao, gi&aacute; cả hợp l&yacute; v&agrave; thương hiệu uy t&iacute;n.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Thường xuy&ecirc;n t&igrave;m kiếm, khai th&aacute;c v&agrave; ph&acirc;n phối c&aacute;c sản phẩm mới, hiện đại, ph&ugrave; hợp với nhu cầu kh&aacute;ch h&agrave;ng.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif">&nbsp; &nbsp;+ Cam kết sẽ tiếp tục đổi mới về mọi mặt để đưa <strong>Quyết Tiến </strong>l&ecirc;n một tầm v&oacute;c mới chuy&ecirc;n nghiệp hơn hiện đại hơn.</span></span></p>
+
+                                <p style="margin-left:0in; margin-right:0in">&nbsp;</p>
+
+                                <p style="margin-left:0in; margin-right:0in; text-align:center"><img alt="" src="/static/images/1.%20banner/0.%20home/6.%20chung/Infographic.jpg" style="height:1465px; width:595px" /></p>
+                            </div>
+
+                            <div class="block support-block">
+                                <div class="col-md-3 no-padding">
+                                    <img src="~/www.root/shared/user_layout/img/tong-dai.png" alt="quyet tien">
+                                </div>
+                                <div class="col-md-9 no-padding-right">
+                                    <h3 class="title-line"><br><br>Tổng đài hỗ trợ <span class="note">(1000đ/ Phút, 08h-22h, Thứ 2 - Chủ nhật)</span></h3>
+                                    <div class="support">
+                                        <p>Hỗ trợ mua hàng: <span class="color">1900 1829</span> (nhấn phím <span class="color">1</span>)</p>
+                                        <p>Hỗ trợ bảo hành: <span class="color">1900 1829</span> (nhấn phím <span class="color">2</span>)</p>
+                                        <p>Hỗ trợ khiếu nại, thắc mắc: <span class="color">1900 1829</span> (nhấn phím <span class="color">0</span>)<br><br></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-9-->
+            </div>
+        </div>
+    </div>
+</div>
+

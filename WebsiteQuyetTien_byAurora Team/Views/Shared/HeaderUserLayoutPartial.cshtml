@@ -1,0 +1,131 @@
+﻿<!-- *** HEADER ***  -->
+<header class="header mb-5 sticky-top">
+    <!-- *** NAVBAR *** --->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a href="@Url.Action("Index","Home")" class="navbar-brand home">
+                <img src="@Url.Content("~/www.root/shared/user_layout/img/logo.png")" alt="Logo Quyết Tiến" class="d-none d-md-inline-block" style="height: 70px">
+                <img src="@Url.Content("~/www.root/shared/user_layout/img/logo.png")" alt="Logo Quyết Tiến" class="d-inline-block d-md-none" style="height: 70px">
+                <span class="sr-only">Quyết Tiến - Trang chủ</span>
+            </a>
+            <div class="navbar-buttons">
+                <button type="button" data-toggle="collapse" data-target="#navigation"
+                        class="btn btn-outline-secondary navbar-toggler">
+                    <span class="sr-only">Chuyển đổi điều hướng</span><i class="fa fa-align-justify"></i>
+                </button>
+                <button type="button" data-toggle="collapse" data-target="#search"
+                        class="btn btn-outline-secondary navbar-toggler">
+                    <span class="sr-only">Chuyển đổi tìm kiếm</span><i class="fa fa-search"></i>
+                </button>
+            </div>
+            <div id="navigation" class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a href="@Url.Action("Index","Home")" class="nav-link active text-white">Trang chủ</a></li>
+                    <li class="nav-item dropdown menu-large">
+                        <a href="#" data-toggle="dropdown" data-hover="dropdown"
+                           data-delay="200" class="dropdown-toggle nav-link">
+                            Sản
+                            phẩm<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu megamenu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-3">
+                                        <h5>Tivi</h5>
+                                        <ul class="list-unstyled mb-3">
+                                            <li class="nav-item"><a href="category.html" class="nav-link">LG</a></li>
+                                            <li class="nav-item"><a href="category.html" class="nav-link">TCL</a></li>
+                                            <li class="nav-item"><a href="category.html" class="nav-link">Sony</a></li>
+                                            <li class="nav-item">
+                                                <a href="category.html" class="nav-link">Samsung</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3">
+                                        <h5>Điện thoại</h5>
+                                        <ul class="list-unstyled mb-3">
+                                            <li class="nav-item">
+                                                <a href="category.html" class="nav-link">Iphone</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="category.html" class="nav-link">Samsung</a>
+                                            </li>
+                                            <li class="nav-item"><a href="category.html" class="nav-link">HTC</a></li>
+                                            <li class="nav-item"><a href="category.html" class="nav-link">LG</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3">
+                                        <h5>Máy Giặt</h5>
+                                        <ul class="list-unstyled mb-3">
+                                            <li class="nav-item">
+                                                <a href="category.html" class="nav-link">Toshiba</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="category.html" class="nav-link">Samsung</a>
+                                            </li>
+                                            <li class="nav-item"><a href="category.html" class="nav-link">LG</a></li>
+                                            <li class="nav-item">
+                                                <a href="category.html" class="nav-link">Panasonic</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="category.html" class="nav-link">Electrolux</a>
+                                            </li>
+                                            <li class="nav-item"><a href="category.html" class="nav-link">Sharp</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3">
+                                        <h5>Máy Lạnh</h5>
+                                        <ul class="list-unstyled mb-3">
+                                            <li class="nav-item"><a href="category.html" class="nav-link">LG</a></li>
+                                            <li class="nav-item">
+                                                <a href="category.html" class="nav-link">Daikin</a>
+                                            </li>
+                                            <li class="nav-item"><a href="category.html" class="nav-link">Sharp</a></li>
+                                        </ul>
+                                        <h5>Lò vi sóng</h5>
+                                        <ul class="list-unstyled mb-3">
+                                            <li class="nav-item"><a href="category.html" class="nav-link">Sharp</a></li>
+                                            <li class="nav-item"><a href="category.html" class="nav-link">LG</a></li>
+                                            <li class="nav-item">
+                                                <a href="category.html" class="nav-link">Electrolux</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="@Url.Action("News","Home")" class="nav-link">Tin tức - Sự kiện</a></li>
+                    <li class="nav-item"><a href="@Url.Action("About","Home")" class="nav-link">Về chúng tôi</a></li>
+                    <li class="nav-item"><a href="@Url.Action("Contactus","Home")" class="nav-link">Liên hệ</a></li>
+                    <li class="nav-item"><a href="@Url.Action("InstallmentHelper","Home")" class="nav-link">Mua trả góp</a></li>
+                </ul>
+                <div class="navbar-buttons d-flex justify-content-end">
+                    <div id="search-not-mobile" class="navbar-collapse collapse"></div>
+                    <a data-toggle="collapse" href="#search"
+                       class="btn navbar-btn btn-primary d-none d-lg-inline-block">
+                        <span class="sr-only">Chuyển hướng tìm kiếm</span><i class="fa fa-search"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- *** HẾT NAVBAR *** -->
+    <!-- --------------------------------------------- -->
+    <!-- *** CÔNG CỤ TÌM KIẾM *** -->
+    <div id="search" class="collapse">
+        <div class="container">
+            <form role="search" class="ml-auto">
+                <div class="input-group">
+                    <input type="text" placeholder="Tìm kiếm" class="form-control">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- *** HẾT CÔNG CỤ TÌM KIẾM *** -->
+</header>
+<!-- *** HẾT HEADER *** -->
+<!-- --------------------------------------------- -->

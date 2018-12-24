@@ -21,6 +21,9 @@
         <AssociationConnector Association="DmQT08Model.FK_InstallmentBillDetail_Product" ManuallyRouted="false" />
         <AssociationConnector Association="DmQT08Model.FK_Product_Manufactory" ManuallyRouted="false" />
         <AssociationConnector Association="DmQT08Model.FK_Product_ProductType" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DmQT08Model.Manufactory" Width="1.5" PointX="8.375" PointY="5.875" />
+        <AssociationConnector Association="DmQT08Model.FK_Product_Manufactory" />
+        <EntityTypeShape EntityType="DmQT08Model.sysdiagram" Width="1.5" PointX="8.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,0 +1,31 @@
+.paymenticon {
+    display: inline-block;
+}
+
+.paymenticon.icon-cash {
+    background-image: url(../img/sprite.png);
+    background-position: -171px -192px;
+    width: 54px;
+    height: 33px
+}
+
+.paymenticon.icon-installment {
+    background-image: url(../img/sprite.png);
+    background-position: 0 -245px;
+    width: 54px;
+    height: 33px
+}
+
+.paymenticon.icon-visa {
+    width: 54px;
+    height: 33px;
+    background-image: url(../img/sprite.png?v=1519811185455);
+    background-position: -59px -245px
+}
+
+.paymenticon.icon-mastercard {
+    background-position: -230px -192px;
+    width: 54px;
+    height: 33px;
+    background-image: url(../img/sprite.png?v=1519811185455)
+}
