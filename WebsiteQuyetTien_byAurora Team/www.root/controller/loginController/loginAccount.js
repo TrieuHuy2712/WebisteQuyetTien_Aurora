@@ -6,7 +6,7 @@
         url: "/Login/checkLogin",
         data: {
             username: username,
-            password: password
+            password: password,
         },
       
         beforeSend: function () {

@@ -101,16 +101,6 @@
     <Property Name="ProductTypeCode" Type="varchar" MaxLength="3" Nullable="false" />
     <Property Name="ProductTypeName" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <Association Name="FK_CashBillDetail_CashBill">
     <End Role="CashBill" Type="Self.CashBill" Multiplicity="1" />
     <End Role="CashBillDetail" Type="Self.CashBillDetail" Multiplicity="*" />
@@ -205,7 +195,6 @@
     <EntitySet Name="Manufactory" EntityType="Self.Manufactory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_CashBillDetail_CashBill" Association="Self.FK_CashBillDetail_CashBill">
       <End Role="CashBill" EntitySet="CashBill" />
       <End Role="CashBillDetail" EntitySet="CashBillDetail" />

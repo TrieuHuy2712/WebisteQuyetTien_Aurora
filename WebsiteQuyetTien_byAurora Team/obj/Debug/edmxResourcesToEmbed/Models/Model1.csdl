@@ -105,9 +105,6 @@
     <NavigationProperty Name="InstallmentBillDetails" Relationship="Self.FK_InstallmentBillDetail_Product" FromRole="Product" ToRole="InstallmentBillDetail" />
     <NavigationProperty Name="Manufactory" Relationship="Self.FK_Product_Manufactory" FromRole="Product" ToRole="Manufactory" />
     <NavigationProperty Name="ProductType" Relationship="Self.FK_Product_ProductType" FromRole="Product" ToRole="ProductType" />
-    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="ManufactoryID" Type="Int32" />
-    <NavigationProperty Name="Manufactory" Relationship="DmQT08Model.FK_Product_Manufactory" FromRole="Product" ToRole="Manufactory" />
   </EntityType>
   <EntityType Name="ProductType">
     <Key>
@@ -202,7 +199,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DmQT08Entities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="DmQT08Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Accounts" EntityType="Self.Account" />
     <EntitySet Name="CashBills" EntityType="Self.CashBill" />
     <EntitySet Name="CashBillDetails" EntityType="Self.CashBillDetail" />
@@ -240,41 +237,5 @@
       <End Role="ProductType" EntitySet="ProductTypes" />
       <End Role="Product" EntitySet="Products" />
     </AssociationSet>
-    <EntitySet Name="Manufactories" EntityType="DmQT08Model.Manufactory" />
-    <AssociationSet Name="FK_Product_Manufactory" Association="DmQT08Model.FK_Product_Manufactory">
-      <End Role="Manufactory" EntitySet="Manufactories" />
-      <End Role="Product" EntitySet="Products" />
-    </AssociationSet>
-    <EntitySet Name="sysdiagrams" EntityType="DmQT08Model.sysdiagram" />
   </EntityContainer>
-  <EntityType Name="Manufactory">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ManufactoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Products" Relationship="DmQT08Model.FK_Product_Manufactory" FromRole="Manufactory" ToRole="Product" />
-  </EntityType>
-  <Association Name="FK_Product_Manufactory">
-    <End Type="DmQT08Model.Manufactory" Role="Manufactory" Multiplicity="0..1" />
-    <End Type="DmQT08Model.Product" Role="Product" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Manufactory">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Product">
-        <PropertyRef Name="ManufactoryID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
 </Schema>

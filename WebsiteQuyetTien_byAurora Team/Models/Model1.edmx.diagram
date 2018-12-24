@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="725207ac3b624781b5fdcd2bb3db6755" Name="Diagram1">
+      <Diagram DiagramId="48fedbc7c2d542af8efde0b570d49cb2" Name="Diagram1">
         <EntityTypeShape EntityType="DmQT08Model.Account" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DmQT08Model.CashBill" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DmQT08Model.CashBillDetail" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
@@ -21,9 +21,6 @@
         <AssociationConnector Association="DmQT08Model.FK_InstallmentBillDetail_Product" ManuallyRouted="false" />
         <AssociationConnector Association="DmQT08Model.FK_Product_Manufactory" ManuallyRouted="false" />
         <AssociationConnector Association="DmQT08Model.FK_Product_ProductType" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="DmQT08Model.Manufactory" Width="1.5" PointX="8.375" PointY="5.875" />
-        <AssociationConnector Association="DmQT08Model.FK_Product_Manufactory" />
-        <EntityTypeShape EntityType="DmQT08Model.sysdiagram" Width="1.5" PointX="8.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

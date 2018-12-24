@@ -18,7 +18,6 @@ namespace WebsiteQuyetTien_byAurora_Team.Models
         public InstallmentBill()
         {
             this.InstallmentBillDetails = new HashSet<InstallmentBillDetail>();
-            Date = DateTime.Now;
         }
     
         public int ID { get; set; }

@@ -9,7 +9,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
 {
     public class ManageInstallmentBillController : Controller
     {
-        private DmQT08Entities1 db = new DmQT08Entities1();
+        private DmQT08Entities db = new DmQT08Entities();
 
         // GET: ManageInstallmentBill
         public ActionResult Index()

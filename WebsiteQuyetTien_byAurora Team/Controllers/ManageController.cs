@@ -10,7 +10,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
 {
     public class ManageController : Controller
     {
-        public DmQT08Entities1 db = new DmQT08Entities1();
+        public DmQT08Entities db = new DmQT08Entities();
         public int currentID;
 
         // GET: Manage
@@ -60,7 +60,9 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
                 p.SalePrice,
                 p.Status,
                 p.ProductTypeID,
-                p.ProductType.ProductTypeName
+                p.ManufactoryID,
+                p.ProductType.ProductTypeName,
+                p.Manufactory.ManufactoryName
             }).Where(s=>s.Status==true).OrderByDescending(x=>x.ID).ToList();
 
             return Json(products, JsonRequestBehavior.AllowGet);

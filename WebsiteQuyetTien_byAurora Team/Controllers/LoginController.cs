@@ -9,7 +9,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
 {
     public class LoginController : Controller
     {
-        DmQT08Entities1 db = new DmQT08Entities1();
+        DmQT08Entities db = new DmQT08Entities();
         // GET: Login
         public ActionResult Index()
         {
@@ -22,7 +22,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             if (acc != null)
             {
                 Session["TaiKhoan"] = acc.Fullname;
-                var taikhoan = db.Accounts.SingleOrDefault(n => n.Username == username && n.Password == password);
+                var taikhoan = db.Accounts.First(n => n.Username == username && n.Password == password);
                 return Content("<script>window.location.reload();</script>");
             }
             return Content("Tài khoản hoặc mật khẩu không đúng");

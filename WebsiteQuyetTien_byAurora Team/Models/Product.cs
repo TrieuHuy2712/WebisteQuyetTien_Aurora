@@ -40,6 +40,5 @@ namespace WebsiteQuyetTien_byAurora_Team.Models
         public virtual ICollection<InstallmentBillDetail> InstallmentBillDetails { get; set; }
         public virtual Manufactory Manufactory { get; set; }
         public virtual ProductType ProductType { get; set; }
-        public virtual Manufactory Manufactory { get; set; }
     }
 }
