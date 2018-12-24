@@ -8,24 +8,31 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
 {
     public class HomeController : Controller
     {
+        //Giao diện chính
         public ActionResult Index()
         {
             return View();
         }
-
+        //Giao diện về chúng tôi
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        //Hướng dẫn mua trả góp
+        public ActionResult InstallmentHelper()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
-        
+        //Giao diện liên lạc
+        public ActionResult Contactus()
+        {
+            return View();
+        }
+        //Giao diện trang tin tức sự kiện
+        public ActionResult News()
+        {
+            return View();
+        }
     }
 }

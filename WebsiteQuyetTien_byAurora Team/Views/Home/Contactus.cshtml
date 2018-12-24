@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Contactus";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="all">
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- *** THANH ĐƯỜNG DẪN *** -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                            <li aria-current="page" class="breadcrumb-item active">Liên hệ</li>
+                        </ol>
+                    </nav>
+                </div>
+                    <!-- *** DANH MỤC *** -->
+                    @Html.Partial("~/Views/Shared/DoanhMuc1Partial.cshtml")
+                    <!-- *** HẾT DANH MỤC ***-->
+                    
+                <div class="col-lg-9">
+                    <div id="contact" class="box">
+                        <h1>Bạn cần hỗ trợ?</h1>
+                        <p class="lead">
+                            Hãy liên hệ với trung tâm chăm sóc khách hàng của chúng tôi để được trợ giúp kịp
+                            thời 24/7.
+                        </p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h3><i class="fa fa-map-marker"></i> Địa chỉ</h3>
+                                <p>
+                                    Số 999<br>Đường Dương Quảng Hàm<br>Quận Gò Vấp<br>Thành phố Hồ Chí Minh<br><strong>
+                                        Việt
+                                        Nam
+                                    </strong>
+                                </p>
+                            </div>
+                            <!-- /.col-sm-4-->
+                            <div class="col-md-4">
+                                <h3><i class="fa fa-phone"></i> Hotline</h3>
+                                <p class="text-muted">Gọi tổng đài viên để được hỗ trợ chi tiết và kịp thời.</p>
+                                <p><strong>+84 038 XXX XXX</strong></p>
+                            </div>
+                            <!-- /.col-sm-4-->
+                            <div class="col-md-4">
+                                <h3><i class="fa fa-envelope"></i> Email</h3>
+                                <p class="text-muted"></p>
+                                <ul>
+                                    <li><strong><a href="mailto:">hotro@quyettien.com</a></strong></li>
+                                </ul>
+                            </div>
+                            <!-- /.col-sm-4-->
+                        </div>
+                        <!-- /.row-->
+                        <hr>
+                        <h3>Công ty Quyết Tiến</h3>
+                        <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.795972899111!2d106.69631291382288!3d10.826920061222557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528f4a62fce9b%3A0xc99902aa1e26ef02!2zxJDhuqFpIEjhu41jIFbEg24gTGFuZyBDxqEgU-G7nyAz!5e0!3m2!1svi!2s!4v1543411773290" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                        <hr>
+                        <h2>Gửi thông tin cần hỗ trợ</h2>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="firstname">Tên</label>
+                                        <input id="firstname" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="lastname">Họ</label>
+                                        <input id="lastname" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Địa chỉ email</label>
+                                        <input id="email" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="subject">Chủ đề</label>
+                                        <input id="subject" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="message">Nội dung</label>
+                                        <textarea id="message" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa fa-envelope-o"></i> Gửi
+                                        tin
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- /.row-->
+                        </form>
+                    </div>
+                </div>
+                <!-- /.col-md-9-->
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -378,3 +378,98 @@ D:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyet
 D:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csproj.CopyComplete
 D:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.dll
 D:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.pdb
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\ApplicationInsights.config
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\WebsiteQuyetTien_byAurora Team.dll.config
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\WebsiteQuyetTien_byAurora Team.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\WebsiteQuyetTien_byAurora Team.pdb
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\csc.exe
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\csc.exe.config
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\csc.rsp
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\csi.exe
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\csi.exe.config
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\csi.rsp
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.AppContext.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Collections.Immutable.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Console.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.IO.Compression.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.IO.FileSystem.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.IO.Pipes.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Reflection.Metadata.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Security.AccessControl.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Security.Claims.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Security.Principal.Windows.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.ValueTuple.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Xml.XPath.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\vbc.exe
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\vbc.exe.config
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\vbc.rsp
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\VBCSCompiler.exe
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\roslyn\VBCSCompiler.exe.config
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Antlr3.Runtime.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\EntityFramework.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\EntityFramework.SqlServer.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.DependencyCollector.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.Web.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.WindowsServer.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.ApplicationInsights.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.Web.Infrastructure.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Newtonsoft.Json.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Diagnostics.DiagnosticSource.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Web.Helpers.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Web.Mvc.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Web.Optimization.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Web.Razor.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Web.WebPages.Deployment.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Web.WebPages.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Web.WebPages.Razor.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\WebGrease.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\EntityFramework.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\EntityFramework.SqlServer.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Web.Helpers.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Web.Mvc.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Web.Optimization.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Web.Razor.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Web.WebPages.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Web.WebPages.Deployment.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Web.WebPages.Razor.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Newtonsoft.Json.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Antlr3.Runtime.pdb
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\System.Diagnostics.DiagnosticSource.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.DependencyCollector.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.WindowsServer.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.Web.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csprojAssemblyReference.cache
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csproj.CoreCompileInputs.cache
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csproj.CopyComplete
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.pdb

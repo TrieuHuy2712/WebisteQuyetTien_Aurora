@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "News";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="all">
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- *** THANH ĐƯỜNG DẪN *** -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                            <li aria-current="page" class="breadcrumb-item active">Tin tức</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <div class="row">
+                <!--Cột bên trái-->
+                @Html.Partial("~/Views/Shared/DoanhMuc1Partial.cshtml")
+
+
+                <!-- *** CỘT TRÁI *** -->
+                <div id="blog-listing" class="col-lg-9">
+                    <div class="box">
+                        <h1>Tổng hợp Tin tức - Sự kiện</h1>
+                        <p>
+                            Luôn cập nhật các chương trình khuyến mãi và giá cả cạnh tranh cho các khách hàng thân thiết
+                            của chúng tôi.
+                        </p>
+                    </div>
+                    <!-- *** KHU VỰC BÀI VIẾT *** -->
+                    <div class="post">
+                        <h2><a href="posting.html">Tiêu đề bài viết</a></h2>
+                        <p class="author-category">Viết bởi <a href="#">Tác giả</a> trong <a href="">Danh mục bài viết</a></p>
+                        <hr>
+                        <p class="date-comments"><a href="posting.html"><i class="fa fa-calendar-o"></i> Ngày/Tháng/Năm</a></p>
+                        <div class="image">
+                            <a href="posting.html">
+                                <img src="img/blog2.jpg" alt="Hình ảnh bài viết"
+                                     class="img-fluid">
+                            </a>
+                        </div>
+                        <p class="intro">Tóm tắt bài viết</p>
+                        <p class="read-more"><a href="posting.html" class="btn btn-primary">Xem thêm</a></p>
+                    </div>
+                    <!-- *** KHU VỰC BÀI VIẾT *** -->
+                    <div class="post">
+                        <h2><a href="posting.html">Tiêu đề bài viết</a></h2>
+                        <p class="author-category">Viết bởi <a href="#">Tác giả</a> in <a href="">Trong danh mục</a></p>
+                        <hr>
+                        <p class="date-comments"><a href="posting.html"><i class="fa fa-calendar-o"></i> Ngày/Tháng/Năm</a></p>
+                        <div class="image">
+                            <a href="posting.html">
+                                <img src="img/blog2.jpg" alt="Hình ảnh bài viết"
+                                     class="img-fluid">
+                            </a>
+                        </div>
+                        <p class="intro">Tóm tắt bài viết</p>
+                        <p class="read-more"><a href="posting.html" class="btn btn-primary">Xem thêm</a></p>
+                    </div>
+                    <div class="pager d-flex justify-content-between">
+                        <div class="previous"><a href="#" class="btn btn-outline-primary">← Cũ hơn</a></div>
+                        <div class="next">
+                            <a href="#" class="btn btn-outline-secondary disabled">Mới hơn → </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- *** HẾT CỘT TRÁI ***-->
+            </div>
+        </div>
+    </div>
+</div>
+
