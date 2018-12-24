@@ -9,7 +9,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
 {
     public class ManageCashBillController : Controller
     {
-        private DmQT08Entities db = new DmQT08Entities();
+        private DmQT08Entities1 db = new DmQT08Entities1();
 
         // GET: ManageCashBill
         public ActionResult Index()
@@ -79,7 +79,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
                     db.CashBills.Add(cb);
                 }
                 else
-                {                  
+                {
                     db.Entry(cb).State = EntityState.Modified;
                     foreach (var item in details)
                     {
@@ -94,7 +94,16 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
                     }
                 }
                 db.SaveChanges();
-                return Json(cb, JsonRequestBehavior.AllowGet);
+                return Json(new
+                {
+                    cb.ID,
+                    cb.BillCode,
+                    cb.CustomerName,
+                    cb.Date,
+                    cb.GrandTotal,
+                    cb.Note,
+                    cb.PhoneNumber,
+                }, JsonRequestBehavior.AllowGet);
             }
         }
 
@@ -111,7 +120,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
                 rp.Date = order.Date;
                 rp.Shipper = order.Shipper;
                 rp.Note = order.Note;
-                rp.GrandTotal = order.GrandTotal;
+                rp.GrandTotal = int.Parse(order.GrandTotal.ToString());
                 rp.CashBillDetail = order.CashBillDetails.ToList();
                 return View(rp);
             }
@@ -119,7 +128,6 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             {
                 return View();
             }
-
         }
     }
 }

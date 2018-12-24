@@ -9,7 +9,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
 {
     public class LoginController : Controller
     {
-        DmQT08Entities db = new DmQT08Entities();
+        DmQT08Entities1 db = new DmQT08Entities1();
         // GET: Login
         public ActionResult Index()
         {

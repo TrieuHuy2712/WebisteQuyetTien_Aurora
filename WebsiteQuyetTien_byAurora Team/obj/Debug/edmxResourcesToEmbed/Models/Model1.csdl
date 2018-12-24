@@ -20,7 +20,7 @@
     <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Shipper" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Note" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="GrandTotal" Type="Int32" Nullable="false" />
+    <Property Name="GrandTotal" Type="Int64" Nullable="false" />
     <NavigationProperty Name="CashBillDetails" Relationship="Self.FK_CashBillDetail_CashBill" FromRole="CashBill" ToRole="CashBillDetail" />
   </EntityType>
   <EntityType Name="CashBillDetail">
@@ -31,7 +31,7 @@
     <Property Name="BillID" Type="Int32" Nullable="false" />
     <Property Name="ProductID" Type="Int32" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <Property Name="SalePrice" Type="Int32" Nullable="false" />
+    <Property Name="SalePrice" Type="Int64" Nullable="false" />
     <NavigationProperty Name="CashBill" Relationship="Self.FK_CashBillDetail_CashBill" FromRole="CashBillDetail" ToRole="CashBill" />
     <NavigationProperty Name="Product" Relationship="Self.FK_CashBillDetail_Product" FromRole="CashBillDetail" ToRole="Product" />
   </EntityType>
@@ -59,7 +59,7 @@
     <Property Name="Note" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Method" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Period" Type="Int32" Nullable="false" />
-    <Property Name="GrandTotal" Type="Int32" Nullable="false" />
+    <Property Name="GrandTotal" Type="Int64" Nullable="false" />
     <Property Name="Taken" Type="Int32" Nullable="false" />
     <Property Name="Remain" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Customer" Relationship="Self.FK_InstallmentBill_Customer" FromRole="InstallmentBill" ToRole="Customer" />
@@ -73,9 +73,17 @@
     <Property Name="BillID" Type="Int32" Nullable="false" />
     <Property Name="ProductID" Type="Int32" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <Property Name="InstallmentPrice" Type="Int32" Nullable="false" />
+    <Property Name="InstallmentPrice" Type="Int64" Nullable="false" />
     <NavigationProperty Name="InstallmentBill" Relationship="Self.FK_InstallmentBillDetail_InstallmentBill" FromRole="InstallmentBillDetail" ToRole="InstallmentBill" />
     <NavigationProperty Name="Product" Relationship="Self.FK_InstallmentBillDetail_Product" FromRole="InstallmentBillDetail" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Manufactory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ManufactoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Product_Manufactory" FromRole="Manufactory" ToRole="Product" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -85,14 +93,17 @@
     <Property Name="ProductCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="ProductTypeID" Type="Int32" Nullable="false" />
-    <Property Name="SalePrice" Type="Int32" Nullable="false" />
-    <Property Name="OriginPrice" Type="Int32" Nullable="false" />
-    <Property Name="InstallmentPrice" Type="Int32" Nullable="false" />
+    <Property Name="SalePrice" Type="Int64" Nullable="false" />
+    <Property Name="OriginPrice" Type="Int64" Nullable="false" />
+    <Property Name="InstallmentPrice" Type="Int64" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
     <Property Name="Avatar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Status" Type="Boolean" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ManufactoryID" Type="Int32" />
     <NavigationProperty Name="CashBillDetails" Relationship="Self.FK_CashBillDetail_Product" FromRole="Product" ToRole="CashBillDetail" />
     <NavigationProperty Name="InstallmentBillDetails" Relationship="Self.FK_InstallmentBillDetail_Product" FromRole="Product" ToRole="InstallmentBillDetail" />
+    <NavigationProperty Name="Manufactory" Relationship="Self.FK_Product_Manufactory" FromRole="Product" ToRole="Manufactory" />
     <NavigationProperty Name="ProductType" Relationship="Self.FK_Product_ProductType" FromRole="Product" ToRole="ProductType" />
   </EntityType>
   <EntityType Name="ProductType">
@@ -164,6 +175,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Product_Manufactory">
+    <End Role="Manufactory" Type="Self.Manufactory" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufactory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ManufactoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Product_ProductType">
     <End Role="ProductType" Type="Self.ProductType" Multiplicity="1" />
     <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -176,13 +199,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DmQT08Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="DmQT08Entities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Accounts" EntityType="Self.Account" />
     <EntitySet Name="CashBills" EntityType="Self.CashBill" />
     <EntitySet Name="CashBillDetails" EntityType="Self.CashBillDetail" />
     <EntitySet Name="Customers" EntityType="Self.Customer" />
     <EntitySet Name="InstallmentBills" EntityType="Self.InstallmentBill" />
     <EntitySet Name="InstallmentBillDetails" EntityType="Self.InstallmentBillDetail" />
+    <EntitySet Name="Manufactories" EntityType="Self.Manufactory" />
     <EntitySet Name="Products" EntityType="Self.Product" />
     <EntitySet Name="ProductTypes" EntityType="Self.ProductType" />
     <AssociationSet Name="FK_CashBillDetail_CashBill" Association="Self.FK_CashBillDetail_CashBill">
@@ -204,6 +228,10 @@
     <AssociationSet Name="FK_InstallmentBillDetail_Product" Association="Self.FK_InstallmentBillDetail_Product">
       <End Role="Product" EntitySet="Products" />
       <End Role="InstallmentBillDetail" EntitySet="InstallmentBillDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Manufactory" Association="Self.FK_Product_Manufactory">
+      <End Role="Manufactory" EntitySet="Manufactories" />
+      <End Role="Product" EntitySet="Products" />
     </AssociationSet>
     <AssociationSet Name="FK_Product_ProductType" Association="Self.FK_Product_ProductType">
       <End Role="ProductType" EntitySet="ProductTypes" />

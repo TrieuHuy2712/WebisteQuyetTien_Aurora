@@ -82,7 +82,7 @@ $('body').on('click', '.btn-delete-attribute', function (e) {
     $(this).closest('tr').remove();
 });
 
-function resetForm() {
+function resetFormBill() {
     $('#txtBillCode').val('');
     $('#txtCustomerName').val('');
     $('#txtPhoneNumber').val('');
@@ -121,15 +121,15 @@ function getAllProduct(render, callback) {
     });
 }
 $('body').on('click', '.btn-edit-bills', function (e) {
-    resetForm();
+    resetFormBill();
     var arr = 1;
     e.preventDefault();
     $("#title").text("");
     $("#title").text("Cập nhật hóa đơn");
     console.log('aaa');
     $("#table-product tbody tr").remove();
-    var template = $('#template-table-load').html();
-
+    var template = $('#template-table-loading').html();
+   
     var render = '';
     console.log(billDetail);
     var that = $(this).data('id');
@@ -171,19 +171,23 @@ $('body').on('click', '.btn-edit-bills', function (e) {
             if (render != '') {
                 $('#table-product').html(render);
             };
+            $("#modal-cash-bill").modal('show');
         },
         error: function (ex) {
             console.log("Error");
         },
     });
+
+    
 });
 $('#btnCreateCash').on('click', function () {
-    resetForm();
+    $('#modal-cash-bill').modal('show');
+    resetFormBill();
     currentBill = 0;
     $("#title").text("");
     $("#title").text("Tạo mới hóa đơn");
 });
-$('#btnCashCreateNew').on('click', function () {
+$('body').on('click','#btnCashCreateNew', function () {
     var billCode = $('#txtBillCode').val();
     var customerName = $('#txtCustomerName').val();
     var phonenumber = $('#txtPhoneNumber').val();
@@ -239,20 +243,22 @@ $('#btnCashCreateNew').on('click', function () {
             general.startLoading();
         },
         success: function (response) {
+            $('#modal-cash-bill').modal('hide');
             $('body').removeClass('modal-open');
             $('.modal-backdrop').remove();
             $('#modal-cash-bill').modal('hide');
             general.stopLoading();
             console.log(response);
+            LoadCashBill();
             general.notify("Lưu thành công", "success");
         },
-        error: function () {
-            $('body').removeClass('modal-open');
-            $('.modal-backdrop').remove();
+        error: function (request, error) {
+            console.log(error);
             $('#modal-cash-bill').modal('hide');
+            $('.modal-backdrop').remove();
             LoadCashBill();
             console.log("Có lỗi trong khi ghi");
-            general.notify("Lưu thành công", "success");
+            general.notify("Lưu thành công", "error");
             general.stopLoading();
         }
     });

@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<WebsiteQuyetTien_byAurora_Team.Models.Product>
 @{
-                /**/
+    /**/
 
-                ViewBag.Title = "Index";
-                Layout = "~/Views/Shared/_AdminLayput.cshtml";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayput.cshtml";
 }
 
 <div class="monthly-grid">
@@ -13,7 +13,7 @@
         </div>
 
         <div class="col-sm-6">
-            <a href="#" data-target="#modal-add-edit" data-toggle="modal" class="btn btn-success pull-right" id="btnCreate"><i class="fas fa-plus"></i></a>
+            <a href="#" @*data-target="#modal-add-edit" data-toggle="modal"*@ class="btn btn-success pull-right" id="btnCreate"><i class="fas fa-plus"></i></a>
         </div>
     </div>
     <div id="modal-add-edit" class=" modal fade modal-darkorange in" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -70,3 +70,7 @@
         </tr>
     </script>
 </div>
+@*data-target="#modal-add-edit" data-toggle="modal"*@
+@section Scripts{
+    <script src="~/www.root/controller/productController/Scripts/manageProduct.js"></script>
+};

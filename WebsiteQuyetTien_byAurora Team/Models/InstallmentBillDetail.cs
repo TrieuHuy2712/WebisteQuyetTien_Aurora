@@ -18,7 +18,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Models
         public int BillID { get; set; }
         public int ProductID { get; set; }
         public int Quantity { get; set; }
-        public int InstallmentPrice { get; set; }
+        public long InstallmentPrice { get; set; }
     
         public virtual InstallmentBill InstallmentBill { get; set; }
         public virtual Product Product { get; set; }

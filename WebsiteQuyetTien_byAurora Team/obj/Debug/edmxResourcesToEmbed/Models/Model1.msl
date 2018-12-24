@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DmQT08ModelStoreContainer" CdmEntityContainer="DmQT08Entities">
+  <EntityContainerMapping StorageEntityContainer="DmQT08ModelStoreContainer" CdmEntityContainer="DmQT08Entities1">
     <EntitySetMapping Name="Accounts">
       <EntityTypeMapping TypeName="DmQT08Model.Account">
         <MappingFragment StoreEntitySet="Account">
@@ -76,6 +76,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Manufactories">
+      <EntityTypeMapping TypeName="DmQT08Model.Manufactory">
+        <MappingFragment StoreEntitySet="Manufactory">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ManufactoryName" ColumnName="ManufactoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="DmQT08Model.Product">
         <MappingFragment StoreEntitySet="Product">
@@ -89,6 +97,8 @@
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="Avatar" ColumnName="Avatar" />
           <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ManufactoryID" ColumnName="ManufactoryID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

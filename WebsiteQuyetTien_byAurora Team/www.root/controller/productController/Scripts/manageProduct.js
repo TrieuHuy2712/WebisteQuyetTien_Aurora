@@ -6,11 +6,13 @@ var currentID = "";
 var count = 0;
 var getImage = "";
 //Khi nhấn vào sẽ show modal
-$("#btnCreate").on('click', function () {
-    resetForm();
-    getProductType();
+$('body').on('click', '#btnCreate', function () {
+    $('#modal-add-edit').modal('show');
     $('#titleProduct').text('');
     $('#titleProduct').text('Thêm mới sản phẩm');
+    resetForm();
+    getProductType();
+
 });
 //Thực hiện lưu hình ảnh và những thông tin mới
 $("#btnAttributeCreateNew").on('click', function () {
@@ -132,8 +134,8 @@ $('body').on('keyup', '#txtQuantity', function (event) {
 
 ///-------Ajax Sửa------////
 function resetForm() {
-    $('#txtProductCode').val('');
-    $('#txtProductName').val('');
+    $('#txtProductCode').val("");
+    $('#txtProductName').val("");
     $('#txtOriginPrice').val('');
     $('#txtSalePrice').val('');
     $('#txtInstallmentPrice').val('');
@@ -151,7 +153,6 @@ $('body').on('click', '.btn-edit', function (e) {
     var that = $(this).data('id');
     console.log(that);
     getProductType();
-    $('#modal-add-edit').show();
     $.ajax({
         type: "GET",
         url: "/Manage/GetById",
@@ -180,7 +181,8 @@ $('body').on('click', '.btn-edit', function (e) {
 
                 $('#txtQuantity').val(response.Quantity);
             }
-            $('#modal-add-edit').modal('toggle');
+
+            $('#modal-add-edit').modal('show');
         },
         error: function (status) {
             //tedu.notify('Có lỗi xảy ra', 'error');

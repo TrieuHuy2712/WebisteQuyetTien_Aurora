@@ -13,10 +13,10 @@ namespace WebsiteQuyetTien_byAurora_Team.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DmQT08Entities : DbContext
+    public partial class DmQT08Entities1 : DbContext
     {
-        public DmQT08Entities()
-            : base("name=DmQT08Entities")
+        public DmQT08Entities1()
+            : base("name=DmQT08Entities1")
         {
         }
     
@@ -31,6 +31,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Models
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<InstallmentBill> InstallmentBills { get; set; }
         public virtual DbSet<InstallmentBillDetail> InstallmentBillDetails { get; set; }
+        public virtual DbSet<Manufactory> Manufactories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
     }

@@ -9,10 +9,10 @@
         </div>
 
         <div class="col-sm-6">
-            <a href="#" data-target="#modal-cash-bill" data-toggle="modal" class="btn btn-success pull-right " id="btnCreateCash"><i class="fas fa-plus"></i></a>
+            <a href="#" class="btn btn-success pull-right" id="btnCreateCash"><i class="fas fa-plus"></i></a>
         </div>
     </div>
-    <div id="modal-cash-bill"  class="modal fade modal-cash-bill" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="modal-cash-bill" class="modal fade modal-darkorange in modal-cash-bill" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 @Html.Partial("~/Views/ManageCashBill/_CRUDModal.cshtml")
@@ -46,7 +46,7 @@
         </table>
     </div>
 
-    <script id="table-template-cashBill" type="x-tmpl-mustache">
+    <script type="x-tmpl-mustache" id="table-template-cashBill">
         <tr>
             <td id="BillCode" style="text-align:center; vertical-align:middle">{{BillCode}}</td>
             <td style="text-align:center; vertical-align:middle">{{CustomerName}}</td>
@@ -59,9 +59,13 @@
             <td style="text-align:center; vertical-align:middle">{{GrandTotal}}</td>
 
             <td scope="row" style="text-align:center; vertical-align:middle">
-                <button class="btn btn-default btn-sm btn-edit-bills" data-id="{{ID}}" id="{{ID}}" data-target="#modal-cash-bill" data-toggle="modal"><i class="far fa-edit"></i></button>
-                <a href="/ManageCashBill/PrintBill?id={{ID}}" class="btn btn-primary btn-sm btn-print-bill"  id="{{ID}}"><i class="fas fa-print"></i></a>
+                <button class="btn btn-default btn-sm btn-edit-bills" data-id="{{ID}}" id="{{ID}}"><i class="far fa-edit"></i></button>
+                <a href="/ManageCashBill/PrintBill?id={{ID}}" class="btn btn-primary btn-sm btn-print-bill" id="{{ID}}"><i class="fas fa-print"></i></a>
             </td>
         </tr>
     </script>
 </div>
+@*data-target="#modal-cash-bill" data-toggle="modal"*@
+@section Scripts{
+    <script src="~/www.root/controller/cashBillController/Scripts/manageCashBill.js"></script>
+};

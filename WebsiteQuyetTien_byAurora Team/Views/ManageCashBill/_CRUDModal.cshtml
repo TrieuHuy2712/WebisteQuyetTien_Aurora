@@ -4,7 +4,7 @@
 </div>
 <div class="modal-body">
     <div id="horizontal-form">
-        <form class="form-horizontal" role="form" id="frmProduct">
+        <form class="form-horizontal" role="form">
             <div class="form-group row">
                 <label for="txtBillCode" class="col-sm-3 col-form-label">Mã hóa đơn<span class="star">*</span></label>
                 <div class="col-sm-3">
@@ -19,7 +19,7 @@
             <div class="form-group row">
                 <label for="txtPhoneNumber" class="col-sm-3 col-form-label">Số điện thoại<span class="star">*</span></label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="txtPhoneNumber" name="txtPhoneNumber">
+                    <input type="text" class="form-control" id="txtPhoneNumber" name="txtPhoneNumber" maxlength="12">
                     <span id="validatePhoneNumber" style="color:red"></span>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                     <script type="x-tmpl-mustache" id="template-table-product" class="template-table-product">
                         <tr data-id="{{ProductID}}" data-key="{{ID}}">
                             <td width="5%">{{STT}}</td>
-                            <td id="txtProductID-col" width="40%" ">
+                            <td id="txtProductID-col" width="40%" >
                                 <select id="dropdownProduct" class="form-control select2"><option>Vui lòng chọn sản phẩm</option></select>
                             </td>
                             <td id="txtQuantity-col">
@@ -97,10 +97,10 @@
                             <td><button class="btn btn-sm btn-danger btn-delete-attribute" type="button" data-id="{{ProductID}}"><i class="fa fa-trash"></i></button></td>
                         </tr>
                     </script>
-                    <script type="x-tmpl-mustache" id="template-table-load" class="template-table-load">
+                    <script type="x-tmpl-mustache" id="template-table-loading" class="template-table-loading">
                         <tr data-id="{{ProductID}}" data-key="{{ID}}">
                             <td width="5%">{{STT}}</td>
-                            <td id="txtProductID-col" width="40%" >
+                            <td id="txtProductID-col" width="40%">
                                 <input name="txtProductName" id="txtProductName" class="form-control" value="{{ProductName}}" disabled>
                             </td>
                             <td id="txtQuantity-col">
@@ -112,8 +112,6 @@
                             <td id="txtGrandTotal-col">
                                 <input name="txtGrandTotal" id="txtGrandTotalProduct" class="form-control" value="{{GrandTotal}}" disabled>
                             </td>
-
-                            <td><button class="btn btn-sm btn-danger btn-delete-attribute" type="button" data-id="{{ProductID}}"><i class="fa fa-trash"></i></button></td>
                         </tr>
                     </script>
                 </div>

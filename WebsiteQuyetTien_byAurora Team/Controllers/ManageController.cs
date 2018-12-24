@@ -10,8 +10,9 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
 {
     public class ManageController : Controller
     {
-        private DmQT08Entities db = new DmQT08Entities();
+        public DmQT08Entities1 db = new DmQT08Entities1();
         public int currentID;
+
         // GET: Manage
         public ActionResult Index()
         {
@@ -25,30 +26,44 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         }
 
         [HttpGet]
-        public ActionResult getProduct()
+        public JsonResult getProduct()
         {
             db.Configuration.ProxyCreationEnabled = false;
 
-            var students = db.Products.Join(
-            db.ProductTypes,
-            s => s.ProductTypeID,
-            c => c.ID,
-            (s, c) => new
+            //var students = db.Products.Join(
+            //db.ProductTypes,
+            //s => s.ProductTypeID,
+            //c => c.ID,
+            //(s, c) => new
+            //{
+            //    s.ID,
+            //    s.ProductCode,
+            //    s.ProductName,
+            //    s.OriginPrice,
+            //    s.InstallmentPrice,
+            //    s.Quantity,
+            //    s.SalePrice,
+            //    s.Status,
+            //    s.ProductTypeID,
+            //    c.ProductTypeName,
+
+            //}).Where(s=>s.Status==true).OrderByDescending(x=>x.ID).ToList();
+
+            var products = db.Products.Select(p => new
             {
-                s.ID,
-                s.ProductCode,
-                s.ProductName,
-                s.OriginPrice,
-                s.InstallmentPrice,
-                s.Quantity,
-                s.SalePrice,
-                s.Status,
-                s.ProductTypeID,
-                c.ProductTypeName,
-                
+                p.ID,
+                p.ProductCode,
+                p.ProductName,
+                p.OriginPrice,
+                p.InstallmentPrice,
+                p.Quantity,
+                p.SalePrice,
+                p.Status,
+                p.ProductTypeID,
+                p.ProductType.ProductTypeName
             }).Where(s=>s.Status==true).OrderByDescending(x=>x.ID).ToList();
-            
-            return Json(students, JsonRequestBehavior.AllowGet);
+
+            return Json(products, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -117,16 +132,18 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             db.SaveChanges();
             return Json(bangsanpham, JsonRequestBehavior.AllowGet);
         }
+
         [HttpPost]
         public string UploadImage(HttpPostedFileBase file)
         {
             file.SaveAs(Server.MapPath("/www.root/Img/" + file.FileName + ".png"));
             return "/www.root/Img/" + file.FileName + ".png";
         }
+
         public ActionResult DangXuat()
         {
             Session["TaiKhoan"] = null;
-            return RedirectToAction("Index","Login", new { area = "" });
+            return RedirectToAction("Index", "Login", new { area = "" });
         }
     }
 }

@@ -29,7 +29,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Models
         public System.DateTime Date { get; set; }
         public string Shipper { get; set; }
         public string Note { get; set; }
-        public int GrandTotal { get; set; }
+        public long GrandTotal { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CashBillDetail> CashBillDetails { get; set; }
