@@ -38,17 +38,17 @@ namespace WebsiteQuyetTien_byAurora_Team.Tests.Controllers
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);
         }
 
-        [TestMethod]
-        public void Contact()
-        {
-            // Arrange
-            HomeController controller = new HomeController();
+        //[TestMethod]
+        //public void Contact()
+        //{
+        //    // Arrange
+        //    HomeController controller = new HomeController();
 
-            // Act
-            ViewResult result = controller.Contact() as ViewResult;
+        //    // Act
+        //    ViewResult result = controller.Contact() as ViewResult;
 
-            // Assert
-            Assert.IsNotNull(result);
-        }
+        //    // Assert
+        //    Assert.IsNotNull(result);
+        //}
     }
 }

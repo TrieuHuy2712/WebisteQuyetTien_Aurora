@@ -114,3 +114,43 @@ C:\Users\Callous - Rot\Desktop\test\WebsiteQuyetTien_byAurora Team.Tests\obj\Deb
 C:\Users\Callous - Rot\Desktop\test\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.pdb
 C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\EntityFramework.SqlServer.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.csprojAssemblyReference.cache
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.csproj.CoreCompileInputs.cache
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.pdb
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\ApplicationInsights.config
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\WebsiteQuyetTien_byAurora Team.Tests.dll.config
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\WebsiteQuyetTien_byAurora Team.Tests.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\WebsiteQuyetTien_byAurora Team.Tests.pdb
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\EntityFramework.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\EntityFramework.SqlServer.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Newtonsoft.Json.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Helpers.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Mvc.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Razor.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.WebPages.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\WebsiteQuyetTien_byAurora Team.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Optimization.dll
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\WebsiteQuyetTien_byAurora Team.pdb
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\WebsiteQuyetTien_byAurora Team.dll.config
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\EntityFramework.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\EntityFramework.SqlServer.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\Newtonsoft.Json.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Helpers.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Mvc.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Razor.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.WebPages.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\bin\Debug\System.Web.Optimization.xml
+E:\Work\Dự án Quyết Tiến\Project\WebsiteQuyetTien_byAurora Team.Tests\obj\Debug\WebsiteQuyetTien_byAurora Team.Tests.csproj.CopyComplete

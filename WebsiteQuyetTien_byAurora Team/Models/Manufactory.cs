@@ -12,25 +12,18 @@ namespace WebsiteQuyetTien_byAurora_Team.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CashBill
+    public partial class Manufactory
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CashBill()
+        public Manufactory()
         {
-            this.CashBillDetails = new HashSet<CashBillDetail>();
+            this.Products = new HashSet<Product>();
         }
     
         public int ID { get; set; }
-        public string BillCode { get; set; }
-        public string CustomerName { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Address { get; set; }
-        public System.DateTime Date { get; set; }
-        public string Shipper { get; set; }
-        public string Note { get; set; }
-        public int GrandTotal { get; set; }
+        public string ManufactoryName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CashBillDetail> CashBillDetails { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }
