@@ -282,7 +282,6 @@ C:\Users\Callous - Rot\Desktop\test\WebsiteQuyetTien_byAurora Team\obj\Debug\Web
 C:\Users\Callous - Rot\Desktop\test\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csproj.CopyComplete
 C:\Users\Callous - Rot\Desktop\test\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.dll
 C:\Users\Callous - Rot\Desktop\test\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.pdb
-C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csprojAssemblyReference.cache
 D:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\ApplicationInsights.config
 D:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\WebsiteQuyetTien_byAurora Team.dll.config
 D:\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\WebsiteQuyetTien_byAurora Team.dll
@@ -663,3 +662,4 @@ E:\Work\Dự án Quyết Tiến\ProjectFinal\WebsiteQuyetTien_byAurora Team\obj\
 E:\Work\Dự án Quyết Tiến\ProjectFinal\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csproj.CopyComplete
 E:\Work\Dự án Quyết Tiến\ProjectFinal\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.dll
 E:\Work\Dự án Quyết Tiến\ProjectFinal\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.pdb
+C:\Users\HUY TRIEU\Source\Repos\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csprojAssemblyReference.cache

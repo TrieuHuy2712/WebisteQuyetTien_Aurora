@@ -30,25 +30,6 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         {
             db.Configuration.ProxyCreationEnabled = false;
 
-            //var students = db.Products.Join(
-            //db.ProductTypes,
-            //s => s.ProductTypeID,
-            //c => c.ID,
-            //(s, c) => new
-            //{
-            //    s.ID,
-            //    s.ProductCode,
-            //    s.ProductName,
-            //    s.OriginPrice,
-            //    s.InstallmentPrice,
-            //    s.Quantity,
-            //    s.SalePrice,
-            //    s.Status,
-            //    s.ProductTypeID,
-            //    c.ProductTypeName,
-
-            //}).Where(s=>s.Status==true).OrderByDescending(x=>x.ID).ToList();
-
             var products = db.Products.Select(p => new
             {
                 p.ID,
@@ -120,8 +101,24 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         public ActionResult GetById(int id)
         {
             db.Configuration.ProxyCreationEnabled = false;
-            var product = db.Products.Where(x => x.ID == id).FirstOrDefault();
-            return Json(product, JsonRequestBehavior.AllowGet);
+            var model = db.Products.Where(x => x.ID == id).Select(p => new
+            {
+                p.ID,
+                p.ProductCode,
+                p.ProductName,
+                p.SalePrice,
+                p.Quantity,
+                p.OriginPrice,
+                p.Description,
+                p.ManufactoryID,
+                p.InstallmentPrice,
+                p.ProductTypeID,
+                p.Status,
+                p.Avatar,
+                p.ProductType.ProductTypeName,
+                p.Manufactory.ManufactoryName
+            }).FirstOrDefault();
+            return Json(model, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]

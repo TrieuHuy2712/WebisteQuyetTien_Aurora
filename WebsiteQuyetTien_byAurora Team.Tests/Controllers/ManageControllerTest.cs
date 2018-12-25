@@ -23,7 +23,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Tests.Controllers
             var count = 0;
             foreach (var item in list)
                 count++;
-            Assert.AreEqual(db.Products.Count(), count);
+            Assert.AreEqual(db.Products.Where(x=>x.Status==true).Count(), count);
         }
 
         [TestMethod]
@@ -32,9 +32,32 @@ namespace WebsiteQuyetTien_byAurora_Team.Tests.Controllers
             var db = new DmQT08Entities();
             var controller = new ManageController();
             var result = controller.getProductType() as JsonResult;
+           
+                        Assert.IsNotNull(result);
+            var list = result.Data as IEnumerable;
+            var count = 0;
+            foreach (var item in list)
+            {
+                count++;
+            }
+            Assert.AreEqual(db.ProductTypes.Count(), count);
+        }
+        [TestMethod]
+        public void TestManufacturer()
+        {
+
+            var db = new DmQT08Entities();
+            var controller = new ManageController();
+            var result = controller.getManufacture() as JsonResult;
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(JsonConvert.SerializeObject(db.ProductTypes.Count()), JsonConvert.SerializeObject(result.Data));
+            var list = result.Data as IEnumerable;
+            var count = 0;
+            foreach (var item in list)
+            {
+                count++;
+            }
+            Assert.AreEqual(db.ProductTypes.Count(), count);
         }
 
         [TestMethod]
@@ -53,13 +76,16 @@ namespace WebsiteQuyetTien_byAurora_Team.Tests.Controllers
                 SalePrice = model.SalePrice,
                 Quantity = model.Quantity,
                 OriginPrice = model.OriginPrice,
+                Description = model.Description,
+                ManufactoryID = model.ManufactoryID,
                 InstallmentPrice = model.InstallmentPrice,
                 ProductTypeID = model.ProductTypeID,
+                
                 Status = model.Status,
                 Avatar= model.Avatar,
-                CashBillDetails= model.CashBillDetails.Select(d => d.ProductID).ToArray(),
-                InstallmentBillDetails= model.InstallmentBillDetails.Select(d => d.ProductID).ToArray(),
-                ProductTypeName = model.ProductType.ProductTypeName
+                ProductTypeName = model.ProductType.ProductTypeName,
+                ManufactoryName = model.Manufactory.ManufactoryName,
+                
                
 
             }), JsonConvert.SerializeObject(result.Data));

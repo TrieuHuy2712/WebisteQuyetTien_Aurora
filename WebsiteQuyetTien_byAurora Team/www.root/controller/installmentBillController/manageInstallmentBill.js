@@ -105,6 +105,7 @@ $('#btn-add-product_insEdit').on('click', function () {
     getAllProduct(render);
 });
 $("#btnCreateIns").on('click', function () {
+    resetInsBill();
     $('#modal-edit-installment').modal('show');
     getCustomerName();
 });
@@ -233,9 +234,6 @@ $('body').on('change', '#dropdownIns', function () {
     });
 });
 
-$('body').on('change', 'select#txtCustomerName_InsEdit', function () {
-    alert($(this).val());
-});
 $('body').on('keyup', '#txtQuantityProduct_Ins', function (event) {
     if (event.which >= 37 && event.which <= 40) return;
 
@@ -258,6 +256,8 @@ $('body').on('click', '#btnInsCreateNew', function () {
     var period = $('#txtPeriod_InsEdit').val();
     var taken = $('#txtTaken_InsEdit').val();
     var remain = $('#txtRemain_InsEdit').val();
+    period = period.replace(/\,/g, '');
+    period = parseInt(period, 10);
     grandTotal = grandTotal.replace(/\,/g, '');
     grandTotal = parseInt(grandTotal, 10);
 
@@ -267,69 +267,71 @@ $('body').on('click', '#btnInsCreateNew', function () {
     remain = remain.replace(/\,/g, '');
     remain = parseInt(remain, 10);
     var productBill = [];
-    $('#table-product1 tr').each(function (i, item) {
-        var attributeId = $(this).data('id');
-        var keyID = $(this).data('key');
+    if (checkBillValidation() == true) {
+        $('#table-product1 tr').each(function (i, item) {
+            var attributeId = $(this).data('id');
+            var keyID = $(this).data('key');
 
-        if (attributeId != "") {
-            var sale = $(item).find('#txtSalePriceProduct_Ins').first().val();
-            sale = sale.replace(/\,/g, '');
-            sale = parseInt(sale, 10);
-            var quantity1 = $(item).find('#txtQuantityProduct_Ins').first().val();
-            quantity1 = quantity1.replace(/\,/g, '');
-            quantity1 = parseInt(quantity1, 10);
+            if (attributeId != "") {
+                var sale = $(item).find('#txtSalePriceProduct_Ins').first().val();
+                sale = sale.replace(/\,/g, '');
+                sale = parseInt(sale, 10);
+                var quantity1 = $(item).find('#txtQuantityProduct_Ins').first().val();
+                quantity1 = quantity1.replace(/\,/g, '');
+                quantity1 = parseInt(quantity1, 10);
 
-            var obj = {
-                ID: keyID,
-                BillID: curInsBill,
-                ProductID: attributeId,
-                Quantity: quantity1,
-                InstallmentPrice: sale
-            };
-            if (obj.ProductID != null)
-                productBill.push(obj);
-        }
-    });
-    var data = {
-        ID: curInsBill,
-        BillCode: bill,
-        CustomerID: customer,
-        Shipper: shipper,
-        Note: note,
-        GrandTotal: grandTotal,
-        Method: method,
-        Period: period,
-        Taken: taken,
-        Remain: remain,
-        InstallmentBillDetails: productBill
-    };
-    $.ajax({
-        type: "POST",
-        url: "/ManageInstallmentBill/SaveEntity",
-        data: data,
-        dataType: "json",
-        beforeSend: function () {
-            general.startLoading();
-        },
-        success: function (response) {
-            $('body').removeClass('modal-open');
-            $('.modal-backdrop').remove();
-            $('#modal-edit-installment').modal('hide');
-            general.stopLoading();
-            console.log(response);
-            general.notify("Lưu thành công", "success");
-            LoadInstallmentBill();
-        },
-        error: function (request, error) {
-            console.log(error);
-            $('#modal-edit-installment').modal('hide');
-            $('.modal-backdrop').remove();
-            LoadInstallmentBill();
-            console.log("Có lỗi trong khi ghi");
-            general.notify("Lưu thành công", "error");
-            general.stopLoading();
-        }
-    });
+                var obj = {
+                    ID: keyID,
+                    BillID: curInsBill,
+                    ProductID: attributeId,
+                    Quantity: quantity1,
+                    InstallmentPrice: sale
+                };
+                if (obj.ProductID != null)
+                    productBill.push(obj);
+            }
+        });
+        var data = {
+            ID: curInsBill,
+            BillCode: bill,
+            CustomerID: customer,
+            Shipper: shipper,
+            Note: note,
+            GrandTotal: grandTotal,
+            Method: method,
+            Period: period,
+            Taken: taken,
+            Remain: remain,
+            InstallmentBillDetails: productBill
+        };
+        $.ajax({
+            type: "POST",
+            url: "/ManageInstallmentBill/SaveEntity",
+            data: data,
+            dataType: "json",
+            beforeSend: function () {
+                general.startLoading();
+            },
+            success: function (response) {
+                $('body').removeClass('modal-open');
+                $('.modal-backdrop').remove();
+                $('#modal-edit-installment').modal('hide');
+                general.stopLoading();
+                console.log(response);
+                general.notify("Lưu thành công", "success");
+                LoadInstallmentBill();
+            },
+            error: function (request, error) {
+                console.log(error);
+                $('#modal-edit-installment').modal('hide');
+                $('.modal-backdrop').remove();
+                LoadInstallmentBill();
+                console.log("Có lỗi trong khi ghi");
+                general.notify("Lưu thành công", "error");
+                general.stopLoading();
+            }
+        });
+    }
 });
 //Set event onkeyup
 $('body').on('keyup', '#txtTaken_InsEdit', function (event) {
@@ -352,3 +354,89 @@ $('body').on('keyup', '#txtRemain_InsEdit', function (event) {
             ;
     });
 });
+$('body').on('keyup', '#txtPeriod_InsEdit', function (event) {
+    if (event.which >= 37 && event.which <= 40) return;
+
+    $(this).val(function (index, value) {
+        return value
+            .replace(/\D/g, "")
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+            ;
+    });
+});
+function resetInsBill() {
+    $('#txtBillCode_InsEdit').val('');
+    $('#txtCustomerName_InsEdit').val('');
+    $('#txtNote_InsEdit').val('');
+    $('#txtGrandTotal_InsEdit').val('');
+    $('#txtDate_InsEdit').val('');
+    $('#txtShipper_InsEdit').val('');
+    $('#dropdown_method').val('');
+    $('#txtPeriod_InsEdit').val('');
+    $('#txtTaken_InsEdit').val('');
+    $('#txtRemain_InsEdit').val('');
+    $('#table-product1 tr').each(function () { $(this).remove(); });
+    resetValidate();
+    stt = 1;
+}
+function checkBillValidation() {
+    var countErr = 0;
+    if ($("#txtCustomerName_InsEdit").val() == "" || $("#txtCustomerName_InsEdit").val() == null) {
+        $('#validateCustomerNameIns').text("Tên khách hàng không được bỏ trống");
+        countErr++;
+    }
+    if ($("#txtPeriod_InsEdit").val() == "" || $("#txtPeriod_InsEdit").val() == null) {
+        $('#validatePeriodEdit').text("Thời hạn trả không được bỏ trống");
+        countErr++;
+    }
+    if ($("#txtTaken_InsEdit").val() == "" || $("#txtTaken_InsEdit").val() == null) {
+        $('#validateTakenEdit').text("Taken không được bỏ trống");
+        countErr++;
+    }
+    if ($("#txtRemain_InsEdit").val() == "" || $("#txtRemain_InsEdit").val() == null) {
+        $('#validateRemainnEdit').text("Remain không được bỏ trống");
+        countErr++;
+    }
+
+    if ($('#txtQuantityProduct_Ins').val() == "" || $('#txtQuantityProduct_Ins').val() == null || $('#txtQuantityProduct_Ins').val() == 0) {
+        $('#validateQuantityIns').text('Số lượng không được bỏ trống');
+        countErr++;
+    }
+    if ($('#dropdownInst').val() == 0) {
+        $('#validatedropdownIns').text("Vui lòng chọn sản phẩm");
+        countErr++;
+    }
+    if (countErr > 0) {
+        return false;
+    }
+    return true;
+}
+
+function resetValidate() {
+    $('#txtCustomerName_InsEdit').text("");
+    $('#validatePeriodEdit').text("");
+    $('#validateTakenEdit').text("");
+    $('#validateRemainnEdit').text("");
+    $('#validateQuantityIns').text("");
+    $('#validatedropdown').text("");
+}
+
+$('#txtCustomerName_InsEdit').on('change', function () {
+    $('#validateCustomerName').text('');
+});
+$('#txtPeriod_InsEdit').on('keyup', function () {
+    $('#validatePeriodEdit').text('');
+});
+$('#txtTaken_InsEdit').on('keyup', function () {
+    $('#validateTakenEdit').text('');
+});
+$('#txtRemain_InsEdit').on('keyup', function () {
+    $('#validateRemainEdit').text('');
+});
+$('#dropdownInst').on('change', function () {
+    $(this).closest('#validatedropdownIns').text('');
+});
+$('#txtQuantityProduct_Ins').on('keyup', function () {
+    $(this).closest('#validateQuantityIns').text('');
+});
+
