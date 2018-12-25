@@ -44,7 +44,7 @@ CKEDITOR.editorConfig = function( config ) {
 
     config.filebrowserImageUploadUrl = "/Upload/UploadImageForCKEditor?type=Images&responseType=json&_token="
     // Define changes to default configuration here. For example:
-    config.language = 'en';
+    config.language = 'vi';
     // config.uiColor = '#AADC6E';
    
 };
