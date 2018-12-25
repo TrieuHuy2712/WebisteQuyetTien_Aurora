@@ -163,6 +163,7 @@
     <Compile Include="Controllers\ManageCashBillController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageInstallmentBillController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -6904,6 +6905,8 @@
     <Content Include="Views\Shared\HeaderUserLayoutPartial.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />
     <Content Include="Views\Home\MenuPartial.cshtml" />
+    <Content Include="Views\Product\ViewListProductWithType.cshtml" />
+    <Content Include="Views\Product\CategoryPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,68 @@
+﻿@using WebsiteQuyetTien_byAurora_Team.Models;
+@model IEnumerable<Product>
+@{
+    ViewBag.Title = "ViewListProductWithType";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="all">
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- breadcrumb-->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                            <li aria-current="page" class="breadcrumb-item active">@ViewBag.ProductType.ProductTypeName</li>
+                        </ol>
+                    </nav>
+                </div>
+                @*Doanh mục loại sản phẩm*@
+                @Html.Action("CategoryPartial","Product")
+                <div class="col-lg-9">
+                    <div class="box">
+                        <h1>@ViewBag.ProductType.ProductTypeName</h1>
+                        <p>Hiển thị danh sách tất cả các sản phẩm cho @ViewBag.ProductType.ProductTypeName</p>
+                    </div>
+                    <div class="box info-bar">
+                        <div class="row">
+                            @*Hiển thị số sản phẩm theo loại*@
+                            <div class="col-md-12 col-lg-4 products-showing">Có <strong>@Model.Count()</strong> sản phẩm</div>
+                            <div class="col-md-12 col-lg-7 products-number-sort">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row products">
+                        @foreach (var item in Model.OrderByDescending(n => n.ID))
+                        {
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front"><a href="detail.html"><img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt="" class="img-fluid" style="height:339px"></a></div>
+                                        <div class="back"><a href="detail.html"><img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt="" class="img-fluid" style="height:339px"></a></div>
+                                    </div>
+                                </div><a href="detail.html" class="invisible"><img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt="" class="img-fluid" style="height:339px"></a>
+                                <div class="text">
+                                    <h3><a href="detail.html">@item.ProductName</a></h3>
+                                    <p class="price">
+                                        <del></del>@item.SalePrice.ToString("#,##") VNĐ
+                                    </p>
+                                    <p class="buttons"><a href="detail.html" class="btn btn-outline-secondary">Xem Chi Tiết</a></p>
+                                </div>
+                                <!-- /.text-->
+                            </div>
+                            <!-- /.product            -->
+                        </div>
+                        }
+
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

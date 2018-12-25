@@ -11,13 +11,13 @@
                 @if (groupItem.Key != null)
                 {
                     
-                    <h5>@groupItem.Key.ProductTypeName</h5>
+                    <h5><a href="@Url.Action("ViewListProductWithType","Product",new { @ProductTypeID = groupItem.Key.ID })" class="nav-link">@groupItem.Key.ProductTypeName</a></h5>
                     <ul class="list-unstyled mb-3">
                         @foreach (var item in groupItem.GroupBy(n => n.Manufactory))
                         {
                             if (item.Key != null)
                             {
-                                <li class="nav-item"><a href="category.html" class="nav-link">@item.Key.ManufactoryName</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">@item.Key.ManufactoryName</a></li>
                             }
 
                         }
