@@ -23,7 +23,7 @@
                         <ul class="list-unstyled">
                             @foreach (var item in groupItem.GroupBy(n => n.Manufactory))
                             {
-                                <li><a href="category.html" class="nav-link">@item.Key.ManufactoryName</a></li>
+                                <li><a href="@Url.Action("ViewListProductWithManufactor","Product",new { @ProductTypeID = groupItem.Key.ID, @ManufactoryID = item.Key.ID })" class="nav-link">@item.Key.ManufactoryName</a></li>
                             }
                         </ul>
                     </li>

@@ -26,7 +26,26 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             }
             return RedirectToAction("Error", "Home");
         }
-        //Cột thể loại sản phẩm
+
+        //Xem danh sách sản phẩm đươc xếp theo nhà sản xuất
+        public ActionResult ViewListProductWithManufactor(int? ProductTypeID, int? ManufactoryID)
+        {
+            //lấy ra danh sách các sản phẩm theo loại sản phẩm được yêu cầu và theo đúng nhà sản xuất
+            var lstProductOfType = db.Products.Where(n => n.ProductTypeID == ProductTypeID && n.Status == true && n.ManufactoryID == ManufactoryID);
+            var productType = db.ProductTypes.SingleOrDefault(n => n.ID == ProductTypeID);
+            var productManu = db.Manufactories.SingleOrDefault(n => n.ID == ManufactoryID);
+            
+            //Kiểm tra có tồn tại nhà sản xuất đó không
+            if (productType != null && productManu != null)
+            {
+                ViewBag.ProductType = productType;
+                ViewBag.productManu = productManu;
+                return View(lstProductOfType);
+            }
+            return RedirectToAction("Error", "Home");
+        }
+
+        //Cột thể loại sản phẩm Partial
         public ActionResult CategoryPartial()
         {
             var lstProduct = db.Products.Where(n=>n.Status==true);
