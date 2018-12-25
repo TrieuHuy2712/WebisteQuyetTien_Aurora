@@ -57,8 +57,8 @@
                         <div class="header_top">
                             <div class="top_right">
                                 <ul>
-                                    <li><a href="#">Trang khách hàng</a></li>|
-                                    <li><a href="#">Hổ trợ kỹ thuật</a></li>|
+                                    <li><a href="@Url.Action("Index","Home")">Trang khách hàng</a></li>|
+                                    <li><a href="@Url.Action("Contactus","Home")">Hổ trợ kỹ thuật</a></li>|
                                 </ul>
                             </div>
                             <div class="top_left">
@@ -92,34 +92,34 @@
         <!--/sidebar-menu-->
         <div class="sidebar-menu">
             <header class="logo1">
-                <a href="index.html" class="logoQT"><img src="~/www.root/shared/admin_layout/Admin/images/logo.png" class="img-responsive" alt="" style="width: 125px; display: inline;"> </a>
+                <a href="@Url.Action("Index","Manage")" class="logoQT"><img src="~/www.root/shared/admin_layout/Admin/images/logo.png" class="img-responsive" alt="" style="width: 125px; display: inline;"> </a>
                 <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a>
             </header>
             <div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
             <div class="menu">
                 <ul id="menu">
-                    <li><a href="#"><i class="fas fa-home"></i> <span>Trang Chủ</span></a></li>
+                    <li><a href="@Url.Action("Index","Manage")"><i class="fas fa-home"></i> <span>Trang Chủ</span></a></li>
                     <li id="menu-academico">
-                        <a href="#"><i class="fa fa-table"></i> <span> Sản phẩm</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                        <a href="@Url.Action("Index","Manage")"><i class="fa fa-table"></i> <span> Sản phẩm</span> <span class="fa fa-angle-right" style="float: right"></span></a>
                         <ul id="menu-academico-sub">
-                            <li id="menu-academico-avaliacoes"><a href="#">Danh sách sản phẩm</a></li>
-                            <li id="menu-academico-boletim"><a href="#">Thêm sản phẩm</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="@Url.Action("Index","Manage")">Danh sách sản phẩm</a></li>
+                            <li id="menu-academico-boletim"><a href="@Url.Action("Index","Manage")">Thêm sản phẩm</a></li>
                         </ul>
                     </li>
                     <li id="menu-academico">
                         <a href="#"><i class="fas fa-money-bill"></i> <span> Hóa đơn tiền mặt</span> <span class="fa fa-angle-right" style="float: right"></span></a>
                         <ul id="menu-academico-sub">
-                            <li id="menu-academico-avaliacoes"><a href="#">Danh sách hóa đơn tiền mặt</a></li>
-                            <li id="menu-academico-boletim"><a href="#">Thêm hóa đơn tiền mặt</a></li>
-                            <li id="menu-academico-boletim"><a href="#">In hóa đơn tiền mặt</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="@Url.Action("Index","ManageCashBill")">Danh sách hóa đơn tiền mặt</a></li>
+                            <li id="menu-academico-boletim"><a href="@Url.Action("Index","ManageCashBill")">Thêm hóa đơn tiền mặt</a></li>
+                            <li id="menu-academico-boletim"><a href="@Url.Action("Index","ManageCashBill")">In hóa đơn tiền mặt</a></li>
                         </ul>
                     </li>
                     <li id="menu-academico">
                         <a href="#"><i class="lnr lnr-book"></i> <span> Hóa đơn trả góp</span> <span class="fa fa-angle-right" style="float: right"></span></a>
                         <ul id="menu-academico-sub">
-                            <li id="menu-academico-avaliacoes"><a href="#">Danh sách hóa đơn trả góp</a></li>
-                            <li id="menu-academico-boletim"><a href="#">Thêm hóa đơn trả góp</a></li>
-                            <li id="menu-academico-boletim"><a href="#">In hóa đơn trả góp</a></li>
+                            <li id="menu-academico-avaliacoes"><a href="@Url.Action("Index","ManageInstallmentBill")">Danh sách hóa đơn trả góp</a></li>
+                            <li id="menu-academico-boletim"><a href="@Url.Action("Index","ManageInstallmentBill")">Thêm hóa đơn trả góp</a></li>
+                            <li id="menu-academico-boletim"><a href="@Url.Action("Index","ManageInstallmentBill")">In hóa đơn trả góp</a></li>
                         </ul>
                     </li>
                     <li id="menu-academico"><a href="sunglasses.html"><i class="fas fa-gift"></i> <span>Quản lý khuyến Mãi</span></a></li>
