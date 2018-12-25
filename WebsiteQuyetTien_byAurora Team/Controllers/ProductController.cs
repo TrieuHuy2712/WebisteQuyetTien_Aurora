@@ -11,11 +11,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
     public class ProductController : Controller
     {
         public DmQT08Entities db = new DmQT08Entities();
-        // GET: Product
-        public ActionResult Index()
-        {
-            return View();
-        }
+
         //Xem danh sách sản phẩm theo loại sản phẩm
         public ActionResult ViewListProductWithType(int? ProductTypeID)
         {
@@ -33,7 +29,8 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         //Cột thể loại sản phẩm
         public ActionResult CategoryPartial()
         {
-            return PartialView();
+            var lstProduct = db.Products.Where(n=>n.Status==true);
+            return PartialView(lstProduct);
         }
     }
 }
