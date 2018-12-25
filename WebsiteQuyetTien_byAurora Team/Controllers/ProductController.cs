@@ -62,5 +62,11 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             var lstProduct = db.Products.Where(n=>n.Status==true);
             return PartialView(lstProduct);
         }
+        //Hiển thị top sản phẩm bán chạy nhất
+        public ActionResult ShowTopSale()
+        {
+            var sale = db.CashBillDetails.Where(n=>n.Product.Status==true).OrderByDescending(n=>n.Quantity);
+            return PartialView(sale);
+        }
     }
 }

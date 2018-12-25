@@ -1,0 +1,42 @@
+﻿@using WebsiteQuyetTien_byAurora_Team.Models;
+@model IEnumerable<CashBillDetail>
+
+@foreach (var item in Model)
+{
+    <div class="item">
+        <div class="product">
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="front">
+                        <a href="@Url.Action("ViewDetail","Product",new {@ID = item.ProductID })">
+                            <img src="@Url.Content("~/www.root/Img/"+item.Product.ID+".png")" alt=""
+                                 class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="back">
+                        <a href="@Url.Action("ViewDetail","Product",new {@ID = item.ProductID })">
+                            <img src="@Url.Content("~/www.root/Img/"+item.Product.ID+".png")" alt=""
+                                 class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a href="@Url.Action("ViewDetail","Product",new {@ID = item.ProductID })" class="invisible">
+                <img src="@Url.Content("~/www.root/Img/"+item.Product.ID+".png")" alt=""
+                     class="img-fluid">
+            </a>
+            <div class="text">
+                <h3><a href="@Url.Action("ViewDetail","Product",new {@ID = item.ProductID })">@item.Product.ProductName</a></h3>
+                <p class="price">
+                    <del></del>
+                    @item.Product.SalePrice.ToString("#,##") VNĐ
+                </p>
+            </div>
+            <div class="ribbon sale">
+                <div class="theribbon">Góp 0%</div>
+                <div class="ribbon-background"></div>
+            </div>
+        </div>
+    </div>
+}
+
