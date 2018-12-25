@@ -40,16 +40,16 @@
                             <div class="product">
                                 <div class="flip-container">
                                     <div class="flipper">
-                                        <div class="front"><a href="detail.html"><img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt="" class="img-fluid" style="height:339px"></a></div>
-                                        <div class="back"><a href="detail.html"><img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt="" class="img-fluid" style="height:339px"></a></div>
+                                        <div class="front"><a href="@Url.Action("ViewDetail","Product",new {@ID = item.ID })"><img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt="" class="img-fluid" style="height:339px"></a></div>
+                                        <div class="back"><a href="@Url.Action("ViewDetail","Product",new {@ID = item.ID })"><img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt="" class="img-fluid" style="height:339px"></a></div>
                                     </div>
-                                </div><a href="detail.html" class="invisible"><img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt="" class="img-fluid" style="height:339px"></a>
+                                </div><a href="@Url.Action("ViewDetail","Product",new {@ID = item.ID })" class="invisible"><img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt="" class="img-fluid" style="height:339px"></a>
                                 <div class="text">
-                                    <h3><a href="detail.html">@item.ProductName</a></h3>
+                                    <h3><a href="@Url.Action("ViewDetail","Product",new {@ID = item.ID })">@item.ProductName</a></h3>
                                     <p class="price">
                                         <del></del>@item.SalePrice.ToString("#,##") VNĐ
                                     </p>
-                                    <p class="buttons"><a href="detail.html" class="btn btn-outline-secondary">Xem Chi Tiết</a></p>
+                                    <p class="buttons"><a href="@Url.Action("ViewDetail","Product",new {@ID = item.ID })" class="btn btn-outline-secondary">Xem Chi Tiết</a></p>
                                 </div>
                                 <!-- /.text-->
                             </div>

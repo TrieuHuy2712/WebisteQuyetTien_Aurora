@@ -1,0 +1,58 @@
+﻿@using WebsiteQuyetTien_byAurora_Team.Models;
+@model Product
+@{
+    ViewBag.Title = "ViewDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="all">
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- breadcrumb-->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                            <li class="breadcrumb-item"><a href="@Url.Action("ViewListProductWithType","Product",new { @ProductTypeID = Model.ProductTypeID})">@Model.ProductType.ProductTypeName</a></li>
+                            <li class="breadcrumb-item"><a href="@Url.Action("ViewListProductWithManufactor","Product",new { @ProductTypeID = Model.ProductTypeID, @ManufactoryID = Model.ManufactoryID})">@Model.Manufactory.ManufactoryName</a></li>
+                            <li aria-current="page" class="breadcrumb-item active">@Model.ProductName</li>
+                        </ol>
+                    </nav>
+                </div>
+                @Html.Action("CategoryPartial", "Product")
+                <div class="col-lg-9">
+                    <div id="productMain" class="row">
+                        <div class="col-md-6">
+                            <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
+                                <div class="item"><img src="@Url.Content("~/www.root/Img/"+Model.ID+".png")" alt="" class="img-fluid"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="box">
+                                <h1 class="text-center">@Model.ProductName</h1>
+                                <p class="goToDescription">
+                                    <a href="#details" class="scroll-to">
+                                        Nhấp vào để cuộn tới chi tiết
+                                        sản phẩm
+                                    </a>
+                                </p>
+                                <p class="price">@Model.SalePrice.ToString("#,##") VNĐ</p>
+                            </div>
+                            <div data-slider-id="1" class="owl-thumbs">
+                                <button class="owl-thumb-item">
+                                    <img src="@Url.Content("~/www.root/Img/"+Model.ID+".png")" alt="" class="img-fluid">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="details" class="box">
+                        <p>@Html.Raw(Model.Description)</p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
