@@ -20,7 +20,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         public ActionResult ViewListProductWithType(int? ProductTypeID)
         {
             //lấy ra danh sách các sản phẩm theo loại sản phẩm được yêu cầu
-            var lstProductOfType = db.Products.Where(n => n.ProductTypeID == ProductTypeID);
+            var lstProductOfType = db.Products.Where(n => n.ProductTypeID == ProductTypeID && n.Status == true);
             var productType = db.ProductTypes.SingleOrDefault(n => n.ID == ProductTypeID);
             //Kiểm tra có tồn tại loại sản phẩm đó không
             if (productType != null)
