@@ -55,7 +55,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         }
 
 
-        //Menu droplist danh sách sản phẩm hiển thị theo loại sản phẩm và nhà cung cấp hihi
+        //Menu droplist danh sách sản phẩm hiển thị theo loại sản phẩm và nhà cung cấp
         public ActionResult MenuPartial()
         {
             var listPro = db.Products.Where(n=>n.Status==true);
