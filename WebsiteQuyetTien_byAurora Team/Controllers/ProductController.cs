@@ -45,6 +45,17 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             return RedirectToAction("Error", "Home");
         }
 
+        //Trang xem chi tiết sản phẩm
+        public ActionResult ViewDetail(int? ID)
+        {
+            var pro = db.Products.SingleOrDefault(n => n.ID == ID && n.Status == true);
+            if(pro != null)
+            {
+                return View(pro);
+            }
+            return RedirectToAction("Error", "Home");
+        }
+
         //Cột thể loại sản phẩm Partial
         public ActionResult CategoryPartial()
         {
