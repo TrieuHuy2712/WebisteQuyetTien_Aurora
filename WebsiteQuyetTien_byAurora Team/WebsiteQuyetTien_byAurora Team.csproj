@@ -6909,6 +6909,7 @@
     <Content Include="Views\Product\CategoryPartial.cshtml" />
     <Content Include="Views\Product\ViewListProductWithManufactor.cshtml" />
     <Content Include="Views\Product\ViewDetail.cshtml" />
+    <Content Include="Views\Product\ShowTopSale.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

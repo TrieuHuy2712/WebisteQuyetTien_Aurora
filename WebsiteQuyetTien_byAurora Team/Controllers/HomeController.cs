@@ -14,7 +14,13 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         //Giao diện chính
         public ActionResult Index()
         {
-            return View();
+
+            //Lây ra danh sách 8 sản phẩm bán chạy nhất
+            var lstProBestSale = db.CashBillDetails.OrderByDescending(n => n.Quantity).GroupBy(n => n.ProductID);
+            ViewBag.lstProBestSale = lstProBestSale;
+            //Lấy danh sách 8 sản phẩm mới nhất
+            var lstProNew = db.Products.Where(n=>n.Status==true).OrderByDescending(n=>n.ID);
+            return View(lstProNew);
         }
         //Giao diện về chúng tôi
         public ActionResult About()
@@ -49,7 +55,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         }
 
 
-        //Menu droplist danh sách sản phẩm hiển thị theo loại sản phẩm và nhà cung cấp hihi
+        //Menu droplist danh sách sản phẩm hiển thị theo loại sản phẩm và nhà cung cấp
         public ActionResult MenuPartial()
         {
             var listPro = db.Products.Where(n=>n.Status==true);
