@@ -27,73 +27,8 @@
                             Sản
                             phẩm<b class="caret"></b>
                         </a>
-                        <ul class="dropdown-menu megamenu">
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-6 col-lg-3">
-                                        <h5>Tivi</h5>
-                                        <ul class="list-unstyled mb-3">
-                                            <li class="nav-item"><a href="category.html" class="nav-link">LG</a></li>
-                                            <li class="nav-item"><a href="category.html" class="nav-link">TCL</a></li>
-                                            <li class="nav-item"><a href="category.html" class="nav-link">Sony</a></li>
-                                            <li class="nav-item">
-                                                <a href="category.html" class="nav-link">Samsung</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <h5>Điện thoại</h5>
-                                        <ul class="list-unstyled mb-3">
-                                            <li class="nav-item">
-                                                <a href="category.html" class="nav-link">Iphone</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="category.html" class="nav-link">Samsung</a>
-                                            </li>
-                                            <li class="nav-item"><a href="category.html" class="nav-link">HTC</a></li>
-                                            <li class="nav-item"><a href="category.html" class="nav-link">LG</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <h5>Máy Giặt</h5>
-                                        <ul class="list-unstyled mb-3">
-                                            <li class="nav-item">
-                                                <a href="category.html" class="nav-link">Toshiba</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="category.html" class="nav-link">Samsung</a>
-                                            </li>
-                                            <li class="nav-item"><a href="category.html" class="nav-link">LG</a></li>
-                                            <li class="nav-item">
-                                                <a href="category.html" class="nav-link">Panasonic</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="category.html" class="nav-link">Electrolux</a>
-                                            </li>
-                                            <li class="nav-item"><a href="category.html" class="nav-link">Sharp</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <h5>Máy Lạnh</h5>
-                                        <ul class="list-unstyled mb-3">
-                                            <li class="nav-item"><a href="category.html" class="nav-link">LG</a></li>
-                                            <li class="nav-item">
-                                                <a href="category.html" class="nav-link">Daikin</a>
-                                            </li>
-                                            <li class="nav-item"><a href="category.html" class="nav-link">Sharp</a></li>
-                                        </ul>
-                                        <h5>Lò vi sóng</h5>
-                                        <ul class="list-unstyled mb-3">
-                                            <li class="nav-item"><a href="category.html" class="nav-link">Sharp</a></li>
-                                            <li class="nav-item"><a href="category.html" class="nav-link">LG</a></li>
-                                            <li class="nav-item">
-                                                <a href="category.html" class="nav-link">Electrolux</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                        @Html.Action("MenuPartial","Home")
+                        
                     </li>
                     <li class="nav-item"><a href="@Url.Action("News","Home")" class="nav-link">Tin tức - Sự kiện</a></li>
                     <li class="nav-item"><a href="@Url.Action("About","Home")" class="nav-link">Về chúng tôi</a></li>

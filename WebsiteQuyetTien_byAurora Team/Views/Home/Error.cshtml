@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="all">
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- breadcrumb-->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                            <li aria-current="page" class="breadcrumb-item active">Không có trang được tìm</li>
+                        </ol>
+                    </nav>
+                    <div id="error-page" class="row">
+                        <div class="col-md-6 mx-auto">
+                            <div class="box text-center py-5">
+                                <p class="text-center"><img src="~/www.root/shared/user_layout/img/logo.png" alt="Logo Quyết Tiến"></p>
+                                <h3>Trang bạn tìm kiếm hiện tại không có!</h3>
+                                <h4 class="text-muted">Lỗi 404 - Không tìm thấy trang</h4>
+                                <p class="text-center">Vui lòng sử dụng <strong>Công cụ tìm kiếm</strong> hoặc <strong>Menu</strong> ở trên.</p>
+                                <p class="buttons"><a href="@Url.Action("Index","Home")" class="btn btn-primary"><i class="fa fa-home"></i> Về trang chủ</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

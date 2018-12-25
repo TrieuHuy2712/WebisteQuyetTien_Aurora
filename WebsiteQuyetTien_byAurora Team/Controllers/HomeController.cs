@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebsiteQuyetTien_byAurora_Team.Models;
 
 namespace WebsiteQuyetTien_byAurora_Team.Controllers
 {
     public class HomeController : Controller
     {
+        DmQT08Entities db = new DmQT08Entities();
         //Giao diện chính
         public ActionResult Index()
         {
@@ -33,6 +36,24 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         public ActionResult News()
         {
             return View();
+        }
+        //Giao diện tin tức sự kiện chi tiết
+        public ActionResult NewsDetail()
+        {
+            return View();
+        }
+        //Giao diện không tìm thấy trang
+        public ActionResult Error()
+        {
+            return View();
+        }
+
+
+        //Menu droplist danh sách sản phẩm hiển thị theo loại sản phẩm và nhà cung cấp
+        public ActionResult MenuPartial()
+        {
+            var listPro = db.Products;
+            return PartialView(listPro);
         }
     }
 }
