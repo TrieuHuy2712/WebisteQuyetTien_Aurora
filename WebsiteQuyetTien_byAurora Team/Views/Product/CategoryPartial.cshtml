@@ -1,0 +1,39 @@
+﻿@using WebsiteQuyetTien_byAurora_Team.Models;
+@model IEnumerable<Product>
+
+<div class="col-lg-3">
+    <!--
+    *** MENUS AND FILTERS ***
+    _________________________________________________________
+    -->
+    <div class="card sidebar-menu mb-4">
+        <div class="card-header">
+            <h3 class="h4 card-title">Loại sản phẩm</h3>
+        </div>
+        <div class="card-body">
+            <ul class="nav nav-pills flex-column category-menu">
+                @foreach (var groupItem in Model.GroupBy(n => n.ProductType))
+                {
+                    if (groupItem.Key != null)
+                    {
+                    <li>
+                        <a href="@Url.Action("ViewListProductWithType","Product",new { @ProductTypeID = groupItem.Key.ID})" class="nav-link">
+                            @groupItem.Key.ProductTypeName <span class="badge badge-secondary">@Model.Where(n=>n.ProductTypeID == groupItem.Key.ID).Count()</span>
+                        </a>
+                        <ul class="list-unstyled">
+                            @foreach (var item in groupItem.GroupBy(n => n.Manufactory))
+                            {
+                                <li><a href="@Url.Action("ViewListProductWithManufactor","Product",new { @ProductTypeID = groupItem.Key.ID, @ManufactoryID = item.Key.ID })" class="nav-link">@item.Key.ManufactoryName</a></li>
+                            }
+                        </ul>
+                    </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+    <!-- *** MENUS AND FILTERS END ***-->
+    <div class="banner">
+        <a href="#"><img src="~/www.root/shared/user_layout/img/banner.jpg" alt="sales 2014" class="img-fluid"></a>
+    </div>
+</div>
