@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="txtDate" class="col-sm-3 col-form-label">Ngày giao<span class="star">*</span></label>
+                <label for="txtDate" class="col-sm-3 col-form-label">Ngày lập hóa đơn<span class="star">*</span></label>
                 <div class="col-sm-3">
                     <input type="text" class="form-control" id="txtDate" name="txtDate" disabled>
                     <span id="validateDate" style="color:red"></span>
@@ -72,6 +72,11 @@
                         <tfoot>
                             <tr>
                                 <td colspan="6">
+                                    <span id="validateAdd" style="color:red"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6">
                                     <button class="btn btn-sm btn-success" type="button" id="btn-add-product">Thêm</button>
                                 </td>
                             </tr>
@@ -81,11 +86,13 @@
                     <script type="x-tmpl-mustache" id="template-table-product" class="template-table-product">
                         <tr data-id="{{ProductID}}" data-key="{{ID}}">
                             <td width="5%">{{STT}}</td>
-                            <td id="txtProductID-col" width="40%" >
-                                <select id="dropdownProduct" class="form-control select2"><option>Vui lòng chọn sản phẩm</option></select>
+                            <td id="txtProductID-col" width="40%">
+                                <select id="dropdownProduct" class="form-control select2"><option value="0">Vui lòng chọn sản phẩm</option></select>
+                                <span id="validatedropdown" style="color:red"></span>
                             </td>
                             <td id="txtQuantity-col">
-                                <input name="txtQuantityProduct" id="txtQuantityProduct" class="form-control" value="{{Quantity}}">
+                                <input name="txtQuantityProduct" id="txtQuantityProduct" class="form-control" value="0">
+                                <span id="validateCQuantity" style="color:red"></span>
                             </td>
                             <td id="txtSalePrice-col">
                                 <input name="txtSalePriceProduct" id="txtSalePriceProduct" class="form-control" value="{{SalePrice}}">
@@ -105,6 +112,7 @@
                             </td>
                             <td id="txtQuantity-col">
                                 <input name="txtQuantityProduct" id="txtQuantityProduct" class="form-control" value="{{Quantity}}">
+                                <span id="validateCQuantity" style="color:red"></span>
                             </td>
                             <td id="txtSalePrice-col">
                                 <input name="txtSalePriceProduct" id="txtSalePriceProduct" class="form-control" value="{{SalePrice}}" disabled>

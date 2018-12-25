@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     LoadData();
+
     CKEDITOR.replace('editorDescription');
 });
 var gIDProduct = 0;
@@ -14,7 +15,6 @@ $('body').on('click', '#btnCreate', function () {
     resetForm();
     getProductType();
     getManufacture();
-
 });
 //Thực hiện lưu hình ảnh và những thông tin mới
 $("#btnAttributeCreateNew").on('click', function () {
@@ -81,7 +81,6 @@ $("#btnAttributeCreateNew").on('click', function () {
                 general.stopLoading();
                 if ($("#txtUploadFile").get(0).files.length != 0) {
                     uploadImage(currentID);
-                    
                 }
                 LoadData();
                 general.notify("Load thành công", "success");
@@ -151,6 +150,7 @@ function resetForm() {
     $('#statusProduct').val('');
     $('#txtQuantity').val('');
     $('#HinhAnhSP').attr('src', "#");
+    CKEDITOR.instances.editorDescription.setData("");
 }
 ///Load Dữ liệu/////
 $('body').on('click', '.btn-edit', function (e) {
@@ -183,7 +183,7 @@ $('body').on('click', '.btn-edit', function (e) {
                 $('#material-dropdown').val('' + response.ProductTypeID + '').trigger('change.select2');
                 $('#manufacture-dropdown').val('' + response.ManufactoryID + '').trigger('change.select2');
                 CKEDITOR.instances.editorDescription.setData(response.Description);
-                $('#HinhAnhSP').attr('src', '/www.root/Img/' + response.ID + ".png?" + new Date().getTime()+'');
+                $('#HinhAnhSP').attr('src', '/www.root/Img/' + response.ID + ".png?" + new Date().getTime() + '');
                 if (response.Status == true) {
                     $('#statusProduct').val("1");
                 } else if (response.Status == false) {
@@ -245,8 +245,6 @@ function uploadImage(currID) {
         data: formData,
         success: function (urlImage) {
             console.log("Lưu thành công");
-            
-            
         },
         error: function (err) {
             alert("Có lỗi khi upload: " + err.statusText);
@@ -349,7 +347,7 @@ function LoadData() {
                 //stateSave: true,
                 destroy: true,
                 retrieve: true,
-               
+
                 "language": {
                     "sProcessing": "Đang xử lý...",
                     "sLengthMenu": "Xem _MENU_ sản phẩm",
@@ -367,16 +365,15 @@ function LoadData() {
                         "sLast": "Cuối"
                     }
                 },
-               
             });
         },
-        
+
         error: function (ex) {
             console.log("Error");
         },
-        
     });
 }
+
 //Kiểm tra validation
 function checkValidation() {
     var countErr = 0;

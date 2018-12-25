@@ -63,7 +63,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
                 p.ManufactoryID,
                 p.ProductType.ProductTypeName,
                 p.Manufactory.ManufactoryName
-            }).Where(s=>s.Status==true).OrderByDescending(x=>x.ID).ToList();
+            }).Where(s => s.Status == true).OrderByDescending(x => x.ID).ToList();
 
             return Json(products, JsonRequestBehavior.AllowGet);
         }
@@ -123,6 +123,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             var product = db.Products.Where(x => x.ID == id).FirstOrDefault();
             return Json(product, JsonRequestBehavior.AllowGet);
         }
+
         [HttpGet]
         public ActionResult getManufacture()
         {
