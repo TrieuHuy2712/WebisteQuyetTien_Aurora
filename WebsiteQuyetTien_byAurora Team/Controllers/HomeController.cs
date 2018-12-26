@@ -63,10 +63,29 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         }
 
         //Tìm kiếm sản phẩm theo tên
-        public ActionResult Search()
+        public ActionResult Search(FormCollection f)
         {
-            var lstPro = db.Products.Where(n => n.Status == true);
-            return PartialView(lstPro);
+            var pro = f["searchKey"];
+            var lstpro = db.Products.Where(n => n.ProductName.Contains(pro) && n.Status==true);
+            if(lstpro != null)
+            {
+                if(lstpro.Count() == 1)
+                {
+                    var product = db.Products.SingleOrDefault(n => n.ProductName.Contains(pro) && n.Status == true);
+                    if (product != null)
+                    {
+                        return RedirectToAction("ViewDetail", "Product", new { @ID = product.ID });
+                    }
+                    return RedirectToAction("Error", "Home");
+                }
+                if(lstpro.Count() == 0)
+                {
+                    return RedirectToAction("Error", "Home");
+                }
+                ViewBag.searchKey = pro;
+                return View(lstpro);
+            }
+            return RedirectToAction("Error", "Home");
         }
 
         public JsonResult getProductName()
