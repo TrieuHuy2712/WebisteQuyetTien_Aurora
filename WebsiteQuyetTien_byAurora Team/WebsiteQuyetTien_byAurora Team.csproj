@@ -162,6 +162,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageCashBillController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManageCustomerController.cs" />
     <Compile Include="Controllers\ManageInstallmentBillController.cs" />
     <Compile Include="Controllers\ManageManufactureController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -212,6 +213,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ReceiptCashModel.cs" />
+    <Compile Include="Models\ReceiptInstallment.cs" />
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -249,6 +251,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="www.root\controller\cashBillController\Scripts\manageCashBill.js" />
+    <Content Include="www.root\controller\customerController\manageCustomer.js" />
     <Content Include="www.root\controller\homeController\homeQT.js" />
     <Content Include="www.root\controller\installmentBillController\manageInstallmentBill.js" />
     <Content Include="www.root\controller\loginController\css\style.css" />
@@ -6928,6 +6931,9 @@
     <Content Include="Views\ProductType\CRUDModal.cshtml" />
     <Content Include="Views\ManageManufacture\Index.cshtml" />
     <Content Include="Views\ManageManufacture\CRUDModal.cshtml" />
+    <Content Include="Views\ManageInstallmentBill\PrintBill.cshtml" />
+    <Content Include="Views\ManageCustomer\Index.cshtml" />
+    <Content Include="Views\ManageCustomer\CRUDModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

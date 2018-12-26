@@ -1,0 +1,47 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title"><span id="titleProduct">Thêm mới sản phẩm</span></h4>
+    <button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true">×</button>
+</div>
+<div class="modal-body">
+    <div id="horizontal-form">
+        <form class="form-horizontal" role="form" id="frmProduct" method="post" enctype="multipart/form-data">
+            <div class="form-group row">
+                <label for="txtProductCode" class="col-sm-3 col-form-label">Mã khách hàng<span class="star">*</span></label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="txtCustomerCode" name="txtCustomerCode" maxlength="12">
+                    <span id="validateCustomerCode" style="color:red"></span>
+                </div>
+                <label for="txtProductName" class="col-sm-3 col-form-label">Tên khách hàng<span class="star">*</span></label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="txtCustomerName" name="txtCustomerName" maxlength="100">
+                    <span id="validateCustomerName" style="color:red"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="material-dropdown" class="col-sm-3 col-form-label">Số điện thoại<span class="star">*</span></label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="txtPhoneNumber" name="txtPhoneNumber" maxlength="12">
+                    <span id="validatePhoneNumber" style="color:red"></span>
+                </div>
+                <label for="statusProduct" class="col-sm-3 col-form-label">Năm sinh<span class="star">*</span></label>
+                <div class="col-sm-3">
+                    <select id="dob-dropdown" class="form-control"></select>
+                    <span id="validatedob" style="color:red"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="txtOriginPrice" class="col-sm-3 col-form-label">Địa chỉ<span class="star">*</span></label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="txtCustomerAddress" name="txtCustomerAddress" maxlength="100">
+                    <span id="validateCustomerAddress" style="color:red"></span>
+               </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" id="btnCustomerCreateNew" class="btn btn-success">Ghi</button>
+                    <button type="button" id="btnAttributeCancel" data-dismiss="modal" class="btn btn-danger">Hủy</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

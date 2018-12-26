@@ -129,5 +129,30 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
                 }, JsonRequestBehavior.AllowGet);
             }
         }
+        public ActionResult PrintBill(int id)
+        {
+            var order = db.InstallmentBills.FirstOrDefault(o => o.ID == id);
+            if (order != null)
+            {
+                ReceiptInstallment rp = new ReceiptInstallment();
+                rp.BillCode = order.BillCode;
+                rp.CustomerID = order.CustomerID;
+                rp.Date = order.Date;
+                rp.GrandTotal = order.GrandTotal;
+                rp.Method = order.Method;
+                rp.Note = order.Note;
+                rp.Period = order.Period;
+                rp.Remain = order.Remain;
+                rp.Shipper = order.Shipper;
+                rp.Taken = order.Taken;
+                rp.Customer = order.Customer;
+                rp.InstallmentBillDetail = order.InstallmentBillDetails.ToList();
+                return View(rp);
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }
