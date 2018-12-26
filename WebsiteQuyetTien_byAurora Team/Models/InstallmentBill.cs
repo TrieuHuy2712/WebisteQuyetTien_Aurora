@@ -17,6 +17,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public InstallmentBill()
         {
+            Date = DateTime.Now;
             this.InstallmentBillDetails = new HashSet<InstallmentBillDetail>();
         }
     
