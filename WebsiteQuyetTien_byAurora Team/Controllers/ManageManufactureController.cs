@@ -1,17 +1,16 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Web.Mvc;
 using WebsiteQuyetTien_byAurora_Team.Models;
+using System.Net;
+using System.Data.Entity;
 
 namespace WebsiteQuyetTien_byAurora_Team.Controllers
 {
-    public class ProductTypeController : Controller
+    public class ManageManufactureController : Controller
     {
-        private DmQT08Entities db = new DmQT08Entities();
-
-        // GET: ProductType
+        DmQT08Entities db = new DmQT08Entities();
+        // GET: ManageManufacture
         public ActionResult Index()
         {
             return View();
@@ -20,29 +19,29 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         public ActionResult getTypeProduct()
         {
             db.Configuration.ProxyCreationEnabled = false;
-            var productType = db.ProductTypes.Select(p => new
+            var manu = db.Manufactories.Select(p => new
             {
                 p.ID,
-                p.ProductTypeCode,
-                p.ProductTypeName,
+                p.ManufactoryCode,
+                p.ManufactoryName
             }).OrderByDescending(x=>x.ID).ToList();
-            return Json(productType, JsonRequestBehavior.AllowGet);
+            return Json(manu, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
         public ActionResult getTypeID(int id)
         {
             db.Configuration.ProxyCreationEnabled = false;
-            var productType = db.ProductTypes.Where(x => x.ID == id).Select(p => new
+            var manu = db.Manufactories.Where(x => x.ID == id).Select(p => new
             {
-                p.ProductTypeCode,
-                p.ProductTypeName,
+                p.ManufactoryName,
+                p.ManufactoryCode
             }).FirstOrDefault();
-            return Json(productType, JsonRequestBehavior.AllowGet);
+            return Json(manu, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
-        public ActionResult SaveEntity(ProductType productType)
+        public ActionResult SaveEntity(Manufactory manufactory)
         {
             db.Configuration.ProxyCreationEnabled = false;
             if (!ModelState.IsValid)
@@ -52,16 +51,16 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             }
             else
             {
-                if (productType.ID == 0)
+                if (manufactory.ID == 0)
                 {
-                    db.ProductTypes.Add(productType);
+                    db.Manufactories.Add(manufactory);
                 }
                 else
                 {
-                    db.Entry(productType).State = EntityState.Modified;
+                    db.Entry(manufactory).State = EntityState.Modified;
                 }
                 db.SaveChanges();
-                return Json(productType, JsonRequestBehavior.AllowGet);
+                return Json(manufactory, JsonRequestBehavior.AllowGet);
             }
         }
     }

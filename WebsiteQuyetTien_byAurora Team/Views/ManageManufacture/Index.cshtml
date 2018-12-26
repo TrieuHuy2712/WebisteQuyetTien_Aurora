@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayput.cshtml";
+}
+
+<div class="monthly-grid">
+    <div class="form-group row">
+        <div class="progressbar-heading grids-heading col-sm-6">
+            <h2><strong>XEM DANH SÁCH CÁC HÃNG</strong></h2>
+        </div>
+
+        <div class="col-sm-6">
+            <a href="#" @*data-target="#modal-add-edit" data-toggle="modal"*@ class="btn btn-success pull-right" id="btnCreateManu"><i class="fas fa-plus"></i></a>
+        </div>
+    </div>
+    <div id="modal-manu-type" class=" modal fade modal-darkorange in" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                @Html.Partial("~/Views/ManageManufacture/CRUDModal.cshtml")
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered" id="myManuTable" style="width:100%">
+            <thead>
+                <tr>
+                    <th style="text-align:center; vertical-align:middle">Mã sản xuất</th>
+                    <th style="text-align:center; vertical-align:middle">Hãng sản xuất</th>
+                    <th style="text-align:center; vertical-align:middle">#</th>
+                </tr>
+            </thead>
+            <tbody id="tbl-manu-content"></tbody>
+        </table>
+    </div>
+
+    <script id="table-manu-template" type="x-tmpl-mustache">
+        <tr data-id="{{ID}}">
+            <td style="text-align:center; vertical-align:middle">{{ManuCode}}</td>
+            <td style="text-align:center; vertical-align:middle">{{ManuName}}</td>
+
+            <td scope="row" style="text-align:center; vertical-align:middle">
+                <button class="btn btn-default btn-sm btn-edit" data-id="{{ID}}"><i class="far fa-edit"></i></button>
+            </td>
+        </tr>
+    </script>
+</div>
+@section Scripts{
+
+    <script src="~/www.root/controller/manufactureController/manageManufacture.js" charset="utf-8"></script>
+}

@@ -84,6 +84,7 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ManufactoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Products" Relationship="Self.FK_Product_Manufactory" FromRole="Manufactory" ToRole="Product" />
+    <Property Name="ManufactoryCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -99,7 +100,7 @@
     <Property Name="Quantity" Type="Int32" Nullable="false" />
     <Property Name="Avatar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Status" Type="Boolean" />
-    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ManufactoryID" Type="Int32" />
     <NavigationProperty Name="CashBillDetails" Relationship="Self.FK_CashBillDetail_Product" FromRole="Product" ToRole="CashBillDetail" />
     <NavigationProperty Name="InstallmentBillDetails" Relationship="Self.FK_InstallmentBillDetail_Product" FromRole="Product" ToRole="InstallmentBillDetail" />
@@ -237,5 +238,16 @@
       <End Role="ProductType" EntitySet="ProductTypes" />
       <End Role="Product" EntitySet="Products" />
     </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="DmQT08Model.sysdiagram" />
   </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
 </Schema>
