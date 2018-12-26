@@ -78,8 +78,8 @@
             </div>
             <div class="container">
                 <div class="product-slider owl-carousel owl-theme">
-                    @Html.Action("ShowTopSale","Product", new { area = "" })
-                    
+                    @Html.Action("ShowTopSale", "Product", new { area = "" })
+
                 </div>
             </div>
         </div>
@@ -100,41 +100,41 @@
                 <div class="product-slider owl-carousel owl-theme">
                     @foreach (var item in Model.OrderBy(n => n.SalePrice).Take(20))
                     {
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-                                        <a href="@Url.Action("ViewDetail","Product",new { @ID = item.ID })">
-                                            <img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt=""
-                                                 class="img-fluid">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="@Url.Action("ViewDetail","Product",new { @ID = item.ID })">
-                                            <img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt=""
-                                                 class="img-fluid">
-                                        </a>
+                        <div class="item">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="@Url.Action("ViewDetail","Product",new { @ID = item.ID })">
+                                                <img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt=""
+                                                     class="img-fluid">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="@Url.Action("ViewDetail","Product",new { @ID = item.ID })">
+                                                <img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt=""
+                                                     class="img-fluid">
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <a href="@Url.Action("ViewDetail","Product",new { @ID = item.ID })" class="invisible">
-                                <img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt=""
-                                     class="img-fluid">
-                            </a>
-                            <div class="text">
-                                <h3><a href="@Url.Action("ViewDetail","Product",new { @ID = item.ID })">@item.ProductName</a></h3>
-                                <p class="price">
-                                    <del></del>
-                                    @item.SalePrice.ToString("#,##") VNĐ
-                                </p>
-                            </div>
-                            <div class="ribbon gift">
-                                <div class="theribbon">HOT</div>
-                                <div class="ribbon-background"></div>
+                                <a href="@Url.Action("ViewDetail","Product",new { @ID = item.ID })" class="invisible">
+                                    <img src="@Url.Content("~/www.root/Img/"+item.ID+".png")" alt=""
+                                         class="img-fluid">
+                                </a>
+                                <div class="text">
+                                    <h3><a href="@Url.Action("ViewDetail","Product",new { @ID = item.ID })">@item.ProductName</a></h3>
+                                    <p class="price">
+                                        <del></del>
+                                        @item.SalePrice.ToString("#,##") VNĐ
+                                    </p>
+                                </div>
+                                <div class="ribbon gift">
+                                    <div class="theribbon">HOT</div>
+                                    <div class="ribbon-background"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     }
 
 
