@@ -244,6 +244,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="www.root\controller\cashBillController\Scripts\manageCashBill.js" />
+    <Content Include="www.root\controller\homeController\homeQT.js" />
     <Content Include="www.root\controller\installmentBillController\manageInstallmentBill.js" />
     <Content Include="www.root\controller\loginController\css\style.css" />
     <Content Include="www.root\controller\loginController\images\b.jpg" />
@@ -6910,6 +6911,7 @@
     <Content Include="Views\Product\ViewListProductWithManufactor.cshtml" />
     <Content Include="Views\Product\ViewDetail.cshtml" />
     <Content Include="Views\Product\ShowTopSale.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
