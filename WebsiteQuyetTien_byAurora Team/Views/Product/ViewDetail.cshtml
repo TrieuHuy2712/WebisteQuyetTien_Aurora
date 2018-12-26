@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <!-- breadcrumb-->
+                    <!-- *** THANH ĐƯỜNG DẪN *** -->
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
@@ -19,6 +19,7 @@
                             <li aria-current="page" class="breadcrumb-item active">@Model.ProductName</li>
                         </ol>
                     </nav>
+                    <!-- *** HẾT THANH ĐƯỜNG DẪN *** -->
                 </div>
                 @Html.Action("CategoryPartial", "Product")
                 <div class="col-lg-9">
@@ -33,23 +34,26 @@
                                 <h1 class="text-center">@Model.ProductName</h1>
                                 <p class="goToDescription">
                                     <a href="#details" class="scroll-to">
-                                        Nhấp vào để cuộn tới chi tiết
-                                        sản phẩm
+                                        Xem thông tin chi tiết sản phẩm
                                     </a>
                                 </p>
                                 <p class="price">@Model.SalePrice.ToString("#,##") VNĐ</p>
                             </div>
+                            <!-- *** HÌNH ẢNH SẢN PHẨM *** -->
                             <div data-slider-id="1" class="owl-thumbs">
                                 <button class="owl-thumb-item">
                                     <img src="@Url.Content("~/www.root/Img/"+Model.ID+".png")" alt="" class="img-fluid">
                                 </button>
                             </div>
+                            <!-- *** HẾT HÌNH ẢNH SẢN PHẨM *** -->
                         </div>
                     </div>
+                    <!-- *** KHU VỰC MÔ TẢ SẢN PHẨM *** -->
                     <div id="details" class="box">
                         <p>@Html.Raw(Model.Description)</p>
                         <hr>
                     </div>
+                    <!-- *** HẾT KHU VỰC MÔ TẢ SẢN PHẨM *** -->
                 </div>
             </div>
         </div>

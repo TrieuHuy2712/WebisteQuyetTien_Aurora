@@ -1,0 +1,31 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title"><span id="titleType">Thêm mới thuộc tính</span></h4>
+    <button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true">×</button>
+</div>
+<div class="modal-body">
+    <div id="horizontal-form">
+        <form class="form-horizontal" role="form" id="frmProduct">
+            <div class="form-group row">
+                <label for="txtProductCode" class="col-sm-3 col-form-label">Mã loại sản phẩm<span class="star">*</span></label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="txtTypeCode" name="txtTypeCode" maxlength="3"/>
+                    <span id="validateTypeCode" style="color:red"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="txtProductName" class="col-sm-3 col-form-label">Tên sản phẩm<span class="star">*</span></label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="txtTypeName" name="txtTypeName" maxlength="100">
+                    <span id="validateTypeName" style="color:red"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" id="btnTypeCreateNew" class="btn btn-success">Ghi</button>
+                    <button type="button" id="btnAttributeCancel" data-dismiss="modal" class="btn btn-danger">Hủy</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
