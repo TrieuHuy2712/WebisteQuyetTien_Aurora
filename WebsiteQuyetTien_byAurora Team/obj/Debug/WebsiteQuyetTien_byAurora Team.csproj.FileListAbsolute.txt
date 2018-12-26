@@ -562,7 +562,6 @@ C:\Users\kenas\Source\Repos\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Te
 C:\Users\kenas\Source\Repos\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\kenas\Source\Repos\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.Web.xml
 C:\Users\kenas\Source\Repos\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\kenas\Source\Repos\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csprojAssemblyReference.cache
 C:\Users\kenas\Source\Repos\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csproj.CoreCompileInputs.cache
 C:\Users\kenas\Source\Repos\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csproj.CopyComplete
 C:\Users\kenas\Source\Repos\WebisteQuyetTien_Aurora\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.dll
