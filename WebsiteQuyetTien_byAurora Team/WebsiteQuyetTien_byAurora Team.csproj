@@ -164,6 +164,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageInstallmentBillController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductTypeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -210,6 +211,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ReceiptCashModel.cs" />
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -6125,6 +6129,7 @@
     <Content Include="lib\twbs-pagination\Gruntfile.js" />
     <Content Include="lib\twbs-pagination\jquery.twbsPagination.js" />
     <Content Include="lib\twbs-pagination\jquery.twbsPagination.min.js" />
+    <Content Include="www.root\controller\productTypeController\productType.js" />
     <Content Include="www.root\Img\63.png" />
     <Content Include="www.root\shared\admin_layout\Admin\css\atlas.css" />
     <Content Include="www.root\shared\admin_layout\Admin\css\bootstrap.min.css" />
@@ -6911,7 +6916,8 @@
     <Content Include="Views\Product\ViewListProductWithManufactor.cshtml" />
     <Content Include="Views\Product\ViewDetail.cshtml" />
     <Content Include="Views\Product\ShowTopSale.cshtml" />
-    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\ProductType\Index.cshtml" />
+    <Content Include="Views\ProductType\CRUDModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

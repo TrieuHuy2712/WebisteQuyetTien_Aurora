@@ -62,13 +62,6 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             return PartialView(listPro);
         }
 
-        //Tìm kiếm sản phẩm theo tên
-        public ActionResult Search()
-        {
-            var lstPro = db.Products.Where(n => n.Status == true);
-            return PartialView(lstPro);
-        }
-
         public JsonResult getProductName()
         {
             db.Configuration.ProxyCreationEnabled = false;

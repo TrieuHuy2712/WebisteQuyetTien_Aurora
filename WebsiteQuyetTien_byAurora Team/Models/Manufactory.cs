@@ -22,6 +22,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Models
     
         public int ID { get; set; }
         public string ManufactoryName { get; set; }
+        public string ManufactoryCode { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
