@@ -10,13 +10,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <!-- breadcrumb-->
+                    <!-- *** THANH ĐƯỜNG DẪN *** -->
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
                             <li aria-current="page" class="breadcrumb-item active">@ViewBag.ProductType.ProductTypeName</li>
                         </ol>
                     </nav>
+                    <!-- *** HẾT THANH ĐƯỜNG DẪN *** -->
                 </div>
                 @*Doanh mục loại sản phẩm*@
                 @Html.Action("CategoryPartial","Product")
@@ -47,13 +48,13 @@
                                 <div class="text">
                                     <h3><a href="@Url.Action("ViewDetail","Product",new {@ID = item.ID })">@item.ProductName</a></h3>
                                     <p class="price">
-                                        <del></del>@item.SalePrice.ToString("#,##") VNĐ
+                                        <del></del>@item.SalePrice.ToString("#,##") VND
                                     </p>
                                     <p class="buttons"><a href="@Url.Action("ViewDetail","Product",new {@ID = item.ID })" class="btn btn-outline-secondary">Xem Chi Tiết</a></p>
                                 </div>
                                 <!-- /.text-->
                             </div>
-                            <!-- /.product            -->
+                            <!-- /.product -->
                         </div>
                         }
 
