@@ -118,12 +118,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WebsiteQuyetTien_byAurora Team\WebsiteQuyetTien_byAurora Team.csproj">
-      <Project>{AB94CBE2-1C94-4485-A7A3-838B470FD43F}</Project>
-      <Name>WebsiteQuyetTien_byAurora Team</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -6259,6 +6259,12 @@
     <Content Include="www.root\shared\auto\autoAddressbook.js" />
     <Content Include="www.root\shared\auto\autoUnit.js" />
     <Content Include="www.root\shared\constants.js" />
+    <Content Include="www.root\shared\easyAutocomplete\easy-autocomplete.css" />
+    <Content Include="www.root\shared\easyAutocomplete\easy-autocomplete.min.css" />
+    <Content Include="www.root\shared\easyAutocomplete\easy-autocomplete.themes.css" />
+    <Content Include="www.root\shared\easyAutocomplete\easy-autocomplete.themes.min.css" />
+    <Content Include="www.root\shared\easyAutocomplete\jquery.easy-autocomplete.js" />
+    <Content Include="www.root\shared\easyAutocomplete\jquery.easy-autocomplete.min.js" />
     <Content Include="www.root\shared\general.js" />
     <Content Include="www.root\shared\gupdatestatus.js" />
     <Content Include="www.root\shared\messages.js" />
