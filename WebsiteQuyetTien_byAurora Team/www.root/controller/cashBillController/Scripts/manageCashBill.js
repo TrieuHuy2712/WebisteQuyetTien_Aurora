@@ -93,6 +93,7 @@ function resetFormBill() {
     $('#txtGrandTotal').val('');
     $('#table-product tr').each(function () { $(this).remove(); });
     stt = 1;
+    resetAllValidate();
 }
 
 function getAllProduct(render, callback) {
@@ -122,6 +123,7 @@ function getAllProduct(render, callback) {
 }
 $('body').on('click', '.btn-edit-bills', function (e) {
     resetFormBill();
+   
     var arr = 1;
     e.preventDefault();
     $("#title").text("");
@@ -198,70 +200,77 @@ $('body').on('click','#btnCashCreateNew', function () {
     grandTotal = grandTotal.replace(/\,/g, '');
     grandTotal = parseInt(grandTotal, 10);
     var productBill = [];
-    $('#table-product tr').each(function (i, item) {
-        var attributeId = $(this).data('id');
-        var keyID = $(this).data('key');
+    if (checkBillValidation() == true) {
+        $('#table-product tr').each(function (i, item) {
+            var attributeId = $(this).data('id');
+            var keyID = $(this).data('key');
 
-        if (attributeId != "") {
-            var sale = $(item).find('#txtSalePriceProduct').first().val();
-            sale = sale.replace(/\,/g, '');
-            sale = parseInt(sale, 10);
-            var quantity1 = $(item).find('#txtQuantityProduct').first().val();
-            quantity1 = quantity1.replace(/\,/g, '');
-            quantity1 = parseInt(quantity1, 10);
+            if (attributeId != "") {
+                var sale = $(item).find('#txtSalePriceProduct').first().val();
+                sale = sale.replace(/\,/g, '');
+                sale = parseInt(sale, 10);
+                var quantity1 = $(item).find('#txtQuantityProduct').first().val();
+                quantity1 = quantity1.replace(/\,/g, '');
+                quantity1 = parseInt(quantity1, 10);
 
-            var obj = {
-                ID: keyID,
-                BillID: currentBill,
-                ProductID: attributeId,
-                Quantity: quantity1,
-                SalePrice: sale
-            };
-            if (obj.ProductID != null)
-                productBill.push(obj);
+                var obj = {
+                    ID: keyID,
+                    BillID: currentBill,
+                    ProductID: attributeId,
+                    Quantity: quantity1,
+                    SalePrice: sale
+                };
+                if (obj.ProductID != null)
+                    productBill.push(obj);
+                
+            }
+        });
+        if (productBill.length == 0) {
+            $('#validateAdd').text("Vui lòng chọn 1 sản phẩm");
+            return false;
         }
-    });
-    var data = {
-        ID: currentBill,
-        BillCode: billCode,
-        CustomerName: customerName,
-        PhoneNumber: phonenumber,
-        Address: address,
-        Shipper: shipper,
-        Note: note,
-        GrandTotal: grandTotal,
-        CashBillDetails: productBill
-    };
-    $.ajax({
-        type: "POST",
-        url: "/ManageCashBill/SaveEntity",
-        data: {
-            cb: data, billDetail: productBill
-        },
-        dataType: "json",
-        beforeSend: function () {
-            general.startLoading();
-        },
-        success: function (response) {
-            $('#modal-cash-bill').modal('hide');
-            $('body').removeClass('modal-open');
-            $('.modal-backdrop').remove();
-            $('#modal-cash-bill').modal('hide');
-            general.stopLoading();
-            console.log(response);
-            LoadCashBill();
-            general.notify("Lưu thành công", "success");
-        },
-        error: function (request, error) {
-            console.log(error);
-            $('#modal-cash-bill').modal('hide');
-            $('.modal-backdrop').remove();
-            LoadCashBill();
-            console.log("Có lỗi trong khi ghi");
-            general.notify("Lưu thành công", "error");
-            general.stopLoading();
-        }
-    });
+        var data = {
+            ID: currentBill,
+            BillCode: billCode,
+            CustomerName: customerName,
+            PhoneNumber: phonenumber,
+            Address: address,
+            Shipper: shipper,
+            Note: note,
+            GrandTotal: grandTotal,
+            CashBillDetails: productBill
+        };
+        $.ajax({
+            type: "POST",
+            url: "/ManageCashBill/SaveEntity",
+            data: {
+                cb: data, billDetail: productBill
+            },
+            dataType: "json",
+            beforeSend: function () {
+                general.startLoading();
+            },
+            success: function (response) {
+                $('#modal-cash-bill').modal('hide');
+                $('body').removeClass('modal-open');
+                $('.modal-backdrop').remove();
+                $('#modal-cash-bill').modal('hide');
+                general.stopLoading();
+                console.log(response);
+                LoadCashBill();
+                general.notify("Lưu thành công", "success");
+            },
+            error: function (request, error) {
+                console.log(error);
+                $('#modal-cash-bill').modal('hide');
+                $('.modal-backdrop').remove();
+                LoadCashBill();
+                console.log("Có lỗi trong khi ghi");
+                general.notify("Có lỗi trong khi ghi", "error");
+                general.stopLoading();
+            }
+        });
+    }
 });
 
 //Set event auto number
@@ -311,4 +320,47 @@ $('body').on('keyup', '#txtQuantityProduct', function (event) {
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
             ;
     });
+});
+
+function checkBillValidation() {
+    var countErr = 0;
+    if ($("#txtCustomerName").val() == "" || $("#txtCustomerName").val() == null) {
+        $('#validateCustomerName').text("Tên khách hàng không được bỏ trống");
+        countErr++;
+    }
+    if ($("#txtPhoneNumber").val() == "" || $("#txtPhoneNumber").val() == null) {
+        $('#validatePhoneNumber').text("Số điện thoại không được bỏ trống");
+        countErr++;
+    }
+    if ($('#txtQuantityProduct').val() == "" || $('#txtQuantityProduct').val() == null || $('#txtQuantityProduct').val() == 0) {
+        $('#validateCQuantity').text('Số lượng không được bỏ trống');
+        countErr++;
+    }
+    if ($('#dropdownProduct').val() == 0) {
+        $('#validatedropdown').text("Vui lòng chọn sản phẩm");
+        countErr++;
+    }
+    if (countErr > 0) {
+        return false;
+    }
+    return true;
+}
+function resetAllValidate() {
+    $('#validateCustomerName').text('');
+    $('#validatePhoneNumber').text('');
+    $('#validateCQuantity').text('');
+    $('#validatedropdown').text('');
+    $('#validateAdd').text('');
+}
+$('#txtCustomerName').on('keyup', function () {
+    $('#validateCustomerName').text('');
+});
+$('#txtPhoneNumber').on('keyup', function () {
+    $('#validatePhoneNumber').text('');
+});
+$('#txtQuantityProduct').on('keyup', function () {
+    $(this).find('#validateCQuantity').text('');
+});
+$('#dropdownProduct').on('change', function () {
+    $('#validatedropdown').text('');
 });

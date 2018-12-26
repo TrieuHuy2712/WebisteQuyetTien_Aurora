@@ -13,7 +13,7 @@
                 <label for="txtCustomerName" class="col-sm-3 col-form-label">Tên khách hàng<span class="star">*</span></label>
                 <div class="col-sm-3">
                     <select type="text" id="txtCustomerName_InsEdit" name="txtCustomerName_InsEdit" class="form-control select3"></select>
-                    <span id="validateCustomerName" style="color:red"></span>
+                    <span id="validateCustomerNameIns" style="color:red"></span>
                 </div>
             </div>
             <div class="form-group row">
@@ -30,15 +30,11 @@
             </div>
             <div class="form-group row">
                 <label for="txtInstallmentPrice" class="col-sm-3 col-form-label">Ghi chú<span class="star">*</span></label>
-                <div class="col-sm-3">
+                <div class="col-sm-9">
                     <input type="text" class="form-control" id="txtNote_InsEdit" name="txtNote_InsEdit">
                     <span id="validateNote" style="color:red"></span>
                 </div>
-                <label for="txtGrandTotal" class="col-sm-3 col-form-label">Thành tiền<span class="star">*</span></label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="txtGrandTotal_InsEdit" name="txtGrandTotal_InsEdit" disabled>
-                    <span id="txtGrandTotal" style="color:red"></span>
-                </div>
+
             </div>
             <div class="form-group row">
                 <label for="txtInstallmentPrice" class="col-sm-3 col-form-label">Phương thức<span class="star">*</span></label>
@@ -60,12 +56,19 @@
                 <label for="txtInstallmentPrice" class="col-sm-3 col-form-label">Taken<span class="star">*</span></label>
                 <div class="col-sm-3">
                     <input type="text" class="form-control" id="txtTaken_InsEdit" name="txtGrandTotal_InsEdit">
-                    <span id="validatePeriodEdit" style="color:red"></span>
+                    <span id="validateTakenEdit" style="color:red"></span>
                 </div>
                 <label for="txtGrandTotal" class="col-sm-3 col-form-label">Remain<span class="star">*</span></label>
                 <div class="col-sm-3">
                     <input type="text" class="form-control" id="txtRemain_InsEdit" name="txtGrandTotal_InsEdit">
-                    <span id="validatePeriodEdit" style="color:red"></span>
+                    <span id="validateRemainEdit" style="color:red"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="txtGrandTotal" class="col-sm-3 col-form-label"><span class="star"><strong>Tổng Thành tiền</strong></span></label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="txtGrandTotal_InsEdit" name="txtGrandTotal_InsEdit" disabled>
+                    <span id="txtGrandTotal" style="color:red"></span>
                 </div>
             </div>
             <div class="form-group row ">
@@ -85,9 +88,10 @@
                         <tbody id="table-product1"></tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="6">
+                                <td colspan="5">
                                     <button class="btn btn-sm btn-success" type="button" id="btn-add-product_insEdit">Thêm</button>
                                 </td>
+
                             </tr>
                         </tfoot>
                     </table>
@@ -96,10 +100,12 @@
                         <tr data-id="{{ProductID}}" data-key="{{ID}}">
                             <td width="5%">{{STT}}</td>
                             <td id="txtProductID-col" width="40%">
-                                <select id="dropdownIns" class="form-control select2"><option>Vui lòng chọn sản phẩm</option></select>
+                                <select id="dropdownIns" class="form-control select2"><option value="0">Vui lòng chọn sản phẩm</option></select>
+                                <span id="validatedropdownIns" style="color:red"></span>
                             </td>
                             <td id="txtQuantity-col">
                                 <input name="txtQuantityProduct" id="txtQuantityProduct_Ins" class="form-control" value="{{Quantity}}">
+                                <span id="validateQuantityIns" style="color:red"></span>
                             </td>
                             <td id="txtSalePrice-col">
                                 <input name="txtSalePriceProduct" id="txtSalePriceProduct_Ins" class="form-control" value="{{SalePrice}}" disabled>
@@ -119,6 +125,7 @@
                             </td>
                             <td id="txtQuantity-col">
                                 <input name="txtQuantityProduct" id="txtQuantityProduct_Ins" class="form-control" value="{{Quantity}}">
+                                <span id="validateQuantityIns" style="color:red"></span>
                             </td>
                             <td id="txtSalePrice-col">
                                 <input name="txtSalePriceProduct" id="txtSalePriceProduct_Ins" class="form-control" value="{{SalePrice}}" disabled>
