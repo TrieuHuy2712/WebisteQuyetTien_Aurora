@@ -1,7 +1,7 @@
 ﻿@using WebsiteQuyetTien_byAurora_Team.Models;
 @model IEnumerable<CashBillDetail>
 
-@foreach (var item in Model)
+@foreach (var item in Model.Take(10))
 {
     <div class="item">
         <div class="product">

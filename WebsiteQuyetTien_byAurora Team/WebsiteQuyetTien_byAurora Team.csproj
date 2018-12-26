@@ -6910,6 +6910,7 @@
     <Content Include="Views\Product\ViewListProductWithManufactor.cshtml" />
     <Content Include="Views\Product\ViewDetail.cshtml" />
     <Content Include="Views\Product\ShowTopSale.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
