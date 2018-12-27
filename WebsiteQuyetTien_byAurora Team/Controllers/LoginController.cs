@@ -27,5 +27,28 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
             }
             return Content("Tài khoản hoặc mật khẩu không đúng");
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(FormCollection f)
+        {
+            var username = f["userID"].ToString();
+            var password = f["userPW"].ToString();
+            Account acc = db.Accounts.SingleOrDefault(n => n.Username == username && n.Password == password);
+            if (acc != null)
+            {
+                Session["TaiKhoan"] = acc.Fullname;
+                var taikhoan = db.Accounts.First(n => n.Username == username && n.Password == password);
+                return Content("<script>window.location.href = '/Manage';</script>");
+            }
+            return Content("Tài khoản hoặc mật khẩu không đúng");
+        }
+        public ActionResult DangXuat()
+        {
+            Session["TaiKhoan"] = null;
+            return RedirectToAction("Login");
+        }
     }
 }

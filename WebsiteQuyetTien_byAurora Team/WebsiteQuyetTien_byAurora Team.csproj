@@ -250,6 +250,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="www.root\controller\cashBillController\Scripts\manageCashBill.js" />
     <Content Include="www.root\controller\customerController\manageCustomer.js" />
     <Content Include="www.root\controller\homeController\homeQT.js" />
@@ -6934,6 +6936,7 @@
     <Content Include="Views\ManageInstallmentBill\PrintBill.cshtml" />
     <Content Include="Views\ManageCustomer\Index.cshtml" />
     <Content Include="Views\ManageCustomer\CRUDModal.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
