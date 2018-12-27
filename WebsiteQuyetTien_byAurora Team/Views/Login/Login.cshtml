@@ -1,0 +1,446 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <style>
+        /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+        html {
+            font-size: 10px;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        body {
+            -webkit-font-smoothing;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+            display: block;
+        }
+
+        table {
+            table-layou: fixed;
+            border-collapse: collapse;
+            border-spacing: 0;
+            empty-cells: show;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        a {
+            background-color: transparent;
+        }
+
+            a:active, a:hover {
+                outline: 0;
+            }
+
+        img {
+            max-width: 100%;
+        }
+
+        button {
+            margin: 0;
+            border: 0;
+            padding: 0;
+            background: transparent;
+            font: inherit;
+            cursor: pointer;
+        }
+
+            button::-moz-focus-inner, input::-moz-focus-inner {
+                padding: 0;
+                border: 0;
+            }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: '돋움',dotum,Arial,Helvetica,sans-serif;
+            color: #333;
+        }
+
+        .a11y-hidden {
+            overflow: hidden !important;
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            clip: rect(1px,1px,1px,1px) !important
+        }
+
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px white inset;
+        }
+
+        .login-page {
+            display: table;
+            width: 100%;
+            background-color: white;
+            margin-top: 10%;
+        }
+
+            .login-page form {
+                display: table-cell;
+                height: 100%;
+                vertical-align: middle;
+            }
+
+            .login-page .logo {
+                display: block;
+                margin-bottom: 10px;
+                font-family: Arial;
+                font-size: 50px;
+                font-weight: bold;
+                color: #333;
+                text-align: center;
+            }
+
+                .login-page .logo img {
+                    width: 120px;
+                }
+
+            .login-page .msg-help {
+                display: block;
+                margin-top: 20px;
+                font-family: Arial;
+                font-size: 14px;
+                line-height: 18px;
+                color: #444;
+                text-align: center;
+                text-decoration: none;
+                outline: 0;
+            }
+
+                .login-page .msg-help:hover,
+                .login-page .msg-help:focus {
+                    text-decoration: underline;
+                }
+
+        .login-form {
+            overflow: hidden;
+            margin: 0 auto;
+            padding-bottom: 40px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            width: 358px;
+            background-color: #fff;
+            box-shadow: 0 0 20px #bbb;
+        }
+
+            .login-form .title {
+                padding: 30px 29px 20px;
+                border-bottom: 1px solid #ddd;
+                font-family: Arial;
+                font-size: 28px;
+                line-height: 34px;
+                font-weight: bold;
+                color: #333;
+                background-color: #f7f7f7;
+            }
+
+            .login-form .row {
+                margin-top: 30px;
+                padding: 0 29px;
+            }
+
+            .login-form .option {
+                margin-top: 10px;
+            }
+
+            .login-form .inputbox {
+                display: block;
+                position: relative;
+            }
+
+                .login-form .inputbox input {
+                    padding: 0;
+                    border: 0 none;
+                    border-bottom: 1px solid #757575;
+                    background: transparent;
+                    width: 100%;
+                    height: 40px;
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #212121;
+                    outline: 0;
+                    z-index: 1;
+                }
+
+                .login-form .inputbox label {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    font-family: Arial;
+                    font-size: 14px;
+                    line-height: 40px;
+                    font-weight: 300;
+                    color: #757575;
+                    -webkit-transition: 0.2s ease;
+                    -moz-transition: 0.2s ease;
+                    transition: 0.2s ease;
+                }
+
+                .login-form .inputbox .bar {
+                    display: block;
+                    position: absolute;
+                    top: 40px;
+                    left: 50%;
+                    border-top: 2px solid #b52e31;
+                    width: 0;
+                    -webkit-transition: 0.2s ease;
+                    -moz-transition: 0.2s ease;
+                    transition: 0.2s ease;
+                }
+
+                .login-form .inputbox .active,
+                .login-form .inputbox input:focus ~ label {
+                    top: -24px;
+                    font-size: 12px;
+                    color: #9d9d9d;
+                }
+
+                .login-form .inputbox input:focus ~ .bar {
+                    left: 0;
+                    width: 100%;
+                }
+
+            .login-form .checkbox {
+                display: inline-block;
+                margin-right: 8px;
+                font-family: sans-serif;
+                font-size: 14px;
+                line-height: 20px;
+                color: #333;
+                vertical-align: top;
+            }
+
+                .login-form .checkbox input {
+                    position: absolute;
+                    opacity: 0;
+                }
+
+                .login-form .checkbox label {
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -khtml-user-select: none;
+                    -ms-user-select: none;
+                }
+
+                    .login-form .checkbox label:before {
+                        content: '';
+                        display: inline-block;
+                        position: relative;
+                        top: 2px;
+                        margin-right: 6px;
+                        border: 1px solid #bbb;
+                        border-radius: 2px;
+                        width: 14px;
+                        height: 14px;
+                        font-size: 12px;
+                        line-height: 14px;
+                        color: #b52e31;
+                        text-align: center;
+                        vertical-align: top;
+                    }
+
+                .login-form .checkbox input:checked + label:before {
+                    content: '✔';
+                }
+
+                .login-form .checkbox input:disabled + label {
+                    color: #999;
+                }
+
+                    .login-form .checkbox input:disabled + label:before {
+                        background-color: #ddd;
+                    }
+
+                .login-form .checkbox input:focus + label:before {
+                    border: 1px solid #b52e31;
+                }
+
+            .login-form .btn-login {
+                overflow: hidden;
+                position: relative;
+                margin: 40px 29px 0;
+                padding: 18px 0;
+                border: 2px solid #e3e3e3;
+                border-radius: 8px;
+                width: 296px;
+                outline: 0;
+                -webkit-transition: .3s ease;
+                -moz-transition: .3s ease;
+                transition: .3s ease;
+                z-index: 1;
+            }
+
+                .login-form .btn-login span {
+                    position: relative;
+                    font-family: Arial;
+                    font-size: 16px;
+                    line-height: 20px;
+                    font-weight: 700;
+                    color: #bbb;
+                    -webkit-transition: .3s ease;
+                    -moz-transition: .3s ease;
+                    transition: .3s ease;
+                    z-index: 2;
+                }
+
+                .login-form .btn-login:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin: -15px 0 0 -15px;
+                    border-radius: 100%;
+                    width: 30px;
+                    height: 30px;
+                    background-color: #b52e31;
+                    opacity: 0;
+                    -webkit-transition: .3s ease;
+                    -moz-transition: .3s ease;
+                    transition: .3s ease;
+                    z-index: 1
+                }
+
+                .login-form .btn-login:hover,
+                .login-form .btn-login:focus {
+                    border-color: #b52e31;
+                    color: #b52e31;
+                }
+
+                    .login-form .btn-login:hover span,
+                    .login-form .btn-login:focus span {
+                        color: #b52e31;
+                    }
+
+                .login-form .btn-login:active:before {
+                    opacity: 1;
+                    -webkit-transform: scale(10);
+                    transform: scale(10);
+                }
+
+                .login-form .btn-login:active span {
+                    color: #fff !important;
+                }
+
+            .login-form .msg-error {
+                display: none;
+                padding-top: 8px;
+                font-size: 12px;
+                line-height: 16px;
+                color: #dc321e;
+            }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
+<body>
+    <div class="login-page">
+        @using (Ajax.BeginForm("Login", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "msgLogin", HttpMethod = "POST" }))
+        {
+            <fieldset class="login-form">
+                <h1 class="title" style="text-align: center;"><img  src="~/www.root/shared/admin_layout/Admin/images/logo.png" alt="" height="30px">Đăng nhập</h1>
+                <div class="row">
+                    <span class="inputbox">
+                        <input type="text" id="userID" name="userID" required>
+                        <label for="userID" class="active">Tài Khoản</label>
+                        <span class="bar"></span>
+                        <p id="msgID" class="msg-error">Tài khoản không bỏ trống.</p>
+                    </span>
+                </div>
+                <div class="row">
+                    <span class="inputbox">
+                        <input type="password" id="userPW" name="userPW" required >
+                        <label for="userPW" class="active">Mật khẩu</label>
+                        <span class="bar"></span>
+                        <p id="msgPW" class="msg-error" >Mật khẩu không bỏ trống.</p>
+                    </span>
+                </div>
+                <div class="row option">
+                    <span class="checkbox">
+                        <input type="checkbox" id="saveID" name="saveID">
+                        <label for="saveID">Nhớ mật khẩu</label>
+                    </span>
+                    <p id="msgLogin" class="msg-error" style="display:block"></p>
+                </div>
+                <button type="submit" class="btn-login" onclick="loginClick();"><span>Đăng nhập</span></button>
+            </fieldset>
+        }
+
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var id = document.getElementById('userID').value,
+                pw = document.getElementById('userPW').value;
+            if (id != "" || pw !="") {
+                $(".inputbox").find('label').addClass('active');
+            }
+            $('.inputbox').on({
+                focusout: function () {
+                    var length = $(this).find('input').val().length;
+                    if (length > 0) $(this).find('label').addClass('active');
+                    else $(this).find('label').removeClass('active');
+                }
+            });
+
+        });
+        function loginClick() {
+            var id = document.getElementById('userID').value,
+                pw = document.getElementById('userPW').value,
+                msgID = document.getElementById('msgID'),
+                msgPW = document.getElementById('msgPW'),
+                msgLogin = document.getElementById('msgLogin');
+
+            if (id == "") {
+                msgID.style.display = 'block';
+                msgID.focus();
+                return false;
+            } else {
+                msgID.style.display = 'none';
+            }
+            if (pw == "") {
+                msgPW.style.display = 'block';
+                msgPW.focus();
+                return false;
+            } else {
+                msgPW.style.display = 'none';
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
