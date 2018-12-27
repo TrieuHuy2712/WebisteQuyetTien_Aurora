@@ -62,7 +62,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         {
             db.Configuration.ProxyCreationEnabled = false;
 
-            var cashBill = db.Products.OrderBy(x => x.ID).ToList();
+            var cashBill = db.Products.OrderBy(x => x.ID).Where(x=>x.Status==true).ToList();
             return Json(cashBill, JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
@@ -78,7 +78,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
                              d.ProductID,
                              p.ProductName,
                              d.Quantity,
-                             p.SalePrice,
+                             p.InstallmentPrice,
                          };
             return Json(result, JsonRequestBehavior.AllowGet);
         }

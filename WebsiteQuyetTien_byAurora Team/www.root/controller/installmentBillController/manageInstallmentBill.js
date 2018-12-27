@@ -161,9 +161,9 @@ $('body').on('click', '.btn-edit-ins', function (e) {
                     ID: item.ID,
                     ProductID: item.ProductID,
                     ProductName: item.ProductName,
-                    SalePrice: general.toMoney(item.SalePrice),
+                    SalePrice: general.toMoney(item.InstallmentPrice),
                     Quantity: general.toMoney(item.Quantity),
-                    GrandTotal: general.toMoney(item.Quantity * item.SalePrice)
+                    GrandTotal: general.toMoney(item.Quantity * item.InstallmentPrice)
                 });
                 arr++;
             });
