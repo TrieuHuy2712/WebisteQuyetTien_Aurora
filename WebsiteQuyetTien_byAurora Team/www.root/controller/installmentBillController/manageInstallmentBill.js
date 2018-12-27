@@ -214,6 +214,8 @@ $('body').on('keyup', '#txtQuantityProduct_Ins', function () {
         sum += grand;
     });
     $('#txtGrandTotal_InsEdit').val(general.toMoney(sum));
+    $('#txtTaken_InsEdit').val(general.toMoney(sum * 30 / 100));
+    $('#txtRemain_InsEdit').val(general.toMoney(sum-(sum * 30 / 100)));
 });
 
 $('body').on('change', '#dropdownIns', function () {
@@ -381,6 +383,13 @@ function resetInsBill() {
 }
 function checkBillValidation() {
     var countErr = 0;
+    var grandTotal = $('#txtGrandTotal_InsEdit').val();
+    grandTotal = grandTotal.replace(/\,/g, '');
+    grandTotal = parseInt(grandTotal, 10);
+
+    var taken = $('#txtTaken_InsEdit').val();
+    taken = taken.replace(/\,/g, '');
+    taken = parseInt(taken, 10);
     if ($("#txtCustomerName_InsEdit").val() == "" || $("#txtCustomerName_InsEdit").val() == null) {
         $('#validateCustomerNameIns').text("Tên khách hàng không được bỏ trống");
         countErr++;
@@ -406,6 +415,9 @@ function checkBillValidation() {
         $('#validatedropdownIns').text("Vui lòng chọn sản phẩm");
         countErr++;
     }
+    if (taken >= (grandTotal * 30 / 100)) {
+        countErr++;
+    }
     if (countErr > 0) {
         return false;
     }
@@ -428,7 +440,23 @@ $('#txtPeriod_InsEdit').on('keyup', function () {
     $('#validatePeriodEdit').text('');
 });
 $('#txtTaken_InsEdit').on('keyup', function () {
-    $('#validateTakenEdit').text('');
+    var grandTotal = $('#txtGrandTotal_InsEdit').val();
+    grandTotal = grandTotal.replace(/\,/g, '');
+    grandTotal = parseInt(grandTotal, 10);
+
+    var taken = $('#txtTaken_InsEdit').val();
+    taken = taken.replace(/\,/g, '');
+    taken = parseInt(taken, 10);
+
+    var remain = grandTotal - taken;
+
+    if (taken < (grandTotal * 30 / 100)) {
+        $('#validateTakenEdit').text('Số tiền bạn trả ít hơn 30% tổng hóa đơn');
+    } else if (taken >= (grandTotal * 30 / 100)) {
+        $('#txtRemain_InsEdit').val(general.toMoney(remain));
+        $('#validateTakenEdit').text('');
+    } 
+   
 });
 $('#txtRemain_InsEdit').on('keyup', function () {
     $('#validateRemainEdit').text('');
@@ -439,4 +467,3 @@ $('#dropdownInst').on('change', function () {
 $('#txtQuantityProduct_Ins').on('keyup', function () {
     $(this).closest('#validateQuantityIns').text('');
 });
-

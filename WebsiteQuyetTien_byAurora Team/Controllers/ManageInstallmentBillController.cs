@@ -154,5 +154,10 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
                 return View();
             }
         }
+        public ActionResult DangXuat()
+        {
+            Session["TaiKhoan"] = null;
+            return RedirectToAction("Index", "Login", new { area = "" });
+        }
     }
 }
