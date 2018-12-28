@@ -13,6 +13,12 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         // GET: ManageManufacture
         public ActionResult Index()
         {
+            if (Session["TaiKhoan"] == null || Session["TaiKhoan"].ToString() == "")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            ViewBag.TenTaiKhoan = Session["TaiKhoan"];
+            //var product = db.Products.OrderBy(x => x.ID).ToList();
             return View();
         }
 
@@ -63,6 +69,11 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
                 return Json(manufactory, JsonRequestBehavior.AllowGet);
             }
         }
-       
+        public ActionResult DangXuat()
+        {
+            Session["TaiKhoan"] = null;
+            return RedirectToAction("Index", "Login", new { area = "" });
+        }
+
     }
 }

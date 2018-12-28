@@ -57,7 +57,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Tests.Controllers
             {
                 count++;
             }
-            Assert.AreEqual(db.ProductTypes.Count(), count);
+            Assert.AreEqual(db.Manufactories.Count(), count);
         }
 
         [TestMethod]

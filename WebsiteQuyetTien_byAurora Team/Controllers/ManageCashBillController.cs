@@ -28,7 +28,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         {
             db.Configuration.ProxyCreationEnabled = false;
 
-            var cashBill = db.CashBills.ToList();
+            var cashBill = db.CashBills.OrderByDescending(x=>x.ID).ToList();
 
             return Json(cashBill, JsonRequestBehavior.AllowGet);
         }
@@ -129,5 +129,11 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
                 return View();
             }
         }
+        public ActionResult DangXuat()
+        {
+            Session["TaiKhoan"] = null;
+            return RedirectToAction("Index", "Login", new { area = "" });
+        }
+
     }
 }
