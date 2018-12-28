@@ -132,7 +132,7 @@ function validateType() {
         countErr++;
 
     }
-    if ($('#txtTypeName').val() == null $('#txtTypeName').val() == '') {
+    if ($('#txtTypeName').val() == null || $('#txtTypeName').val() == '') {
         $('#validateTypeName').text('Mã loại sản phẩm không được rỗng');
         countErr++;
 

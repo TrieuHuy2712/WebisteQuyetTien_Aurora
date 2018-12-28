@@ -6,6 +6,9 @@ using WebsiteQuyetTien_byAurora_Team.Controllers;
 using WebsiteQuyetTien_byAurora_Team.Models;
 using Moq;
 using System.Collections;
+using System.Web;
+using System.Web.Routing;
+using System.Transactions;
 
 namespace WebsiteQuyetTien_byAurora_Team.Tests.Controllers
 {
@@ -89,6 +92,53 @@ namespace WebsiteQuyetTien_byAurora_Team.Tests.Controllers
                
 
             }), JsonConvert.SerializeObject(result.Data));
+        }
+        [TestMethod]
+        public void TestSaveEntity1()
+        {
+            var db = new DmQT08Entities();
+            var model = new Product();
+            model.ProductTypeID= db.ProductTypes.First().ID;
+            model.ProductName = "TenSP";
+            model.ProductCode = "MaSP";
+            model.OriginPrice = 123;
+            model.SalePrice = 456;
+            model.InstallmentPrice = 789;
+            model.Quantity = 10;
+            int count = db.Products.Count();
+            var controller = new ManageController();
+            using (var scope = new TransactionScope())
+            {
+                model.ID = 0;
+                var result0 = controller.SaveEntity(model) as JsonResult;
+                Assert.IsNotNull(result0);
+                Assert.AreEqual(count + 1, db.Products.Count());
+
+                Assert.IsInstanceOfType(result0.Data, typeof(Product));
+                var product = result0.Data as Product;
+                Assert.AreEqual("TenSP", product.ProductName);
+            }
+        }
+        [TestMethod]
+        public void TestSaveEntity2()
+        {
+            var db = new DmQT08Entities();
+            var model = db.Products.AsNoTracking().First();
+            
+            int count = db.Products.Count();
+            var controller = new ManageController();
+            using (var scope = new TransactionScope())
+            {
+                model.ID = 1;
+                model.ProductTypeID = 2;
+                var result0 = controller.SaveEntity(model) as JsonResult;
+                Assert.IsNotNull(result0);
+                Assert.AreEqual(count , db.Products.Count());
+
+                Assert.IsInstanceOfType(result0.Data, typeof(Product));
+                var product = result0.Data as Product;
+                Assert.AreEqual(2, product.ProductTypeID);
+            }
         }
     }
 }
