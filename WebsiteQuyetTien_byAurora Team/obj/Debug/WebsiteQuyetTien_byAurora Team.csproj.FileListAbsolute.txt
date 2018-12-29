@@ -752,8 +752,8 @@ E:\Work\Dự án Quyết Tiến\FinalProject\WebsiteQuyetTien_byAurora Team\bin\
 E:\Work\Dự án Quyết Tiến\FinalProject\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.WindowsServer.xml
 E:\Work\Dự án Quyết Tiến\FinalProject\WebsiteQuyetTien_byAurora Team\bin\Microsoft.AI.Web.xml
 E:\Work\Dự án Quyết Tiến\FinalProject\WebsiteQuyetTien_byAurora Team\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Work\Dự án Quyết Tiến\FinalProject\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csprojAssemblyReference.cache
 E:\Work\Dự án Quyết Tiến\FinalProject\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csproj.CoreCompileInputs.cache
 E:\Work\Dự án Quyết Tiến\FinalProject\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csproj.CopyComplete
 E:\Work\Dự án Quyết Tiến\FinalProject\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.dll
 E:\Work\Dự án Quyết Tiến\FinalProject\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.pdb
+E:\Work\Dự án Quyết Tiến\FinalProject\WebsiteQuyetTien_byAurora Team\obj\Debug\WebsiteQuyetTien_byAurora Team.csprojAssemblyReference.cache
