@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Transactions;
 using System.Web.Mvc;
 using WebsiteQuyetTien_byAurora_Team.Controllers;
 using WebsiteQuyetTien_byAurora_Team.Models;
@@ -66,6 +67,73 @@ namespace WebsiteQuyetTien_byAurora_Team.Tests.Controllers
             }
 
             Assert.AreEqual(JsonConvert.SerializeObject(ca), JsonConvert.SerializeObject(result.Data));
+        }
+        [TestMethod]
+        public void TestSaveEntity1()
+        {
+            var db = new DmQT08Entities();
+            var model = new CashBill();
+            model.CustomerName = "Huy Trieu";
+            model.Address = "1234";
+            model.GrandTotal = 123456;
+            model.PhoneNumber = "123142";
+            model.Shipper = "A. Huy";
+            model.CashBillDetails = new List<CashBillDetail>();
+            model.CashBillDetails.Add(new CashBillDetail
+            {
+                ProductID = 1,
+                 Quantity=2,
+                  SalePrice=12000
+
+            });
+
+            int count = db.CashBills.Count();
+            var controller = new ManageCashBillController();
+            using (var scope = new TransactionScope())
+            {
+                model.ID = 0;
+                var result0 = controller.SaveEntity(model) as JsonResult;
+                Assert.IsNotNull(result0);
+                Assert.AreEqual(count + 1, db.CashBills.Count());
+
+                
+                var product = result0.Data as CashBill ;
+                //Assert.AreEqual("Huy Trieu", product.CustomerName);
+                Assert.IsNotNull(result0.Data);
+            }
+        }
+        [TestMethod]
+        public void TestSaveEntity2()
+        {
+            var db = new DmQT08Entities();
+            var model = new CashBill();
+            model.Address = "123";
+            model.CustomerName = "Thuy Vien";
+            model.CashBillDetails = new List<CashBillDetail>();
+
+            model.CashBillDetails.Add(new CashBillDetail
+            {
+                ProductID = 100,
+                Quantity = 2,
+                SalePrice = 12000,
+                 BillID=1,
+                
+            });
+
+            int count = db.CashBills.Count();
+            var controller = new ManageCashBillController();
+            using (var scope = new TransactionScope())
+            {
+                model.ID = 1;
+                var result0 = controller.SaveEntity(model) as JsonResult;
+                Assert.IsNotNull(result0);
+                Assert.AreEqual(count, db.CashBills.Count());
+
+
+                var product = result0.Data as CashBill;
+                //Assert.AreEqual("Huy Trieu", product.CustomerName);
+                Assert.IsNotNull(result0.Data);
+            }
         }
     }
 }
