@@ -75,6 +75,9 @@ function LoadData() {
                     }
                 },
             });
+            $(document).ready(function () {
+                $('#myManuTable_filter input[type = search]').attr('maxlength', 50);
+            });
         },
 
         error: function (ex) {

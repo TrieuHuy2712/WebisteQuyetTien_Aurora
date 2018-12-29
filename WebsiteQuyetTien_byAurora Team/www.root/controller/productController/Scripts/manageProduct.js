@@ -341,7 +341,7 @@ function LoadData() {
             if (render != '') {
                 $('#tbl-content').html(render);
             };
-
+          
             $('#myTable').DataTable({
                 "aaSorting": [],
                 //stateSave: true,
@@ -366,6 +366,10 @@ function LoadData() {
                     }
                 },
             });
+            $(document).ready(function () {
+                $('#myTable_filter input[type = search]').attr('maxlength', 50);
+            });
+           
         },
 
         error: function (ex) {

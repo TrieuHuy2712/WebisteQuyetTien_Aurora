@@ -66,6 +66,9 @@ function LoadInstallmentBill() {
                         }
                     },
                 });
+                $(document).ready(function () {
+                    $('#myTable5_filter input[type = search]').attr('maxlength', 50);
+                });
             };
         },
         error: function (ex) {

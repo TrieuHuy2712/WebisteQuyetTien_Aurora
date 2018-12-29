@@ -40,30 +40,35 @@ function LoadCashBill() {
             if (render != '') {
                 $('#tbl-content-product').html(render);
             };
+            $(document).ready(function () {
+                $('#myTable2').DataTable({
+                    "aaSorting": [],
+                    //stateSave: true,
+                    destroy: true,
+                    retrieve: true,
 
-            $('#myTable2').DataTable({
-                "aaSorting": [],
-                //stateSave: true,
-                destroy: true,
-                retrieve: true,
+                    "language": {
+                        "sProcessing": "Đang xử lý...",
+                        "sLengthMenu": "Xem _MENU_ sản phẩm",
+                        "sZeroRecords": "Không tìm thấy sản phẩm nào phù hợp",
+                        "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ sản phẩm",
+                        "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 sản phẩm",
+                        "sInfoFiltered": "(được lọc từ _MAX_ sản phẩm)",
+                        "sInfoPostFix": "",
+                        "sSearch": "Tìm sản phẩm:",
+                        "sUrl": "",
+                        "oPaginate": {
+                            "sFirst": "Đầu",
+                            "sPrevious": "Trước",
+                            "sNext": "Tiếp",
+                            "sLast": "Cuối"
+                        }
+                    },
+                });
+            });
 
-                "language": {
-                    "sProcessing": "Đang xử lý...",
-                    "sLengthMenu": "Xem _MENU_ sản phẩm",
-                    "sZeroRecords": "Không tìm thấy sản phẩm nào phù hợp",
-                    "sInfo": "Đang xem _START_ đến _END_ trong tổng số _TOTAL_ sản phẩm",
-                    "sInfoEmpty": "Đang xem 0 đến 0 trong tổng số 0 sản phẩm",
-                    "sInfoFiltered": "(được lọc từ _MAX_ sản phẩm)",
-                    "sInfoPostFix": "",
-                    "sSearch": "Tìm sản phẩm:",
-                    "sUrl": "",
-                    "oPaginate": {
-                        "sFirst": "Đầu",
-                        "sPrevious": "Trước",
-                        "sNext": "Tiếp",
-                        "sLast": "Cuối"
-                    }
-                },
+            $(document).ready(function () {
+                $('#myTable2_filter input[type = search]').attr('maxlength', 50);
             });
         },
         error: function (ex) {
@@ -123,7 +128,7 @@ function getAllProduct(render, callback) {
 }
 $('body').on('click', '.btn-edit-bills', function (e) {
     resetFormBill();
-   
+
     var arr = 1;
     e.preventDefault();
     $("#title").text("");
@@ -131,7 +136,7 @@ $('body').on('click', '.btn-edit-bills', function (e) {
     console.log('aaa');
     $("#table-product tbody tr").remove();
     var template = $('#template-table-loading').html();
-   
+
     var render = '';
     console.log(billDetail);
     var that = $(this).data('id');
@@ -179,8 +184,6 @@ $('body').on('click', '.btn-edit-bills', function (e) {
             console.log("Error");
         },
     });
-
-    
 });
 $('#btnCreateCash').on('click', function () {
     $('#modal-cash-bill').modal('show');
@@ -189,7 +192,7 @@ $('#btnCreateCash').on('click', function () {
     $("#title").text("");
     $("#title").text("Tạo mới hóa đơn");
 });
-$('body').on('click','#btnCashCreateNew', function () {
+$('body').on('click', '#btnCashCreateNew', function () {
     var billCode = $('#txtBillCode').val();
     var customerName = $('#txtCustomerName').val();
     var phonenumber = $('#txtPhoneNumber').val();
@@ -222,7 +225,6 @@ $('body').on('click','#btnCashCreateNew', function () {
                 };
                 if (obj.ProductID != null)
                     productBill.push(obj);
-                
             }
         });
         if (productBill.length == 0) {

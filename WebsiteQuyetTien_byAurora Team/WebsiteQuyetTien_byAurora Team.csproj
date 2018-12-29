@@ -6885,7 +6885,7 @@
     <Content Include="lib\twbs-pagination\twbs-pagination.jquery.json" />
     <Content Include="Views\Manage\CRUDModal.cshtml" />
     <Content Include="www.root\controller\loginController\images\.DS_Store" />
-    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\aabc.cshtml" />
     <Content Include="www.root\shared\admin_layout\Admin\fonts\fontawesome-webfont.eot" />
     <Content Include="www.root\shared\admin_layout\Admin\fonts\fontawesome-webfont.ttf" />
     <Content Include="www.root\shared\admin_layout\Admin\fonts\fontawesome-webfont.woff" />
@@ -6936,7 +6936,7 @@
     <Content Include="Views\ManageInstallmentBill\PrintBill.cshtml" />
     <Content Include="Views\ManageCustomer\Index.cshtml" />
     <Content Include="Views\ManageCustomer\CRUDModal.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

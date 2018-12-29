@@ -51,6 +51,9 @@ function LoadData() {
                     }
                 },
             });
+            $(document).ready(function () {
+                $('#myCustomer_filter input[type = search]').attr('maxlength', 50);
+            });
         },
 
         error: function (ex) {
