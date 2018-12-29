@@ -14,13 +14,13 @@
                     if (groupItem.Key != null)
                     {
                     <li>
-                        <a href="@Url.Action("ViewListProductWithType","Product",new { @ProductTypeID = groupItem.Key.ID})" class="nav-link">
+                        <a href="@Url.Action("ViewListProductWithType","Product",new { @ProductTypeID = groupItem.Key.ID, @ProductTypeName = groupItem.Key.ProductTypeName})" class="nav-link">
                             @groupItem.Key.ProductTypeName <span class="badge badge-secondary">@Model.Where(n=>n.ProductTypeID == groupItem.Key.ID).Count()</span>
                         </a>
                         <ul class="list-unstyled">
                             @foreach (var item in groupItem.GroupBy(n => n.Manufactory))
                             {
-                                <li><a href="@Url.Action("ViewListProductWithManufactor","Product",new { @ProductTypeID = groupItem.Key.ID, @ManufactoryID = item.Key.ID })" class="nav-link">@item.Key.ManufactoryName</a></li>
+                                <li><a href="@Url.Action("ViewListProductWithManufactor","Product",new { @ProductTypeID = groupItem.Key.ID, @ManufactoryID = item.Key.ID, @ProductTypeName = groupItem.Key.ProductTypeName, @ManufactoryName = item.Key.ManufactoryName })" class="nav-link">@item.Key.ManufactoryName</a></li>
                             }
                         </ul>
                     </li>

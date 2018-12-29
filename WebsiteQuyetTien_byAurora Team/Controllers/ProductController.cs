@@ -13,7 +13,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         public DmQT08Entities db = new DmQT08Entities();
 
         //Xem danh sách sản phẩm theo loại sản phẩm
-        public ActionResult ViewListProductWithType(int? ProductTypeID)
+        public ActionResult ViewListProductWithType(int? ProductTypeID, string ProductTypeName)
         {
             //lấy ra danh sách các sản phẩm theo loại sản phẩm được yêu cầu
             var lstProductOfType = db.Products.Where(n => n.ProductTypeID == ProductTypeID && n.Status == true);
@@ -28,7 +28,7 @@ namespace WebsiteQuyetTien_byAurora_Team.Controllers
         }
 
         //Xem danh sách sản phẩm đươc xếp theo nhà sản xuất
-        public ActionResult ViewListProductWithManufactor(int? ProductTypeID, int? ManufactoryID)
+        public ActionResult ViewListProductWithManufactor(int? ProductTypeID, int? ManufactoryID, string ManufactoryName, string ProductTypeName)
         {
             //lấy ra danh sách các sản phẩm theo loại sản phẩm được yêu cầu và theo đúng nhà sản xuất
             var lstProductOfType = db.Products.Where(n => n.ProductTypeID == ProductTypeID && n.Status == true && n.ManufactoryID == ManufactoryID);
