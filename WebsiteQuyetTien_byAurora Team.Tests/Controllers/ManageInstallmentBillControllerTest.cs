@@ -7,6 +7,7 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using System.Transactions;
 
 namespace WebsiteQuyetTien_byAurora_Team.Tests.Controllers
 {
@@ -78,6 +79,82 @@ namespace WebsiteQuyetTien_byAurora_Team.Tests.Controllers
                 ca.Add(obj);
             }
             Assert.AreEqual(JsonConvert.SerializeObject(ca), JsonConvert.SerializeObject(result.Data));
+        }
+        [TestMethod]
+        public void TestSaveEntity1()
+        {
+            var db = new DmQT08Entities();
+            var model = new InstallmentBill();
+            model.CustomerID= 1;
+            model.Method = "Thang";
+            model.GrandTotal = 123456;
+            model.Note = "123142";
+            model.Shipper = "A. Huy";
+            model.Period = 4;
+            model.Remain = 456;
+            model.Taken = 123;
+            model.InstallmentBillDetails = new List<InstallmentBillDetail>();
+            model.InstallmentBillDetails.Add(new InstallmentBillDetail
+            {
+                ProductID = 1,
+                Quantity = 2,
+                InstallmentPrice= 12000
+
+            });
+
+            int count = db.InstallmentBills.Count();
+            var controller = new ManageInstallmentBillController();
+            using (var scope = new TransactionScope())
+            {
+                model.ID = 0;
+                var result0 = controller.SaveEntity(model) as JsonResult;
+                Assert.IsNotNull(result0);
+                Assert.AreEqual(count + 1, db.InstallmentBills.Count());
+
+
+                var installment = result0.Data as InstallmentBill;
+               
+                Assert.IsNotNull(result0.Data);
+            }
+        }
+        [TestMethod]
+        public void TestSaveEntity2()
+        {
+            var db = new DmQT08Entities();
+            var model = new InstallmentBill();
+            model.CustomerID = 5;
+            model.Method = "Thangs";
+            model.GrandTotal = 123456;
+            model.Note = "123142";
+            model.Shipper = "A. Huy";
+            model.Period = 4;
+            model.Remain = 456;
+            model.Taken = 123;
+            model.InstallmentBillDetails = new List<InstallmentBillDetail>();
+
+            model.InstallmentBillDetails.Add(new InstallmentBillDetail
+            {
+                ProductID = 100,
+                Quantity = 2,
+                InstallmentPrice = 12000,
+                BillID = 1,
+
+            });
+
+            int count = db.InstallmentBills.Count();
+            var controller = new ManageInstallmentBillController();
+            using (var scope = new TransactionScope())
+            {
+                model.ID = 1;
+                var result0 = controller.SaveEntity(model) as JsonResult;
+                Assert.IsNotNull(result0);
+                Assert.AreEqual(count, db.InstallmentBills.Count());
+
+
+                var product = result0.Data as InstallmentBill;
+               
+                Assert.IsNotNull(result0.Data);
+            }
         }
     }
 }
