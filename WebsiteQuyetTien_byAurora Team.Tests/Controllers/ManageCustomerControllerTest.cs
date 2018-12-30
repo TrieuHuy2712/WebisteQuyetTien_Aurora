@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Collections;
 using System.Linq;
 using Newtonsoft.Json;
+using System.Transactions;
 
 namespace WebsiteQuyetTien_byAurora_Team.Tests.Controllers
 {
@@ -44,6 +45,54 @@ namespace WebsiteQuyetTien_byAurora_Team.Tests.Controllers
                
                 
             }), JsonConvert.SerializeObject(result.Data));
+        }
+        [TestMethod]
+        public void TestSaveEntity1()
+        {
+            var db = new DmQT08Entities();
+            var model = new Customer();
+
+            model.CustomerCode = "12312312";
+            model.CustomerName = "Vien Thuy";
+            model.PhoneNumber = "123123123";
+            model.Address = "BinhThanh";
+            model.YearOfBirth = 1998;
+           
+
+            int count = db.Customers.Count();
+            var controller = new ManageCustomerController();
+            using (var scope = new TransactionScope())
+            {
+                model.ID = 0;
+                var result0 = controller.SaveEntity(model) as JsonResult;
+                Assert.IsNotNull(result0);
+                Assert.AreEqual(count + 1, db.Customers.Count());
+
+                Assert.IsInstanceOfType(result0.Data, typeof(Customer));
+                var customer = result0.Data as Customer;
+                Assert.AreEqual(1998, customer.YearOfBirth);
+            }
+        }
+        [TestMethod]
+        public void TestSaveEntity2()
+        {
+            var db = new DmQT08Entities();
+            var model = db.Customers.AsNoTracking().First();
+
+            int count = db.Customers.Count();
+            var controller = new ManageCustomerController();
+            using (var scope = new TransactionScope())
+            {
+                model.ID = 1;
+                model.CustomerName= "Manh Hung";
+                var result0 = controller.SaveEntity(model) as JsonResult;
+                Assert.IsNotNull(result0);
+                Assert.AreEqual(count, db.Customers.Count());
+
+                Assert.IsInstanceOfType(result0.Data, typeof(Customer));
+                var customer = result0.Data as Customer;
+                Assert.AreEqual("Manh Hung", customer.CustomerName);
+            }
         }
     }
 }
