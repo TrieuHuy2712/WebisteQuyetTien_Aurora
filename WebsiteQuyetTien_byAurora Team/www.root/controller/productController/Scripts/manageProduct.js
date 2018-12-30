@@ -7,6 +7,7 @@ var gIDProduct = 0;
 var currentID = "";
 var count = 0;
 var getImage = "";
+var sizeImg = true;
 //Khi nhấn vào sẽ show modal
 $('body').on('click', '#btnCreate', function () {
     $('#modal-add-edit').modal('show');
@@ -48,49 +49,51 @@ $("#btnAttributeCreateNew").on('click', function () {
         status = false;
     }
     if (checkValidation() == true) {
-        $.ajax({
-            type: "POST",
-            url: "/Manage/SaveEntity",
-            data: {
-                ID: gIDProduct,
-                ProductCode: productCode,
-                ProductName: productName,
-                ProductTypeID: productTypeId,
-                ManufactoryID: manufactoryId,
-                OriginPrice: originPrice,
-                SalePrice: salePrice,
-                InstallmentPrice: installmentPrice,
-                Quantity: quantity,
-                Description: CKEDITOR.instances.editorDescription.getData(),
-                //Description: editorText,
-                Status: status,
-            },
-            dataType: "json",
-            beforeSend: function () {
-                general.startLoading();
-            },
-            success: function (response) {
-                currentID = response.ID;
-                console.log(gIDProduct);
-                console.log(response);
-                //KIểm tra xem có tồn tại hay không
-                $('#modal-add-edit').modal('hide');
-                $('body').removeClass('modal-open');
-                $('.modal-backdrop').remove();
-                console.log("Save thành công");
-                general.stopLoading();
-                if ($("#txtUploadFile").get(0).files.length != 0) {
-                    uploadImage(currentID);
+        if (sizeImg == true) {
+            $.ajax({
+                type: "POST",
+                url: "/Manage/SaveEntity",
+                data: {
+                    ID: gIDProduct,
+                    ProductCode: productCode,
+                    ProductName: productName,
+                    ProductTypeID: productTypeId,
+                    ManufactoryID: manufactoryId,
+                    OriginPrice: originPrice,
+                    SalePrice: salePrice,
+                    InstallmentPrice: installmentPrice,
+                    Quantity: quantity,
+                    Description: CKEDITOR.instances.editorDescription.getData(),
+                    //Description: editorText,
+                    Status: status,
+                },
+                dataType: "json",
+                beforeSend: function () {
+                    general.startLoading();
+                },
+                success: function (response) {
+                    currentID = response.ID;
+                    console.log(gIDProduct);
+                    console.log(response);
+                    //KIểm tra xem có tồn tại hay không
+                    $('#modal-add-edit').modal('hide');
+                    $('body').removeClass('modal-open');
+                    $('.modal-backdrop').remove();
+                    console.log("Save thành công");
+                    general.stopLoading();
+                    if ($("#txtUploadFile").get(0).files.length != 0) {
+                        uploadImage(currentID);
+                    }
+                    LoadData();
+                    general.notify("Load thành công", "success");
+                    console.log(response);
+                },
+                error: function () {
+                    general.notify('Có lỗi', 'error');
+                    general.stopLoading();
                 }
-                LoadData();
-                general.notify("Load thành công", "success");
-                console.log(response);
-            },
-            error: function () {
-                general.notify('Có lỗi', 'error');
-                general.stopLoading();
-            }
-        });
+            });
+        }
     }
     return false;
 });
@@ -341,7 +344,7 @@ function LoadData() {
             if (render != '') {
                 $('#tbl-content').html(render);
             };
-          
+
             $('#myTable').DataTable({
                 "aaSorting": [],
                 //stateSave: true,
@@ -369,7 +372,6 @@ function LoadData() {
             $(document).ready(function () {
                 $('#myTable_filter input[type = search]').attr('maxlength', 50);
             });
-           
         },
 
         error: function (ex) {
@@ -428,6 +430,8 @@ function checkValidation() {
             countErr++;
         }
     }
+    
+   
 
     if (countErr > 0) {
         return false;
@@ -466,4 +470,11 @@ $("#txtQuantity").keyup(function () {
 });
 $("#txtUploadFile").change(function () {
     $('#validateUploadFile').text("");
+});
+$('#txtUploadFile').bind('change', function () {
+    if ((this.files[0].size / 1024 / 1024) > 2) {
+        $('#validateUploadFile').text("Vui lòng chọn hình ảnh nhỏ hơn 20MB");
+        sizeImg = false;
+
+    }
 });

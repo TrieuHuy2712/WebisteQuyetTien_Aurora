@@ -127,12 +127,12 @@ function resetType() {
 }
 function validateType() {
     var countErr = 0;
-    if ($('#txtManuCode').val() == null) {
+    if ($('#txtManuCode').val() == null && $('#txtManuCode').val() == '') {
         $('#validateManuCode').text('Mã loại sản phẩm không được rỗng');
         countErr++;
 
     }
-    if ($('#txtManuName').val() == null) {
+    if ($('#txtManuName').val() == null && $('#txtManuCode').val() == '') {
         $('#validateManuName').text('Mã loại sản phẩm không được rỗng');
         countErr++;
 
