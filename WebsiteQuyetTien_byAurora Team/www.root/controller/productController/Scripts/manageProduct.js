@@ -394,15 +394,15 @@ function checkValidation() {
 
     installmentPrice = installmentPrice.replace(/\,/g, '');;
     installmentPrice = parseInt(installmentPrice, 10);
-    if ($("#txtProductName").val() == "" || $("#txtProductName").val() == null) {
+    if (trim($("#txtProductName").val()) == "" || trim($("#txtProductName").val()) == null) {
         $('#validateProductName').text("Tên sản phẩm không được bỏ trống");
         countErr++;
     }
-    if ($("#txtOriginPrice").val() == "" || $("#txtOriginPrice").val() == null) {
+    if (trim($("#txtOriginPrice").val()) == "" || trim($("#txtOriginPrice").val()) == null) {
         $('#validateOriginPrice').text("Giá gốc không được bỏ trống");
         countErr++;
     }
-    if ($("#txtSalePrice").val() == "" || $("#txtSalePrice").val() == null) {
+    if (trim($("#txtSalePrice").val()) == "" || trim($("#txtSalePrice").val()) == null) {
         $('#validateSalePrice').text("Giá gốc không được bỏ trống");
         countErr++;
     }
@@ -412,7 +412,7 @@ function checkValidation() {
         $('#validateSalePrice').text("Giá bán phải lớn hơn giá gốc");
         countErr++;
     }
-    if ($("#txtInstallmentPrice").val() == "" || $("#txtInstallmentPrice").val() == null) {
+    if (trim($("#txtInstallmentPrice").val()) == "" || trim($("#txtInstallmentPrice").val()) == null) {
         $('#validateInstallmentPrice').text("Giá góp không được bỏ trống");
         countErr++;
     }
@@ -420,7 +420,7 @@ function checkValidation() {
         $('#validateInstallmentPrice').text("Giá góp phải lớn hơn giá gốc");
         countErr++;
     }
-    if ($("#txtQuantity").val() == "" || $("#txtQuantity").val() == null) {
+    if (trim($("#txtQuantity").val()) == "" || trim($("#txtQuantity").val()) == null) {
         $('#validateQuantity').text("Số lượng không được bỏ trống");
         countErr++;
     }
@@ -478,3 +478,6 @@ $('#txtUploadFile').bind('change', function () {
 
     }
 });
+function trim(value) {
+    return value.replace(/^\s+|\s+$/g, "");
+}

@@ -130,12 +130,12 @@ function resetType() {
 }
 function validateType() {
     var countErr = 0;
-    if ($('#txtTypeCode').val() == null || $('#txtTypeCode').val() == '') {
+    if (trim($('#txtTypeCode').val()) == null || trim($('#txtTypeCode').val()) == '') {
         $('#validateTypeCode').text('Mã loại sản phẩm không được rỗng');
         countErr++;
 
     }
-    if ($('#txtTypeName').val() == null || $('#txtTypeName').val() == '') {
+    if (trim($('#txtTypeName').val()) == null || trim($('#txtTypeName').val()) == '') {
         $('#validateTypeName').text('Mã loại sản phẩm không được rỗng');
         countErr++;
 
@@ -151,3 +151,6 @@ $('#txtTypeCode').on('keyup', function () {
 $('#txtTypeName').on('keyup', function () {
     $('#validateTypeName').text('');
 });
+function trim(value) {
+    return value.replace(/^\s+|\s+$/g, "");
+}

@@ -326,15 +326,15 @@ $('body').on('keyup', '#txtQuantityProduct', function (event) {
 
 function checkBillValidation() {
     var countErr = 0;
-    if ($("#txtCustomerName").val() == "" || $("#txtCustomerName").val() == null) {
+    if (trim($("#txtCustomerName").val()) == "" || trim($("#txtCustomerName").val()) == null) {
         $('#validateCustomerName').text("Tên khách hàng không được bỏ trống");
         countErr++;
     }
-    if ($("#txtPhoneNumber").val() == "" || $("#txtPhoneNumber").val() == null) {
+    if (trim($("#txtPhoneNumber").val()) == "" || trim($("#txtPhoneNumber").val()) == null) {
         $('#validatePhoneNumber').text("Số điện thoại không được bỏ trống");
         countErr++;
     }
-    if ($('#txtQuantityProduct').val() == "" || $('#txtQuantityProduct').val() == null || $('#txtQuantityProduct').val() == 0) {
+    if (trim($('#txtQuantityProduct').val()) == "" || trim($('#txtQuantityProduct').val()) == null || trim($('#txtQuantityProduct').val()) == 0) {
         $('#validateCQuantity').text('Số lượng không được bỏ trống');
         countErr++;
     }
@@ -366,3 +366,6 @@ $('#txtQuantityProduct').on('keyup', function () {
 $('#dropdownProduct').on('change', function () {
     $('#validatedropdown').text('');
 });
+function trim(value) {
+    return value.replace(/^\s+|\s+$/g, "");
+}

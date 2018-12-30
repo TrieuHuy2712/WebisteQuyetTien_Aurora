@@ -393,24 +393,24 @@ function checkBillValidation() {
     var taken = $('#txtTaken_InsEdit').val();
     taken = taken.replace(/\,/g, '');
     taken = parseInt(taken, 10);
-    if ($("#txtCustomerName_InsEdit").val() == "" || $("#txtCustomerName_InsEdit").val() == null) {
+    if (trim($("#txtCustomerName_InsEdit").val()) == "" || trim($("#txtCustomerName_InsEdit").val()) == null) {
         $('#validateCustomerNameIns').text("Tên khách hàng không được bỏ trống");
         countErr++;
     }
-    if ($("#txtPeriod_InsEdit").val() == "" || $("#txtPeriod_InsEdit").val() == null) {
+    if (trim($("#txtPeriod_InsEdit").val()) == "" || trim($("#txtPeriod_InsEdit").val()) == null) {
         $('#validatePeriodEdit').text("Thời hạn trả không được bỏ trống");
         countErr++;
     }
-    if ($("#txtTaken_InsEdit").val() == "" || $("#txtTaken_InsEdit").val() == null) {
+    if (trim($("#txtTaken_InsEdit").val()) == "" || trim($("#txtTaken_InsEdit").val()) == null) {
         $('#validateTakenEdit').text("Taken không được bỏ trống");
         countErr++;
     }
-    if ($("#txtRemain_InsEdit").val() == "" || $("#txtRemain_InsEdit").val() == null) {
+    if (trim($("#txtRemain_InsEdit").val()) == "" || trim($("#txtRemain_InsEdit").val()) == null) {
         $('#validateRemainnEdit').text("Remain không được bỏ trống");
         countErr++;
     }
 
-    if ($('#txtQuantityProduct_Ins').val() == "" || $('#txtQuantityProduct_Ins').val() == null || $('#txtQuantityProduct_Ins').val() == 0) {
+    if (trim($('#txtQuantityProduct_Ins').val()) == "" || trim($('#txtQuantityProduct_Ins').val()) == null || trim($('#txtQuantityProduct_Ins').val()) == 0) {
         $('#validateQuantityIns').text('Số lượng không được bỏ trống');
         countErr++;
     }
@@ -470,3 +470,7 @@ $('#dropdownInst').on('change', function () {
 $('#txtQuantityProduct_Ins').on('keyup', function () {
     $(this).closest('#validateQuantityIns').text('');
 });
+
+function trim(value) {
+    return value.replace(/^\s+|\s+$/g, "");
+}

@@ -147,15 +147,15 @@ function resetType() {
 }
 function validateCustomer() {
     var countErr = 0;
-    if ($('#txtCustomerCode').val() == null || $('#txtCustomerCode').val() == '') {
+    if (trim($('#txtCustomerCode').val()) == null || trim($('#txtCustomerCode').val()) == '') {
         $('#validateCustomerCode').text('Mã khách hàng không được bỏ trống');
         countErr++;
     }
-    if ($('#txtCustomerName').val() == null || $('#txtCustomerName').val() == '') {
+    if (trim($('#txtCustomerName').val()) == null || trim($('#txtCustomerName').val()) == '') {
         $('#validateCustomerName').text('Tên khách hàng không được bỏ trống');
         countErr++;
     }
-    if ($('#txtPhoneNumber').val() == null || $('#txtPhoneNumber').val() == '') {
+    if (trim($('#txtPhoneNumber').val()) == null || trim($('#txtPhoneNumber').val()) == '') {
         $('#validatePhoneNumber').text('Tên khách hàng không được bỏ trống');
         countErr++;
     }
@@ -183,3 +183,6 @@ $('#dob-dropdown').on('change', function () {
         $('#validatedob').text('');
     }
 });
+function trim(value) {
+    return value.replace(/^\s+|\s+$/g, "");
+}
