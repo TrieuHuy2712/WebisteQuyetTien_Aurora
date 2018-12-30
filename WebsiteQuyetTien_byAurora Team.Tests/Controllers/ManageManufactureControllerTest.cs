@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using System.Transactions;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
@@ -38,6 +39,50 @@ namespace WebsiteQuyetTien_byAurora_Team.Tests.Controllers
                 model.ManufactoryName,
                 model.ManufactoryCode,
             }), JsonConvert.SerializeObject(result.Data));
+        }
+        [TestMethod]
+        public void TestSaveEntity1()
+        {
+            var db = new DmQT08Entities();
+            var model = new Manufactory();
+
+            model.ManufactoryCode = "ABC";
+            model.ManufactoryName = "ABC Cake";
+
+            int count = db.Manufactories.Count();
+            var controller = new ManageManufactureController();
+            using (var scope = new TransactionScope())
+            {
+                model.ID = 0;
+                var result0 = controller.SaveEntity(model) as JsonResult;
+                Assert.IsNotNull(result0);
+                Assert.AreEqual(count + 1, db.Manufactories.Count());
+
+                Assert.IsInstanceOfType(result0.Data, typeof(Manufactory));
+                var manufactory = result0.Data as Manufactory;
+                Assert.AreEqual("ABC Cake", manufactory.ManufactoryName);
+            }
+        }
+        [TestMethod]
+        public void TestSaveEntity2()
+        {
+            var db = new DmQT08Entities();
+            var model = db.Manufactories.AsNoTracking().First();
+
+            int count = db.Manufactories.Count();
+            var controller = new ManageManufactureController();
+            using (var scope = new TransactionScope())
+            {
+                model.ID = 1;
+                model.ManufactoryName = "ABC Fruits";
+                var result0 = controller.SaveEntity(model) as JsonResult;
+                Assert.IsNotNull(result0);
+                Assert.AreEqual(count, db.Manufactories.Count());
+
+                Assert.IsInstanceOfType(result0.Data, typeof(Manufactory));
+                var manufactory = result0.Data as Manufactory;
+                Assert.AreEqual("ABC Fruits", manufactory.ManufactoryName);
+            }
         }
     }
 }
