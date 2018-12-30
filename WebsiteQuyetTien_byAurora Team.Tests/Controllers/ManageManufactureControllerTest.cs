@@ -63,9 +63,10 @@ namespace WebsiteQuyetTien_byAurora_Team.Tests.Controllers
                 Assert.AreEqual("ABC Cake", manufactory.ManufactoryName);
             }
         }
-        [TestMethod]
+        [TestMethod] 
         public void TestSaveEntity2()
         {
+            //Database Quyet Tien
             var db = new DmQT08Entities();
             var model = db.Manufactories.AsNoTracking().First();
 
