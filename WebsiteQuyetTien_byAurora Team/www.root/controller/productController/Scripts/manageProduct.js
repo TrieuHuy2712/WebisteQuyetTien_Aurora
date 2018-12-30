@@ -473,7 +473,7 @@ $("#txtUploadFile").change(function () {
 });
 $('#txtUploadFile').bind('change', function () {
     if ((this.files[0].size / 1024 / 1024) > 2) {
-        $('#validateUploadFile').text("Vui lòng chọn hình ảnh nhỏ hơn 20MB");
+        $('#validateUploadFile').text("Vui lòng chọn hình ảnh nhỏ hơn 2MB");
         sizeImg = false;
 
     }
