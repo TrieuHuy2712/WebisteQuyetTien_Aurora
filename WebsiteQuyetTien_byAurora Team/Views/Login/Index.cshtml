@@ -7,9 +7,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login Page</title>
+    <title>Đăng nhập Quyết Tiến</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="shortcut icon" href="~/www.root/controller/loginController/images/favicon.png" />
 
     <style>
         /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
@@ -44,7 +45,7 @@
         }
 
         table {
-            table-layou: fixed;
+            table-layout: fixed;
             border-collapse: collapse;
             border-spacing: 0;
             empty-cells: show;
@@ -387,10 +388,10 @@
                     </span>
                 </div>
                 <div class="row option">
-                    <span class="checkbox">
+                    @*<span class="checkbox">
                         <input type="checkbox" id="saveID" name="saveID">
                         <label for="saveID">Nhớ mật khẩu</label>
-                    </span>
+                    </span>*@
                     <p id="msgLogin" class="msg-error" style="display:block"></p>
                 </div>
                 <button type="submit" class="btn-login" onclick="loginClick();"><span>Đăng nhập</span></button>
