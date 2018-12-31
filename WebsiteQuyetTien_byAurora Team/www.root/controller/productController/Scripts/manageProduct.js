@@ -430,8 +430,6 @@ function checkValidation() {
             countErr++;
         }
     }
-    
-   
 
     if (countErr > 0) {
         return false;
@@ -475,7 +473,8 @@ $('#txtUploadFile').bind('change', function () {
     if ((this.files[0].size / 1024 / 1024) > 2) {
         $('#validateUploadFile').text("Vui lòng chọn hình ảnh nhỏ hơn 2MB");
         sizeImg = false;
-
+    } else {
+        sizeImg = true;
     }
 });
 function trim(value) {
