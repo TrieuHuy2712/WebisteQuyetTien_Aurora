@@ -397,28 +397,28 @@ function checkBillValidation() {
         $('#validateCustomerNameIns').text("Tên khách hàng không được bỏ trống");
         countErr++;
     }
-    if (trim($("#txtPeriod_InsEdit").val()) == "" || trim($("#txtPeriod_InsEdit").val()) == null) {
+    if ($("#txtPeriod_InsEdit").val() == "" || $("#txtPeriod_InsEdit").val() == null) {
         $('#validatePeriodEdit').text("Thời hạn trả không được bỏ trống");
         countErr++;
     }
-    if (trim($("#txtTaken_InsEdit").val()) == "" || trim($("#txtTaken_InsEdit").val()) == null) {
+    if ($("#txtTaken_InsEdit").val() == "" || $("#txtTaken_InsEdit").val() == null) {
         $('#validateTakenEdit').text("Taken không được bỏ trống");
         countErr++;
     }
-    if (trim($("#txtRemain_InsEdit").val()) == "" || trim($("#txtRemain_InsEdit").val()) == null) {
+    if ($("#txtRemain_InsEdit").val() == "" || $("#txtRemain_InsEdit").val() == null) {
         $('#validateRemainnEdit').text("Remain không được bỏ trống");
         countErr++;
     }
 
-    if (trim($('#txtQuantityProduct_Ins').val()) == "" || trim($('#txtQuantityProduct_Ins').val()) == null || trim($('#txtQuantityProduct_Ins').val()) == 0) {
+    if ($('#txtQuantityProduct_Ins').val() == "" || $('#txtQuantityProduct_Ins').val() == null || $('#txtQuantityProduct_Ins').val() == 0) {
         $('#validateQuantityIns').text('Số lượng không được bỏ trống');
         countErr++;
     }
-    if ($('#dropdownInst').val() == 0) {
-        $('#validatedropdownIns').text("Vui lòng chọn sản phẩm");
-        countErr++;
-    }
-    if (taken >= (grandTotal * 30 / 100)) {
+    //if ($('#dropdownInst').val() == 0) {
+    //    $('#validatedropdownIns').text("Vui lòng chọn sản phẩm");
+    //    countErr++;
+    //}
+    if (taken < (grandTotal * 30 / 100)) {
         countErr++;
     }
     if (countErr > 0) {

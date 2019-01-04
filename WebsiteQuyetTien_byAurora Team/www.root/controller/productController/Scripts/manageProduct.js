@@ -192,7 +192,7 @@ $('body').on('click', '.btn-edit', function (e) {
                 } else if (response.Status == false) {
                     $('#statusProduct').val("0");
                 }
-
+                $("#txtUploadFile").val("");
                 $('#txtQuantity').val(response.Quantity);
             }
 
